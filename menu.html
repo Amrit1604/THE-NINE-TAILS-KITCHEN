@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #fbf5e5;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 10rem;
+            background-image: url(navmenu.jpg);
+            box-shadow: 0 10px 40px rgba(1, 1, 0.5);
+        }
+        .navlist {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .navlist li {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+        .navlist li h1 {
+            margin: 0;
+            padding: 10px;
+            font-size: 24px;
+            color: #fbf5e5;
+        }
+        .navlist li h1:hover {
+            background-color: black;
+            color: rgb(212, 24, 24);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .logonav img {
+            width: 200px;
+            object-fit: contain;
+            max-width: 230px;
+            margin-top: -75px;
+            z-index: 1;
+            border-radius: 50%;
+            margin-left: -600px;
+        }
+        .rightimg {
+            position: absolute;
+            top: 30px;
+            right: 100px;
+            z-index: 1; /* Ensures the image doesn't overlap with the navbar content */
+        }
+        .rightimg img {
+            width: 250px; /* Adjust as needed */
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(https://png.pngtree.com/background/20210710/original/pngtree-e-commerce-japanese-style-delicious-small-fresh-food-snack-promotion-picture-image_1063092.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: calc(100vh - 10rem); /* Adjust as needed */
+            padding-top: 7rem; /* Space to prevent overlap with navbar */
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: #dfdfdf;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            perspective: 1000px;
+            box-shadow: 0 0 0 5px #ffffff80;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card svg {
+            width: 48px;
+            fill: #333;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+        .card__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #000000;
+            transform: rotateX(-90deg);
+            transform-origin: bottom;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card:hover .card__content {
+            transform: rotateX(0deg);
+        }
+        .card__title {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+            font-weight: 700;
+        }
+        .card:hover svg {
+            scale: 0;
+        }
+        .card__description {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: #777;
+            line-height: 1.4;
+        }
+        .card__button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #f76c6c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .card__button:hover {
+            background-color: #ff4c4c;
+        }
+        .card img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    
+    transition: transform 0.3s ease;
+}
+.text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5); /* Background with transparency */
+            padding: 10px;
+            border-radius: 5px;
+            transition: opacity 0.3s ease;
+        }
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+
+ .container {
+    position: absolute;
+
+
+ }
+ .svg1 img  {
+    width: 80% ;/* Adjust the width as needed */
+    height: auto; /* Maintains the aspect ratio */
+}
+.svg2 img{
+    width: 80% ;/* Adjust the width as needed */
+    height: auto;
+}
+
+        
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navContent">
+            <ul class="navlist">
+                <li><h1>Home</h1></li>
+                <li><h1>Menu</h1></li>
+                <li><h1>Our Story</h1></li>
+                <li><h1>Booking</h1></li>
+            </ul>
+        </div>
+        <div class="logonav">
+            <a href="#home"><img src="logonew.png" alt="Logo"></a>
+        </div>
+        <div class="rightimg">
+            <img src="https://railrocker.com/playground/wp-content/uploads/2020/02/Onigiri-traditional-Japanese-Rice-Balls.jpg" alt="Right Image">
+        </div>
+    </nav>
+    <div class="content">
+        <div class="card-grid">
+            <div class="card">
+               
+                <img src="https://static.tildacdn.com/tild6539-6635-4532-b065-373738313336/Frame_198.svg">
+                <div class="text-overlay">STARTERS</div>
+                <div class="card__content">
+                    <p class="card__title">STARTERS</p>
+                    <p class="card__description">Description for Card 1</p>
+                    <button class="card__button">Button 1</button>
+                </div>
+            </div>
+            <div class="card">
+                <svg> <!-- Your SVG content here --> </svg>
+                <div class="card__content">
+                    <p class="card__title">SUSHI</p>
+                    <p class="card__description">Description for Card 2</p>
+                    <button class="card__button">Button 2</button>
+                </div>
+            </div>
+            <div class="card">
+                <svg> <!-- Your SVG content here --> </svg>
+                <div class="card__content">
+                    <p class="card__title">RAMEN</p>
+                    <p class="card__description">Description for Card 3</p>
+                    <button class="card__button">Button 3</button>
+                </div>
+            </div>
+            <div class="card">
+                <svg> <!-- Your SVG content here --> </svg>
+                <div class="card__content">
+                    <p class="card__title">HOT DISHES</p>
+                    <p class="card__description">Description for Card 4</p>
+                    <button class="card__button">Button 4</button>
+                </div>
+            </div>
+            <div class="card">
+                <svg> <!-- Your SVG content here --> </svg>
+                <div class="card__content">
+                    <p class="card__title">DESERTS</p>
+                    <p class="card__description">Description for Card 5</p>
+                    <button class="card__button">Button 5</button>
+                </div>
+            </div>
+            <div class="card">
+                <svg> <!-- Your SVG content here --> </svg>
+                <div class="card__content">
+                    <p class="card__title">Card 6</p>
+                    <p class="card__description">Description for Card 6</p>
+                    <button class="card__button">Button 6</button>
+                </div>
+            </div>
+        </div>       
+    </div>
+<div class="container">
+    <div class="svg1">
+        <img src="https://static.tildacdn.com/tild3765-3036-4231-b464-356564336130/Frame_132.svg" alt="svg1">
+    </div>
+    <div class="svg2">
+        <img src="https://static.tildacdn.com/tild3534-3764-4134-a430-663030663736/Frame_133.svg" alt="svg2">
+    </div>
+</div>
+
+</body>
+</html>
