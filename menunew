@@ -1,1 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+    <style>
+        body{
+           background-color: #fbf5e5;
+    font-family: system-ui;
+    overflow-y: scroll;
+}
+.navbar{
+    /* background-color: blanchedalmond;*/
+    border-radius: 30px; 
+}
+.navbar ul{
+     overflow:auto;/*coz float karne par parent se overflow ho jaega/ */
+}
+.navbar li{
+    float:right;
+    list-style:none;
+    margin:13px 20px;
+    color: aliceblue;
+    
+}
+.navbar li a{
+    text-decoration:none;
+    padding:3px 3px;
+    color:rgb(0, 0, 0);
+    font-size: 20px;
+}
+.navbar li a:hover{
+    text-decoration:none;
+    padding:3px 3px;
+    color:black;
+    background-color:blanchedalmond;
+}
 
+.search {
+    float: right;
+    color: brown;
+    padding: 12px 12px;
+}
+
+.search input {
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 7px 9px;
+    width: 175px;
+    margin-right: 5px;
+}
+
+.search button {
+    background-color: #1C1F25;
+    color: #fff;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #ec6b01;
+}
+/* .navbar input{
+    border:2px solid black;
+    border-radius: 14px;
+    padding:7px 9px;
+    width:175px;
+} */
+.container{
+    width: 70rem;
+    height: auto;
+    margin: 0rem 5rem 5rem 5rem;
+    transition: 0.5s;
+    text-align: center;
+    background-image: url(https://w0.peakpx.com/wallpaper/565/109/HD-wallpaper-vintage-ink-food-background-material-food-background-food-background-hand-drawn-lettering.jpg);
+    font-family: serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: larger;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+    scrollbar-width:  thin;
+    scrollbar-color: black;
+    overscroll-behavior:none;
+}
+header{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 50px;
+}
+header .shopping{
+    position: relative;
+    text-align: right;
+}
+header .shopping img{
+    width: 40px;
+}
+header .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    padding: 3px 10px;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 62rem;
+    padding-bottom: 20px;
+    column-gap: 40px;
+    row-gap: 60px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right:53px;
+    margin-bottom: 50px;
+    background-color: rgba(28, 31, 37, 0.606);
+    backdrop-filter: blur(3.5px);
+ box-shadow: 15px 15px 30px rgb(25, 25, 25),
+             -15px -15px 30px rgb(60, 60, 60);
+
+}
+
+.list .item{
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    width: 20rem;
+    height: 35rem;
+    margin-left: 63px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+     background: rgb(236, 236, 236);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
+
+
+}
+.list .item img{
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+}
+.list .item .title{
+    font-weight: 600;
+}
+.list .item .price{
+    margin: 15px;
+}
+.list .item button{
+ width: 9em;
+ height: 3em;
+ margin-top: 20px;
+ border-radius: 30em;
+ font-size: 15px;
+ font-family: inherit;
+ border: none;
+ position: relative;
+ overflow: hidden;
+ z-index: 1;
+ box-shadow: 6px 6px 12px #75c25d,
+             -6px -6px 12px #96bf62;
+}
+
+.list .item button::before {
+ content: '';
+ width: 0;
+ height: 3em;
+ border-radius: 30em;
+ position: absolute;
+ top: 0;
+ left: 0;
+ background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+.list .item button:hover::before {
+ width: 9em;
+}
+.Cart{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 500px;
+    background-color: #453E3B;
+    height: 100vh;
+    transition: 0.5s;
+    overflow-y: auto;
+    flex-direction: column;
+}
+.active .Cart{
+    left: calc(100% - 500px);
+}
+.active .container{
+   transform: translateX(-200px);
+}
+.Cart h1{
+    color: #E8BC0E;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.Cart .checkOut{
+    
+    display: flex;
+    justify-content: space-between; /* Spread the elements horizontally */
+    align-items: center; /* Center the elements vertically */
+    padding: 10px;
+    background-color: #1C1F25;
+    color: #fff;
+    position: sticky;
+    bottom: 0;
+
+}
+.Cart .checkOut div{
+    background-color: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.Cart .checkOut div:nth-child(2){
+    background-color: #1C1F25;
+    color: #fff;
+}
+.Cart .checkOut div:nth-child(3) {
+    background-color: #1C1F25;
+    color: #fff;
+}
+.listCart{
+    padding: 10px;
+    flex:1;
+}
+.listCart li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCart li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCart li img{
+    width: 90%;
+}
+.listCart li button{
+    background-color: #fff5;
+    border: none;
+}
+.btn:hover {
+    background-color: #ec6b01;
+    color: rgb(255, 255, 255);
+}
+.listCart .count{
+    margin: 0 10px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+/* Style for "Foodies" text */
+/* Style for "Foodies" text */
+.foodies-box {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    background: linear-gradient(45deg, black, white); /* Black to white gradient */
+    padding: 5px 10px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners */
+}
+.foodies-text {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    background: linear-gradient(45deg, black, white); /* Black to white gradient */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners */
+}
+.navbar img{
+    height: 120px;
+    margin-left: 40px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .foodies-text {
+        display: none; /* Hide "Foodies" text on smaller screens */
+    }
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .foodies-text {
+        display: none; /* Hide "Foodies" text on smaller screens */
+    }
+}
+
+    </style>
+</head>
+<body class="">
+    <section class="first">
+        <header>
+            <!-- Add "Foodies" here -->
+            <nav class="navbar">
+                <ul>
+                    <img style="border-radius: 50%; " src="images/THE NINE-TAILS KITCHEN (1).png" alt="logo">
+                    <li><a href="index.html" ><b>Home</b></a></lI>
+                    <li><a href="menu.html" ><b>Menu</b></a></li>
+                    <li><a href="about.html"><b>About</b>
+                    </a></li>
+                    <li><a href="contact.html"><b>Contact</b></a></li>
+                    
+                    <div class="search">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <button onclick="searchMenu()">Search</button>
+                    </div>
+                
+                </ul>
+            </nav>
+        </header>
+    
+    <div class="container">
+        <header>
+            <h1><b>MENU</b></h1>
+            <div class="shopping">
+                <img src="https://cdn-icons-png.flaticon.com/128/3737/3737151.png" alt="Loading">
+                <span class="quantity">0</span>
+            </div>
+        </header>
+
+        <div class="list">
+          
+        </div>
+    </div>
+    <div class="Cart">
+        <h1>Cart</h1>
+        <ul class="listCart">
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+            <div class="checkoutButton">
+                <a href="payment.html">CHECKOUT</a>
+            </div>
+        </div>
+    </div>
+
+    <script >
+        let openShopping = document.querySelector('.shopping');
+let closeShopping = document.querySelector('.closeShopping');
+let list = document.querySelector('.list');
+let listCart = document.querySelector('.listCart');
+let body = document.querySelector('body');
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
+
+openShopping.addEventListener('click', ()=>{
+    body.classList.add('active');
+})
+closeShopping.addEventListener('click', ()=>{
+    body.classList.remove('active');
+})
+
+let products = [
+    {
+        id: 1,
+        name: 'Sushi (寿司)',
+        image: 'https://img.taste.com.au/lNnNoTvU/taste/2010/01/sushi-187034-1.jpg',
+        description: 'A traditional Japanese dish made with vinegared rice, often accompanied by seafood, vegetables, and occasionally tropical fruits. Served with soy sauce, wasabi, and pickled ginger.',
+        price: 1400
+    },
+    {
+        id: 2,
+        name: 'Sashimi (刺身)',
+        image: 'https://www.oceansideseafood.com/cdn/shop/products/12ab63d31856715caf645d5ac7047f80_grande.png?v=1673880520',
+        description:'Fresh, raw seafood sliced into thin pieces, served with soy sauce and wasabi. Common types include tuna, salmon, and squid.',
+        price: 1350
+    },
+    {
+        id: 3,
+        name: 'Kaisendon (海鮮丼)',
+        image: 'https://recipes.net/wp-content/uploads/2024/01/how-to-eat-kaisendon-1706459535.jpg" ',
+        description:'A rice bowl topped with various types of fresh sashimi, such as tuna, salmon, and sea urchin.',
+        price: 1200
+    },
+    {
+        id: 4,
+        name: 'Ramen (ラーメン)',
+        image: 'https://recipes.net/wp-content/uploads/2022/09/rsz_miso-ramen.jpg',
+        description:'A noodle soup dish consisting of Chinese-style wheat noodles in a flavorful broth, topped with ingredients like sliced pork, nori, and green onions.',
+        price: 750
+    },
+    {
+        id: 5,
+        name: 'Udon (うどん)',
+        image: 'https://tarasmulticulturaltable.com/wp-content/uploads/2014/02/Niku-Udon-Japanese-Meat-Udon-4-of-5-e1573750889431.jpg',
+        description:'Thick, chewy wheat noodles served either hot in a mild broth or cold with a dipping sauce, topped with ingredients like tempura and nori.',
+        price: 500
+    },
+    {
+    id: 6,
+        name: 'Soba (蕎麦)',
+        image: 'https://static01.nyt.com/images/2014/02/04/science/06recipehealth/06recipehealth-superJumbo.jpg',
+        description:'Buckwheat noodles served cold with a dipping sauce or in hot broth, known for their nutty flavor.',
+        price: 600
+    },
+    {
+    id: 7,
+        name: 'Gyudon (牛丼)',
+        image: 'https://marleyspoon.com/media/recipes/248798/main_photos/large/shaved_steak_gyudon-1c8d98ff758f7f65b934497dae9ecb1f.jpeg',
+        description:'A bowl of rice topped with thinly sliced beef and onions simmered in a mildly sweet, soy sauce-based broth.',
+        price: 480
+    },
+    {
+    id: 8,
+        name: 'Donburi (丼)',
+        image: 'https://insanelygoodrecipes.com/wp-content/uploads/2023/08/Donburi-Homemade-Japanese-Teriyaki-Chicken-Rice-Bowl.jpg',
+        description:'A rice bowl dish topped with various ingredients such as tempura (Tendon), beef (Gyudon), or chicken and egg (Oyakodon).',
+        price: 800
+    },
+    {
+    id: 9,
+        name: 'Onigiri (おにぎり)',
+        image: 'https://food-images.files.bbci.co.uk/food/recipes/onigiri_39079_16x9.jpg',
+        description:'A rice ball snack filled with ingredients like pickled plum, salted salmon, or tuna with mayonnaise, wrapped in nori (seaweed).',
+        price: 180
+    },
+    {
+    id: 10,
+        name: 'Yakitori (焼き鳥)',
+        image: 'https://chefjackovens.com/wp-content/uploads/2023/03/My-project-1-18.jpg',
+        description:'Grilled chicken skewers seasoned with either salt or tare sauce. Includes different parts of the chicken like thighs, wings, and liver.',
+        price: 350
+    },
+    {
+    id: 11,
+        name: 'Karaage (唐揚げ)',
+        image: 'https://straightupeats.com/wp-content/uploads/2020/09/Crunchy-Japanese-Chicken-1.jpg',
+        description:'Japanese-style fried chicken, marinated in soy sauce, ginger, and garlic, then deep-fried until crispy.',
+        price: 750
+    },
+    {
+    id: 12,
+        name: 'Tonkatsu (豚カツ)',
+        image: 'https://www.marionskitchen.com/wp-content/uploads/2021/08/20201110_Spicy-Pork-Tonkatsu-5.jpg',
+        description:'A breaded and deep-fried pork cutlet, served with shredded cabbage and a tangy Worcestershire-based sauce.',
+        price: 200
+    },
+    {
+    id: 13,
+        name: 'Tempura (天ぷら)',
+        image: 'https://downshiftology.com/wp-content/uploads/2023/04/How-To-Make-Ceviche-4.jpg',
+        description:'Lightly battered and deep-fried seafood, meat, and vegetables, served with a dipping sauce.',
+        price: 1150
+    },
+    {
+    id: 14,
+        name: 'Shabu-Shabu (しゃぶしゃぶ)',
+        image: 'https://japanesetaste.com/cdn/shop/articles/how-to-make-gyoza-japanese-dumplings-at-home-japanese-taste.jpg',
+        description:'A hotpot dish with thinly sliced meat and vegetables cooked in boiling water or broth, then dipped in sauces.',
+        price: 2100
+    },
+    {
+    id: 15,
+        name: 'Nikujaga (肉じゃが)',
+        image: 'https://thecozycook.com/wp-content/uploads/2020/06/Eggplant-Parmesan-Recipe-f.jpg',
+        description:'Stewed beef and potatoes in a sweet soy sauce-based broth, a comforting home-style dish',
+        price: 640
+    },
+    {
+    id: 16,
+        name: 'Oden (おでん)',
+        image: 'https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2022/05/Chimichangas-20.jpg',
+        description:'A winter dish of various ingredients like boiled eggs, daikon, and fish cakes simmered in a light, soy-flavored dashi broth.',
+        price: 550
+    },
+    {
+    id: 17,
+        name: 'TOM YUM SOUP ',
+        image: 'https://hot-thai-kitchen.com/wp-content/uploads/2023/02/tom-yum-wings-blog.jpg',
+        description:'TOM YUM SOUP is a popular Thai soup known for its spicy and sour flavors. It is typically includes shrimp, mushrooms, lemongrass, lime leaves, and chili peppers in a fragrant broth made with coconut milk or clear broth. Location: Rajpura, India',
+        price: 350
+    },
+    {
+    id: 18,
+        name: 'Takoyaki (たこ焼き)',
+        image: 'https://www.linoui.in/cdn/shop/articles/Linoui_Blogs.png',
+        description:'Fried balls of dough filled with octopus, tempura scraps, and green onions, topped with takoyaki sauce, mayonnaise, bonito flakes, and seaweed.',
+        price: 480
+    },
+    {
+    id: 19,
+        name: 'Okonomiyaki (お好み焼き)',
+        image: 'https://www.linoui.in/cdn/shop/articles/Linoui_Blogs.png',
+        description:' A savory pancake made from batter and cabbage, cooked with various ingredients like pork, seafood, and cheese, topped with okonomiyaki sauce and bonito flakes.',
+        price: 990
+    },
+    {
+    id: 20,
+        name: 'Gyoza (餃子)',
+        image: 'https://www.linoui.in/cdn/shop/articles/Linoui_Blogs.png',
+        description:'Pan-fried dumplings filled with ground meat, cabbage, garlic, and ginger, served with a dipping sauce.',
+        price: 600
+    },
+    {
+    id: 21,
+        name: 'Natto (納豆)',
+        image: 'https://www.linoui.in/cdn/shop/articles/Linoui_Blogs.png',
+        description:'Fermented soybeans with a strong smell and sticky texture, served over rice with soy sauce and mustard.',
+        price: 780
+    },
+    {
+    id: 22,
+        name: 'Matcha Ice Cream (抹茶アイスクリーム)',
+        image: 'https://www.linoui.in/cdn/shop/articles/Linoui_Blogs.png',
+        description:'A rich and creamy ice cream flavored with matcha, a finely ground powder of green tea leaves',
+        price: 480
+    },
+    {
+    id: 22,
+        name: 'Kaiseki (懐石)',
+        image: 'https://www.linoui.in/cdn/shop/articles/Linoui_Blogs.png',
+        description:"A traditional multi-course Japanese meal showcasing seasonal ingredients, prepared in various ways. It's an elaborate dining experience with a focus on harmony, balance, and presentation.",
+        price: 5900
+    },
+];
+let listCarts  = [];
+function initApp(){
+    products.forEach((value, key) =>{
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+        <img src="${value.image}">
+        <div class="title">${value.name}</div>
+        <div class="price">${value.price.toLocaleString()}</div>
+        <div class="description">${value.description}</div>
+        <button onclick="addToCart(${key})">Add To Cart</button>`;
+        
+    
+        list.appendChild(newDiv);
+    })
+}
+initApp();
+function addToCart(key){
+    if(listCarts[key] == null){
+        // copy product form list to list Cart
+        listCarts[key] = JSON.parse(JSON.stringify(products[key]));
+        listCarts[key].quantity = 1;
+    }
+    reloadCart();
+}
+function reloadCart(){
+    listCart.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+    listCarts.forEach((value, key)=>{
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
+        if(value != null){
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML = `
+                <div><img src="${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>`;
+                listCart.appendChild(newDiv);
+        }
+    })
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
+}
+function changeQuantity(key, quantity){
+    if(quantity == 0){
+        delete listCarts[key];
+    }else{
+        listCarts[key].quantity = quantity;
+        listCarts[key].price = quantity * products[key].price;
+    }
+    reloadCart();
+}
+
+
+
+
+
+
+let originalProducts = [];
+
+function initApp() {
+    products.forEach((value, key) => {
+       
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+        <img src="${value.image}">
+        <div class="title">${value.name}</div>
+        <div class="price">${value.price.toLocaleString()}</div>
+        <div class="description">${value.description}</div>
+        <button onclick="addToCart(${key})">Add To Cart</button>`;
+        
+        list.appendChild(newDiv);
+    });
+
+    
+
+    // Store the original list
+    originalProducts = [...products];
+}
+function resetMenu() {
+    displayMenu();
+    document.getElementById('searchInput').value = ''; // Clear the search input
+}
+function searchMenu() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+    if (searchInput.trim() === '') {
+        // If the search input is empty, reset to the original menu
+        resetMenu();
+    } else {
+        // Filter products based on the search input
+        const filteredProducts = originalProducts.filter(product =>
+            product.name.toLowerCase().includes(searchInput) ||
+            product.description.toLowerCase().includes(searchInput)
+        );
+
+        // Display the filtered menu
+        displayFilteredMenu(filteredProducts);
+    }
+}
+
+
+
+
+    
+
+    function searchMenu() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+        // Filter products based on the search input
+        const filteredProducts = products.filter(product =>
+            product.name.toLowerCase().includes(searchInput) || 
+            product.description.toLowerCase().includes(searchInput)
+        );
+
+        // Display the filtered menu
+        displayFilteredMenu(filteredProducts);
+    }
+
+    
+    function displayFilteredMenu(filteredProducts) {
+        const list = document.querySelector('.list');
+        list.innerHTML = ''; // Clear existing items
+
+        filteredProducts.forEach(product => {
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('item');
+            newDiv.innerHTML = `
+                <img src="${product.image}">
+                <div class="title">${product.name}</div>
+                <div class="price">${product.price.toLocaleString()}</div>
+                <div class="description">${product.description}</div>
+                <button onclick="addToCart(${product.id - 1})">Add To Cart</button>`;
+
+            list.appendChild(newDiv);
+        });
+    }
+
+
+
+
+
+
+    
+        
+    
+
+    
+</script>
+
+    
+    <footer>
+        <p>&copy; 2024 NINETAILS KITCHEN </p>
+    </footer>
+</body>
+</html>
