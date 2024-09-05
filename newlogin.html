@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>THE-NINE-TAILS-KITCHEN</title>
+    <style>/* POPPINS FONT */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        
+        *{  
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background-image: url(https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Flaap69nb79o71.jpg&rdt=38920);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        
+        }
+        .wrapper{
+            display: flex;
+            width: 700px;
+            height: 500px;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            background: rgba(72, 71, 71, 0.381);
+            position: relative;
+        }
+
+
+        .content {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.svg-container-left,
+.svg-container-right {
+    position: fixed;
+    top: 100px;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.svg-container-left {
+    left: 50px;
+}
+
+.svg-container-right {
+    right: 50px;
+}
+
+svg {
+    width: 400px;
+    height: 200px;
+    cursor: pointer;
+}
+
+#anime-fox {
+    animation: scaleUpDown 3s infinite alternate;
+}
+
+#anime-cat {
+    animation: rotate 5s infinite linear;
+}
+
+
+#anime-bird {
+    animation: rotate 6s infinite alternate;
+}
+
+#anime-rabbit {
+    animation: jump 4s infinite ease-in-out;
+}
+
+@keyframes scaleUpDown {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.3); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes moveLeftRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(25px); }
+}
+
+@keyframes flyUpDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-25px); }
+}
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+
+
+
+        .nav{
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+            z-index: 100;
+        }
+        .nav-logo p{
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul{
+            display: flex;
+        }
+        .nav-menu ul li{
+            list-style-type: none;
+        }
+        .nav-menu ul li .link{
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover, .active{
+            border-bottom: 2px solid #fff;
+        }
+        .nav-button .btn{
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.4);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover{
+            background: rgba(255, 255, 255, 0.3);
+        }
+        #registerBtn{
+            margin-left: 15px;
+        }
+        .btn.white-btn{
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .btn.btn.white-btn:hover{
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .nav-menu-btn{
+            display: none;
+        }
+        .form-box{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 512px;
+            height: 420px;
+            overflow: hidden;
+            z-index: 2;
+        }
+        .login-container{
+            position: absolute;
+            left: 4px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease-in-out;
+        }
+        .register-container{
+            position: absolute;
+            right: -520px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease-in-out;
+        }
+        .top span{
+            color: #fff;
+            font-size: small;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .top span a{
+            font-weight: 500;
+            color: #fff;
+            margin-left: 5px;
+        }
+        header{
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            padding: 10px 0 30px 0;
+        }
+        .two-forms{
+            display: flex;
+            gap: 10px;
+        }
+        .input-field{
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            height: 50px;
+            width: 100%;
+            padding: 0 10px 0 45px;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            transition: .2s ease;
+        }
+        .input-field:hover, .input-field:focus{
+            background: rgba(255, 255, 255, 0.25);
+        }
+        ::-webkit-input-placeholder{
+            color: #fff;
+        }
+        .input-box i{
+            position: relative;
+            top: -35px;
+            left: 17px;
+            color: #fff;
+        }
+        .submit{
+            font-size: 15px;
+            font-weight: 500;
+            color: black;
+            height: 45px;
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: .3s ease-in-out;
+        }
+        .submit:hover{
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+        .two-col{
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            font-size: small;
+            margin-top: 10px;
+        }
+        .two-col .one{
+            display: flex;
+            gap: 5px;
+        }
+        .two label a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .two label a:hover{
+            text-decoration: underline;
+        }
+        @media only screen and (max-width: 786px){
+            .nav-button{
+                display: none;
+            }
+            .nav-menu.responsive{
+                top: 100px;
+            }
+            .nav-menu{
+                position: absolute;
+                top: -800px;
+                display: flex;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.2);
+                width: 100%;
+                height: 90vh;
+                backdrop-filter: blur(20px);
+                transition: .3s;
+            }
+            .nav-menu ul{
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-menu-btn{
+                display: block;
+            }
+            .nav-menu-btn i{
+                font-size: 25px;
+                color: #fff;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .3s;
+            }
+            .nav-menu-btn i:hover{
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+        @media only screen and (max-width: 540px) {
+            .wrapper{
+                min-height: 100vh;
+            }
+            .form-box{
+                width: 100%;
+                height: 500px;
+            }
+            .register-container, .login-container{
+                width: 100%;
+                padding: 0 20px;
+            }
+            .register-container .two-forms{
+                flex-direction: column;
+                gap: 0;
+            }
+            
+
+
+        }</style>
+</head>
+<body bgcolor="#fbf5e5">
+    <center>
+        <div>
+            <img src="https://static.tildacdn.com/tild3266-3564-4038-b966-653863333938/Frame_123.svg" alt="">
+        </div>
+    </center>
+    
+    <center>
+        <div class="wrapper">
+        
+        
+            <!----------------------------- Form box ----------------------------------->
+            <div class="form-box">
+         
+             <div class="svg-container-left">
+                 <!-- Anime Fox SVG -->
+                    <img src="https://static.tildacdn.com/tild3538-6337-4738-b933-346661626338/Vector.svg" alt="" style="margin: 0;margin-left: -170px; width: 500px;">
+                     
+                 
+                 <!-- Anime Bird SVG -->
+                 <svg id="anime-bird"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="Video-Game-Sonic--Streamline-Freehand" height="24" width="24"><desc>Video Game Sonic Streamline Icon: https://streamlinehq.com</desc><title>video-game-sonic</title><g><path d="M13.34 15.17a0.35 0.35 0 0 0 -0.47 0.17 4.86 4.86 0 0 1 -0.87 0.95c-0.29 0.27 -0.62 0.5 -0.93 0.75a14 14 0 0 1 -1.5 1.15 0.31 0.31 0 0 0 -0.17 0.4 0.32 0.32 0 0 0 0.41 0.17 7.34 7.34 0 0 0 1.64 -0.59 4.38 4.38 0 0 0 0.63 -0.43 3.45 3.45 0 0 0 0.54 -0.54 4.75 4.75 0 0 0 0.88 -1.56 0.36 0.36 0 0 0 -0.16 -0.47Z" fill="#000000" fill-rule="evenodd" stroke-width="1"></path><path d="M8.2 14a1.73 1.73 0 0 0 -1 -0.57c-1.72 -0.3 -3.56 1.63 -2.41 3.37a1.84 1.84 0 0 0 0.7 0.63 2.37 2.37 0 0 0 0.85 0.28 2.7 2.7 0 0 0 0.64 0 1.72 1.72 0 0 0 0.5 -0.11A2.05 2.05 0 0 0 8.72 16a2.07 2.07 0 0 0 -0.52 -2Zm-0.57 1.73a1.08 1.08 0 0 1 -0.6 0.81l-0.55 0a1.74 1.74 0 0 1 -0.48 -0.09 1 1 0 0 1 -0.38 -0.26 1 1 0 0 1 -0.18 -1 1.55 1.55 0 0 1 0.66 -0.88 1.76 1.76 0 0 1 0.75 -0.07 1 1 0 0 1 0.67 0.4 1.32 1.32 0 0 1 0.11 1.11Z" fill="#000000" fill-rule="evenodd" stroke-width="1"></path><path d="M24 12.41a11.21 11.21 0 0 0 -0.12 -1.15c-0.05 -0.37 -0.13 -0.74 -0.21 -1.11a8.18 8.18 0 0 0 -1.89 -3.68A11.58 11.58 0 0 0 18.51 4a0.22 0.22 0 0 0 -0.14 0l0 -0.4V2.51l-0.11 -0.7 -0.19 -0.49a1.23 1.23 0 0 0 -0.84 -0.73 2.22 2.22 0 0 0 -1.35 0.32L14 1.87c-0.22 0.13 -0.47 0.3 -0.73 0.43s-0.09 0.13 -0.82 -0.08a7.55 7.55 0 0 0 -0.76 -0.22 5.56 5.56 0 0 0 -0.82 -0.09 9.4 9.4 0 0 0 -3.23 0.53A10.41 10.41 0 0 0 5 3.89c-0.76 -0.15 -1.52 -0.38 -2.3 -0.47a5.33 5.33 0 0 0 -1.13 0 2.18 2.18 0 0 0 -1.18 0.51A1.34 1.34 0 0 0 0 4.9a2 2 0 0 0 0 0.42 4 4 0 0 0 0.13 0.52L0.59 7c0.13 0.31 0.27 0.6 0.42 0.88l0.69 1.23s0.06 0.06 0.1 0.09a2.13 2.13 0 0 0 -0.31 0.86v1.1a8.78 8.78 0 0 0 0.1 0.88 7.88 7.88 0 0 0 0.19 0.87A6.42 6.42 0 0 0 2.21 14c0.1 0.2 0.23 0.38 0.34 0.57a3.19 3.19 0 0 0 -0.4 0.33 2.34 2.34 0 0 0 -0.65 1.64 3.19 3.19 0 0 0 0.29 1.28 6.64 6.64 0 0 0 1 1.51 3.54 3.54 0 0 0 0.76 0.64 5.66 5.66 0 0 0 1.26 0.55 9.17 9.17 0 0 0 2.25 0.4 15.11 15.11 0 0 0 2.23 -0.06 0.29 0.29 0 0 0 0.1 0 9.79 9.79 0 0 0 3.5 -0.64 7.17 7.17 0 0 0 3.19 -2.3 5.32 5.32 0 0 0 1 -2.43 3 3 0 0 0 -0.37 -1.88 2.68 2.68 0 0 0 -0.47 -0.54 4.3 4.3 0 0 0 -0.78 -0.5l-0.29 -0.12a6.27 6.27 0 0 0 0.76 -1.83A3.73 3.73 0 0 0 16 9.16a2.93 2.93 0 0 0 -2.05 -2.37A4.29 4.29 0 0 0 10.8 7a4.54 4.54 0 0 0 -1.21 0.85 14.34 14.34 0 0 0 -1.34 1.57 5.69 5.69 0 0 1 -0.71 0.77 1.79 1.79 0 0 1 -0.75 0.41 0.48 0.48 0 0 1 -0.29 0 1.83 1.83 0 0 1 -0.42 -0.26A15.24 15.24 0 0 1 4.86 9a3.12 3.12 0 0 0 -0.77 -0.58 1.57 1.57 0 0 0 -1.49 0 1.8 1.8 0 0 0 -0.4 0.28l-0.43 -1.15c-0.09 -0.29 -0.17 -0.57 -0.25 -0.87l-0.24 -1.12 -0.1 -0.65a0.27 0.27 0 0 1 0.17 -0.24 1.12 1.12 0 0 1 0.42 -0.15A4.47 4.47 0 0 1 3 4.42c0.68 0 1.36 0.13 2 0.17a0.36 0.36 0 0 0 0.33 -0.15A9.35 9.35 0 0 1 7.9 3.3a8.06 8.06 0 0 1 2.91 -0.23 5 5 0 0 1 0.66 0.09c0.23 0 0.45 0.11 0.67 0.18s0.38 0.17 0.57 0.23a0.86 0.86 0 0 0 0.41 0 2.14 2.14 0 0 0 0.56 -0.18c0.33 -0.15 0.66 -0.38 0.94 -0.54l1.78 -1c0.26 -0.14 0.47 -0.33 0.68 -0.29s0.13 0.08 0.2 0.2l0.14 0.29 0.12 0.55 0.06 1v1.64a0.35 0.35 0 0 0 0.7 0l0 -0.65A10.79 10.79 0 0 1 21.18 7a7.32 7.32 0 0 1 1.54 3.37c0.06 0.36 0.11 0.71 0.15 1.06a8.93 8.93 0 0 1 0.07 1l0 0.09 -0.24 -0.08c-0.46 -0.17 -0.91 -0.45 -1.31 -0.59l-0.61 -0.2c-0.09 0 -0.25 -0.12 -0.33 -0.15a0.6 0.6 0 0 0 -0.39 0 0.54 0.54 0 0 0 -0.36 0.73l0.5 1.39a12.72 12.72 0 0 1 0.38 2.18 18.93 18.93 0 0 1 0.08 2.24l-0.13 1.11c-0.38 -0.24 -0.76 -0.56 -1 -0.73 0 0 -0.4 -0.27 -0.55 -0.34a0.58 0.58 0 0 0 -0.64 0.1 1.79 1.79 0 0 0 -0.25 0.41c-0.14 0.35 -0.2 0.85 -0.35 1.13a5.45 5.45 0 0 1 -0.84 1.19 8.94 8.94 0 0 1 -1.1 1l-0.74 0.51 -0.06 -0.33 -0.08 -1.89a0.35 0.35 0 1 0 -0.7 0l0 1.93a4.06 4.06 0 0 0 0.09 0.7 0.85 0.85 0 0 0 0.21 0.4 0.41 0.41 0 0 0 0.45 0.1 3.15 3.15 0 0 0 0.32 -0.16l1 -0.64a9.06 9.06 0 0 0 1.24 -1.08 7 7 0 0 0 1 -1.34l0.35 -0.92c0.29 0.21 0.76 0.65 1.21 0.92a2 2 0 0 0 0.85 0.29 0.58 0.58 0 0 0 0.59 -0.39 2.16 2.16 0 0 0 0.05 -0.46c0.06 -0.29 0.12 -0.59 0.16 -0.88s0 -0.42 0.05 -0.63a17.47 17.47 0 0 0 -0.05 -2.39 15 15 0 0 0 -0.41 -2.37l-0.14 -0.28a10.22 10.22 0 0 0 1.4 0.56 2 2 0 0 0 1 0 0.58 0.58 0 0 0 0.41 -0.52l0 -0.63ZM2.37 10.18a1.29 1.29 0 0 1 0.51 -0.8 0.63 0.63 0 0 1 0.72 -0.05 2.09 2.09 0 0 1 0.48 0.41 13.87 13.87 0 0 0 1.29 1.46 2.67 2.67 0 0 0 0.84 0.5 1.7 1.7 0 0 0 0.81 0.05 2.68 2.68 0 0 0 1.07 -0.49 6 6 0 0 0 1.08 -1.11 15.89 15.89 0 0 1 1.21 -1.46 3.64 3.64 0 0 1 0.91 -0.69 3.21 3.21 0 0 1 2.34 -0.28 2.06 2.06 0 0 1 1.52 1.59 3.19 3.19 0 0 1 -0.06 1.44 5.26 5.26 0 0 1 -0.59 1.42 0.11 0.11 0 0 0 0 0.05l-0.19 0a3.48 3.48 0 0 0 -1.58 0.18 9.38 9.38 0 0 0 -1.89 1 11.28 11.28 0 0 1 -1.23 0.71 5.7 5.7 0 0 1 -0.72 0.29c-0.17 0.33 -0.13 0.56 0.21 0.63a4.64 4.64 0 0 0 0.53 -0.16 13.53 13.53 0 0 0 1.63 -0.76A8.44 8.44 0 0 1 13 13.3a2.49 2.49 0 0 1 1.12 -0.06 2.11 2.11 0 0 1 0.38 0.12l0.4 0.2a4 4 0 0 1 0.48 0.32 1.22 1.22 0 0 1 0.31 0.33 2 2 0 0 1 0.15 1.47 4.43 4.43 0 0 1 -0.68 1.58 6.21 6.21 0 0 1 -2.62 2.11 9 9 0 0 1 -3.42 0.79l-0.09 0a13.09 13.09 0 0 1 -1.88 -0.12 8.58 8.58 0 0 1 -2 -0.53 6.11 6.11 0 0 1 -0.85 -0.42 2.52 2.52 0 0 1 -0.65 -0.53 7.21 7.21 0 0 1 -0.74 -1 2.66 2.66 0 0 1 -0.38 -1.06 1.34 1.34 0 0 1 0.27 -1 1.16 1.16 0 0 1 0.95 -0.5c1 0.06 0.82 -0.61 0.6 -0.67a2.11 2.11 0 0 0 -0.65 -0.08 1.8 1.8 0 0 0 -0.57 0.1 4.63 4.63 0 0 1 -0.31 -0.58 5 5 0 0 1 -0.34 -1 7.22 7.22 0 0 1 -0.13 -0.79c0 -0.28 0 -0.55 -0.05 -0.82Z" fill="#000000" fill-rule="evenodd" stroke-width="1"></path><path d="M12.54 11.37a0.78 0.78 0 0 0 -0.7 -1.22 0.85 0.85 0 0 0 -0.59 0.25l-0.07 0.09a0.78 0.78 0 0 0 0 0.95c0.27 0.62 1.02 0.36 1.36 -0.07Z" fill="#000000" fill-rule="evenodd" stroke-width="1"></path><path d="M5.14 13a0.85 0.85 0 0 0 0.19 -0.29 0.68 0.68 0 0 0 -0.08 -0.79 0.85 0.85 0 0 0 -1.25 0.19l0 0.12c-0.09 0.43 0 0.56 0.16 0.75s0.63 0.41 0.98 0.02Z" fill="#000000" fill-rule="evenodd" stroke-width="1"></path></g></svg>
+                </div>
+         
+             <div class="svg-container-right">
+                 <!-- Anime Cat SVG -->
+                 <img src="https://static.tildacdn.com/tild3737-6530-4063-b561-313364323435/Frame_121.svg" alt="" style="width: 250px;">
+                 <img src="https://static.tildacdn.com/tild3735-3236-4039-b462-393533396438/Vector.svg" alt="" style="width: 200px;  margin-top: 3rem; margin-right: 30px;">
+             </div>
+    
+    
+                <!------------------- login form -------------------------->
+                <div class="login-container" id="login">
+                    <div class="top">
+                        <header>Login</header>
+                        <div class="nav-button">
+                            <center>
+                                <button class="btn white-btn" id="loginBtn" onclick="login()">Login</button>
+                                <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+                            </center>
+                        </div>
+                        <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="login-username" placeholder="Username or Email">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" id="login-password" placeholder="Password">
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Sign In" onclick="handleLogin()">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="login-check">
+                            <label for="login-check"> Remember Me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Forgot password?</a></label>
+                        </div>
+                    </div>
+                </div>
+    
+                <!------------------- registration form -------------------------->
+                <div class="register-container" id="register">
+                    <div class="top">
+                        <header>Sign Up</header>
+                        <div class="nav-button">
+                            <center>
+                                <button class="btn" id="loginBtn" onclick="login()">Login</button>
+                                <button class="btn white-btn" id="registerBtn" onclick="register()">Sign Up</button>
+                            </center>
+                        </div>
+                        <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                    </div>
+                    <div class="two-forms">
+                        <div class="input-box">
+                            <input type="text" class="input-field" id="register-firstname" placeholder="Firstname">
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" class="input-field" id="register-lastname" placeholder="Lastname">
+                            <i class="bx bx-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="register-email" placeholder="Email">
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" id="register-password" placeholder="Password">
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Register" onclick="handleRegister()">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="register-check">
+                            <label for="register-check"> Remember Me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Terms & conditions</a></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </center>
+    <script>
+        // Simulated backend database (for demo purposes)
+        var backend = {
+            users: []
+        };
+
+        // Navigation menu function
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+        // Form toggle functions
+        var a = document.getElementById("loginBtn");
+        var b = document.getElementById("registerBtn");
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+
+        function login() {
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            a.className += " white-btn";
+            b.className = "btn";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+
+        function register() {
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            a.className = "btn";
+            b.className += " white-btn";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+
+        // Handle login
+        function handleLogin() {
+            var username = document.getElementById("login-username").value;
+            var password = document.getElementById("login-password").value;
+
+            if (username === "" || password === "") {
+                alert("Please fill out all fields.");
+            } else {
+                // Check if the user exists in the backend and password is correct
+                var user = backend.users.find(user => user.username === username || user.email === username);
+                if (user && user.password === password) {
+                    // Redirect to home page
+                    alert("Login successful! Redirecting to the home page...");
+                    window.location.href = "home.html"; // replace with the actual home page URL
+                } else {
+                    // Show error and prompt to input again
+                    alert("Incorrect username or password. Please try again.");
+                }
+            }
+        }
+
+        // Handle registration
+        function handleRegister() {
+            var firstname = document.getElementById("register-firstname").value;
+            var lastname = document.getElementById("register-lastname").value;
+            var email = document.getElementById("register-email").value;
+            var password = document.getElementById("register-password").value;
+
+            if (firstname === "" || lastname === "" || email === "" || password === "") {
+                alert("Please fill out all fields.");
+            } else {
+                // Simulate adding user to the backend
+                var newUser = {
+                    firstname: firstname,
+                    lastname: lastname,
+                    email: email,
+                    username: email, // for simplicity, using email as username
+                    password: password
+                };
+
+                backend.users.push(newUser);
+
+                // Notify success and switch to login form
+                alert("Registration successful! You can now log in.");
+                login();
+            }
+        }
+    </script>
+</body>
+</html>
