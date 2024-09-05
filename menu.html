@@ -2,279 +2,952 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MENU</title>
     <style>
-        body {
-            background-color: #fbf5e5;
+        body{
+            background-color: #faf5e5;
+           background-position:   bottom;
             background-repeat: no-repeat;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem 10rem;
-            background-image: url(navmenu.jpg);
-            box-shadow: 0 10px 40px rgba(1, 1, 0.5);
-        }
-        .navlist {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .navlist li {
-            font-size: 20px;
-            padding: 10px 20px;
-        }
-        .navlist li h1 {
-            margin: 0;
-            padding: 10px;
-            font-size: 24px;
-            color: #fbf5e5;
-        }
-        .navlist li h1:hover {
-            background-color: black;
-            color: rgb(212, 24, 24);
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .logonav img {
-            width: 200px;
-            object-fit: contain;
-            max-width: 230px;
-            margin-top: -75px;
-            z-index: 1;
-            border-radius: 50%;
-            margin-left: -600px;
-        }
-        .rightimg {
-            position: absolute;
-            top: 30px;
-            right: 100px;
-            z-index: 1; /* Ensures the image doesn't overlap with the navbar content */
-        }
-        .rightimg img {
-            width: 250px; /* Adjust as needed */
-            object-fit: contain;
-            border-radius: 50%;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url(https://png.pngtree.com/background/20210710/original/pngtree-e-commerce-japanese-style-delicious-small-fresh-food-snack-promotion-picture-image_1063092.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-            height: calc(100vh - 10rem); /* Adjust as needed */
-            padding-top: 7rem; /* Space to prevent overlap with navbar */
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-            padding: 20px;
-        }
-        .card {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            background-color: #dfdfdf;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            perspective: 1000px;
-            box-shadow: 0 0 0 5px #ffffff80;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .card svg {
-            width: 48px;
-            fill: #333;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-        }
-        .card__content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #000000;
-            transform: rotateX(-90deg);
-            transform-origin: bottom;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .card:hover .card__content {
-            transform: rotateX(0deg);
-        }
-        .card__title {
-            margin: 0;
-            font-size: 24px;
-            color: #333;
-            font-weight: 700;
-        }
-        .card:hover svg {
-            scale: 0;
-        }
-        .card__description {
-            margin: 10px 0 0;
-            font-size: 14px;
-            color: #777;
-            line-height: 1.4;
-        }
-        .card__button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #f76c6c;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .card__button:hover {
-            background-color: #ff4c4c;
-        }
-        .card img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-    
+            background-size: contain;
+           font-family: system-ui;
+    overflow-y: scroll;
+}
+/* Container for the entire navbar layout */
+.navbar-container {
+    display: flex;
+    justify-content: center; /* Center the navbar horizontally */
+    align-items: center;     /* Center items vertically */
+    padding: 10px; /* Optional: add some padding around the navbar */
+}
+
+/* Navbar items */
+/* Navbar adjustments */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Align vertically in the center */
+    padding: 10px;
+    border-radius: 30px;
+    position: relative;
+    z-index: 10; /* Ensure it's above the cart */
+
+    margin-top: 40px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    padding: 3px 3px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+
+.navbar li a:hover {
+    color: black;
+    background-color: rgb(248, 118, 185);
+}
+
+/* Align the logo and search with the navbar */
+.navbar img {
+    height: 60px;
+    margin-left: 20px;
+    margin-top: 80px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    padding: 12px 12px;
+}
+
+.search input {
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 7px 9px;
+    width: 175px;
+    margin-right: 5px;
+}
+
+.search button {
+    background-color: #1C1F25;
+    color: #fff;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #ec6b01;
+}
+
+/* Adjust for cart opening */
+/* Main container */
+.container {
+    width: 70rem;
+    height: auto;
+    margin: 0rem 5rem 5rem 5rem;
+    transition: 0.5s;
+    text-align: center;
+    background-image: url();
+    font-family: serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: larger;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+    overflow: hidden;
+}
+
+.active .container {
+    transform: translateX(-150px) scale(0.8); /* Only shift horizontally and shrink */
+    transition: transform 0.3s ease;
+    height: 100%; /* Ensure the height stays consistent */
+}
+
+/* Navbar styling to prevent overlap with cart */
+
+
+.search {
+    margin-right: 50px;
+}
+
+.active .navbar {
+    transform: translateX(-200px) scale(0.75); /* More shrink and move */
     transition: transform 0.3s ease;
 }
-.text-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            background: rgba(0, 0, 0, 0.5); /* Background with transparency */
-            padding: 10px;
-            border-radius: 5px;
-            transition: opacity 0.3s ease;
-        }
 
-.card:hover img {
-    transform: scale(1.05);
+/* Shrink and move the search bar even more */
+.active .search {
+    transform: translateX(-10px) scale(0.9); /* More shrink and move */
+    transition: transform 0.3s ease;
+}
+
+/* List items */
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 62rem;
+    padding-bottom: 20px;
+    column-gap: 40px;
+    row-gap: 60px;
+    margin-top: 0; /* Remove top margin to prevent shifting */
+    margin-left: 50px;
+    margin-right: 53px;
+    transition: transform 0.3s ease;
+}
+
+.active .list {
+    transform: translateX(-17px); /* Shift horizontally but keep vertical position */
 }
 
 
- .container {
+.Cart {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: 500px;
+    background-color: #453E3B;
+    height: 100vh;
+    transition: 0.5s;
+    overflow-y: auto;
+    flex-direction: column;
+    z-index: 20;
+}
+
+.active .Cart {
+    right: 0;
+}
+
+/* Cart items */
+.listCart li {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+    margin-bottom: 15px; /* Add space between cart items */
+}
+
+.listCart li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listCart li img {
+    width: 90%;
+}
+
+/* Ensure the cart doesn't overlap with the navbar */
+.navbar-fixed {
+    position: relative;
+    z-index: 15; /* Prevent overlap */
+}
+
+
+/* Make sure cart icon is visible */
+header .shopping {
+    position: relative;
+    text-align: right;
+    z-index: 10; /* Ensure it's above the content */
+}
+
+header .shopping img {
+    width: 40px;
+}
+
+
+header .shopping span {
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
     position: absolute;
-
-
- }
- .svg1 img  {
-    width: 80% ;/* Adjust the width as needed */
-    height: auto; /* Maintains the aspect ratio */
-}
-.svg2 img{
-    width: 80% ;/* Adjust the width as needed */
-    height: auto;
+    top: -25px;
+    right: 0px;
+    padding: 3px 10px;
 }
 
-        
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 50px;
+    margin-top: 50px;
+}
 
+.list .item {
+    text-align: center;
+    padding: 20px;
+    background: #201B19;
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.list .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.list .item img {
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.list .item .title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.list .item .price {
+    margin: 15px;
+    font-size: 1.1rem;
+    color: #27ae60;
+}
+
+/* Buttons */
+.list .item button{
+ width: 9em;
+ height: 3em;
+ margin-top: 20px;
+ border-radius: 30em;
+ font-size: 15px;
+ font-family: inherit;
+ border: none;
+ position: relative;
+ overflow: hidden;
+ z-index: 1;
+ box-shadow: 6px 6px 12px #ff5db9,
+             -6px -6px 12px #000000;
+    font-weight: 900;
+    font-size:medium;
+}
+
+.list .item button::before {
+ content: '';
+ width: 0;
+ height: 3em;
+ border-radius: 30em;
+ position: absolute;
+ top: 0;
+ left: 0;
+ background-image: linear-gradient(to right, #ff56cc 0%, #ffcece 100%);
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+.list .item button:hover::before {
+ width: 9em;
+}
+.Cart{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 500px;
+    background-color: #4b4543;
+    height: 100vh;
+    transition: 0.5s;
+
+    flex-direction: column;
+}
+.active .Cart{
+    left: calc(100% - 500px);
+}
+.active .container {
+    transform: translateX(-200px);
+    transition: transform 0.3s ease; /* Adds smooth transition */
+}
+
+.Cart h1{
+    color: #E8BC0E;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.checkOut{
+    
+    display: flex;
+    justify-content: space-between; /* Spread the elements horizontally */
+    position: relative;
+    width: 90%;
+    bottom: 0;
+    margin-left: 10px;
+    background-color: #2b2424ba;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    gap: 100px;
+    z-index: 100; 
+
+}
+.total,p{
+    color: #E8BC0E;
+    font-size: x-large;
+    margin-top: 20px;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.listCart{
+    padding: 10px;
+    flex:1;
+}
+.listCart li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCart li div{
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.listCart li img{
+    width: 100%;
+    border-radius: 60%;
+}
+
+.listCart li button{
+    background-color: #fff5;
+    border: none;
+}
+.btn:hover {
+    background-color: #ec6b01;
+    color: rgb(255, 255, 255);
+}
+.listCart .count{
+    margin: 0 10px;
+}
+div.description{
+    color:white;
+}
+div.title{
+    color: white;
+    font-size: x-large;
+}
+.list .item .price {
+    color: pink;
+    font-size: xx-large;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+/* Style for "Foodies" text */
+/* Style for "Foodies" text */
+.foodies-box {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    background: linear-gradient(45deg, black, white); /* Black to white gradient */
+    padding: 5px 10px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners */
+}
+.foodies-text {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    background: linear-gradient(45deg, black, white); /* Black to white gradient */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners */
+}
+.navbar img{
+    height: 120px;
+    margin-left: 40px;
+}
+
+.button-container {
+            margin-bottom: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .veg-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .non-veg-button {
+            background-color: #f44336;
+            color: white;
+        }
+        .chkbtn {
+ font-size: 16px;
+ position: relative;
+ margin: auto;
+ padding: 1em 2.5em 1em 2.5em;
+ border: none;
+ background: #fff;
+ transition: all 0.1s linear;
+ box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+}
+
+.chkbtn:active {
+ transform: scale(0.95);
+}
+
+.chkbtn span {
+ color: #464646;
+}
+
+.chkbtn .border {
+ position: absolute;
+ border: 0.15em solid #fff;
+ transition: all 0.3s 0.08s linear;
+ top: 50%;
+ left: 50%;
+ width: 9em;
+ height: 3em;
+ transform: translate(-50%, -50%);
+}
+
+.chkbtn:hover .border {
+ display: block;
+ 
+ width: 9.9em;
+ height: 3.7em;
+}
+
+.full-rounded {
+ border-radius: 2em;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .foodies-text {
+        display: none; /* Hide "Foodies" text on smaller screens */
+    }
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .foodies-text {
+        display: none; /* Hide "Foodies" text on smaller screens */
+    }
+}
 
     </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="navContent">
-            <ul class="navlist">
-                <li><h1>Home</h1></li>
-                <li><h1>Menu</h1></li>
-                <li><h1>Our Story</h1></li>
-                <li><h1>Booking</h1></li>
-            </ul>
+<body class="">
+    <section class="first">
+        <header>
+            <!-- Add "Foodies" here -->
+             <div class="navbar-container">
+            <div class="navbar">
+                <div class="class navbar-logo">
+                    <img style="border-radius: 50%; margin-top: -10px; margin-left: 10px; " src="logonew.png" alt="logo">
+                </div> 
+                <ul>
+                    
+                    <li><a href="index.html" ><b>Home</b></a></lI>
+                    <li><a href="menunew.html" ><b>Menu</b></a></li>
+                    <li><a href="OurStory.html"><b>Our Story</b>
+                    </a></li>
+                    <li><a href="ContactUs.html"><b>Contact</b></a></li>
+                </ul>   
+                <div class="search">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <button onclick="searchMenu()">Search</button>
+                    </div>
+                </div>
         </div>
-        <div class="logonav">
-            <a href="#home"><img src="logonew.png" alt="Logo"></a>
+        
+        </header>
+    
+    <center>
+        <div class="container">
+            <header>
+                <h1><b>MENU</b></h1>
+                <div class="shopping">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3737/3737151.png" alt="Loading">
+                    <span class="quantity">0</span>
+                </div>
+            </header>
+    
+            <div class="button-container">
+                <button class="veg-button" onclick="showVeg()">Veg</button>
+                <button class="all-button" onclick="showAll()">All</button>
+    
+                <button class="non-veg-button" onclick="showNonVeg()">Non-Veg</button>
+                
+            </div>
+    
+            <div class="list">
+              
+            </div>
         </div>
-        <div class="rightimg">
-            <img src="https://railrocker.com/playground/wp-content/uploads/2020/02/Onigiri-traditional-Japanese-Rice-Balls.jpg" alt="Right Image">
+    </center>
+    <div class="Cart">
+        <div style="display: flex; gap: 22.5rem;">
+            <h1>Cart</h1>
+            <div class="closeShopping" style="left: 100%;margin-top: 30px;"><img src="https://www.svgrepo.com/show/39782/cross-mark.svg" alt="" style="width: 30px;"></div>
         </div>
-    </nav>
-    <div class="content">
-        <div class="card-grid">
-            <div class="card">
-               
-                <img src="https://static.tildacdn.com/tild6539-6635-4532-b065-373738313336/Frame_198.svg">
-                <div class="text-overlay">STARTERS</div>
-                <div class="card__content">
-                    <p class="card__title">STARTERS</p>
-                    <p class="card__description">Description for Card 1</p>
-                    <button class="card__button">Button 1</button>
-                </div>
-            </div>
-            <div class="card">
-                <svg> <!-- Your SVG content here --> </svg>
-                <div class="card__content">
-                    <p class="card__title">SUSHI</p>
-                    <p class="card__description">Description for Card 2</p>
-                    <button class="card__button">Button 2</button>
-                </div>
-            </div>
-            <div class="card">
-                <svg> <!-- Your SVG content here --> </svg>
-                <div class="card__content">
-                    <p class="card__title">RAMEN</p>
-                    <p class="card__description">Description for Card 3</p>
-                    <button class="card__button">Button 3</button>
-                </div>
-            </div>
-            <div class="card">
-                <svg> <!-- Your SVG content here --> </svg>
-                <div class="card__content">
-                    <p class="card__title">HOT DISHES</p>
-                    <p class="card__description">Description for Card 4</p>
-                    <button class="card__button">Button 4</button>
-                </div>
-            </div>
-            <div class="card">
-                <svg> <!-- Your SVG content here --> </svg>
-                <div class="card__content">
-                    <p class="card__title">DESERTS</p>
-                    <p class="card__description">Description for Card 5</p>
-                    <button class="card__button">Button 5</button>
-                </div>
-            </div>
-            <div class="card">
-                <svg> <!-- Your SVG content here --> </svg>
-                <div class="card__content">
-                    <p class="card__title">Card 6</p>
-                    <p class="card__description">Description for Card 6</p>
-                    <button class="card__button">Button 6</button>
-                </div>
-            </div>
-        </div>       
+        <ul class="listCart">
+        </ul>
+        <div class="checkOut">
+            <p class="currency">Rs</p>
+            <div class="total">0</div>
+            <button class="chkbtn full-rounded" onclick="window.location.href='checkout.html'">
+                <span>CheckOut</span>
+                <div class="border full-rounded"></div>
+            </button>
+        </div>
+        
     </div>
-<div class="container">
-    <div class="svg1">
-        <img src="https://static.tildacdn.com/tild3765-3036-4231-b464-356564336130/Frame_132.svg" alt="svg1">
-    </div>
-    <div class="svg2">
-        <img src="https://static.tildacdn.com/tild3534-3764-4134-a430-663030663736/Frame_133.svg" alt="svg2">
-    </div>
-</div>
 
+    <script >
+        let openShopping = document.querySelector('.shopping');
+        let closeShopping = document.querySelector('.closeShopping');
+        let list = document.querySelector('.list');
+        let listCart = document.querySelector('.listCart');
+        let body = document.querySelector('body');
+        let total = document.querySelector('.total');
+        let quantity = document.querySelector('.quantity');
+    
+           
+    let products = [
+        {
+            id: 1,
+            name: 'Sushi (寿司)',
+            image: 'https://img.taste.com.au/lNnNoTvU/taste/2010/01/sushi-187034-1.jpg',
+            description: 'A traditional Japanese dish made with vinegared rice, often accompanied by seafood and vegetables. Served with soy sauce, wasabi, and pickled ginger.',
+            price: 1400,
+            type: 'Non-Veg'
+        },
+        {
+            id: 2,
+            name: 'Sashimi (刺身)',
+            image: 'https://www.oceansideseafood.com/cdn/shop/products/12ab63d31856715caf645d5ac7047f80_grande.png?v=1673880520',
+            description: 'Fresh, raw seafood sliced into thin pieces, served with soy sauce and wasabi. Common types include tuna, salmon, and squid.',
+            price: 1350,
+            type: 'Non-Veg'
+        },
+        {
+            id: 3,
+            name: 'Kaisendon (海鮮丼)',
+            image: 'https://recipes.net/wp-content/uploads/2024/01/how-to-eat-kaisendon-1706459535.jpg',
+            description: 'A rice bowl topped with various types of fresh sashimi, such as tuna, salmon, and sea urchin.',
+            price: 1200,
+            type: 'Non-Veg'
+        },
+        {
+            id: 4,
+            name: 'Ramen (ラーメン)',
+            image: 'https://recipes.net/wp-content/uploads/2022/09/rsz_miso-ramen.jpg',
+            description: 'A noodle soup dish consisting of Chinese-style wheat noodles in a flavorful broth, topped with ingredients like sliced pork, nori, and green onions.',
+            price: 750,
+            type: 'Non-Veg'
+        },
+        {
+            id: 5,
+            name: 'Udon (うどん)',
+            image: 'https://tarasmulticulturaltable.com/wp-content/uploads/2014/02/Niku-Udon-Japanese-Meat-Udon-4-of-5-e1573750889431.jpg',
+            description: 'Thick, chewy wheat noodles served either hot in a mild broth or cold with a dipping sauce, topped with ingredients like tempura and nori.',
+            price: 500,
+            type: 'Non-Veg'
+        },
+        {
+            id: 6,
+            name: 'Soba (蕎麦)',
+            image: 'https://static01.nyt.com/images/2014/02/04/science/06recipehealth/06recipehealth-superJumbo.jpg',
+            description: 'Buckwheat noodles served cold with a dipping sauce or in hot broth, known for their nutty flavor. A great option for vegetarians.',
+            price: 600,
+            type: 'Veg'
+        },
+        {
+            id: 7,
+            name: 'Gyudon (牛丼)',
+            image: 'https://marleyspoon.com/media/recipes/248798/main_photos/large/shaved_steak_gyudon-1c8d98ff758f7f65b934497dae9ecb1f.jpeg',
+            description: 'A bowl of rice topped with thinly sliced beef and onions simmered in a mildly sweet, soy sauce-based broth.',
+            price: 480,
+            type: 'Non-Veg'
+        },
+        {
+            id: 8,
+            name: 'Donburi (丼)',
+            image: 'https://insanelygoodrecipes.com/wp-content/uploads/2023/08/Donburi-Homemade-Japanese-Teriyaki-Chicken-Rice-Bowl.jpg',
+            description: 'A rice bowl dish topped with various ingredients. Vegetarian options include tofu, vegetables, or a mix of both, cooked in a flavorful sauce.',
+            price: 800,
+            type: 'Veg'
+        },
+        {
+            id: 9,
+            name: 'Onigiri (おにぎり)',
+            image: 'https://food-images.files.bbci.co.uk/food/recipes/onigiri_39079_16x9.jpg',
+            description: 'A rice ball snack filled with ingredients like pickled plum, salted vegetables, or other vegetarian fillings, wrapped in nori (seaweed).',
+            price: 180,
+            type: 'Veg'
+        },
+        {
+            id: 10,
+            name: 'Yakitori (焼き鳥)',
+            image: 'https://chefjackovens.com/wp-content/uploads/2023/03/My-project-1-18.jpg',
+            description: 'Grilled chicken skewers seasoned with either salt or tare sauce. Includes different parts of the chicken like thighs, wings, and liver.',
+            price: 350,
+            type: 'Non-Veg'
+        },
+        {
+            id: 11,
+            name: 'Karaage (唐揚げ)',
+            image: 'https://straightupeats.com/wp-content/uploads/2020/09/Crunchy-Japanese-Chicken-1.jpg',
+            description: 'Japanese-style fried chicken, marinated in soy sauce, ginger, and garlic, then deep-fried until crispy.',
+            price: 750,
+            type: 'Non-Veg'
+        },
+        {
+            id: 12,
+            name: 'Tonkatsu (豚カツ)',
+            image: 'https://www.marionskitchen.com/wp-content/uploads/2021/08/20201110_Spicy-Pork-Tonkatsu-5.jpg',
+            description: 'A breaded and deep-fried pork cutlet, served with shredded cabbage and a tangy Worcestershire-based sauce.',
+            price: 200,
+            type: 'Non-Veg'
+        },
+        {
+            id: 13,
+            name: 'Tempura (天ぷら)',
+            image: 'https://downshiftology.com/wp-content/uploads/2023/04/How-To-Make-Ceviche-4.jpg',
+            description: 'Lightly battered and deep-fried vegetables and seafood, served with a dipping sauce. Vegetarian options include tempura vegetables such as sweet potato, bell pepper, and zucchini.',
+            price: 1150,
+            type: 'Veg'
+        },
+        {
+            id: 14,
+            name: 'Shabu-Shabu (しゃぶしゃぶ)',
+            image: 'https://japanesetaste.com/cdn/shop/articles/how-to-make-gyoza-japanese-dumplings-at-home-japanese-taste.jpg',
+            description: 'A hotpot dish with thinly sliced meat and vegetables cooked in boiling water or broth, then dipped in sauces. Vegetarian options include tofu, mushrooms, and a variety of fresh vegetables.',
+            price: 2100,
+            type: 'Veg'
+        },
+        {
+            id: 15,
+            name: 'Nikujaga (肉じゃが)',
+            image: 'https://thecozycook.com/wp-content/uploads/2020/06/Eggplant-Parmesan-Recipe-f.jpg',
+            description: 'Stewed beef and potatoes in a sweet soy sauce-based broth, a comforting home-style dish. Vegetarian option available with mushrooms and potatoes.',
+            price: 640,
+            type: 'Veg'
+        },
+        {
+            id: 16,
+            name: 'Oden (おでん)',
+            image: 'https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2022/05/Chimichangas-20.jpg',
+            description: 'A winter dish of various ingredients like boiled eggs, daikon, and vegetables simmered in a light, soy-flavored dashi broth.',
+            price: 550,
+            type: 'Veg'
+        },
+        {
+            id: 17,
+            name: 'TOM YUM SOUP',
+            image: 'https://hot-thai-kitchen.com/wp-content/uploads/2023/02/tom-yum-wings-blog.jpg',
+            description: 'TOM YUM SOUP is a popular Thai soup known for its spicy and sour flavors. It typically includes shrimp, mushrooms, lemongrass, lime leaves, and chili peppers in a fragrant broth made with coconut milk or clear broth. Location: Rajpura, India',
+            price: 350,
+            type: 'Non-Veg'
+        },
+        {
+            id: 18,
+            name: 'Takoyaki (たこ焼き)',
+            image: 'https://static1.squarespace.com/static/62227f3fe1583d580047c391/623dc6e8e9400537fbbcaa9e/64469632b9a7086a12af1724/1683237349137/DSC06203.jpg?format=1500w',
+            description: 'Fried balls of dough filled with octopus, tempura scraps, and green onions, topped with takoyaki sauce, mayonnaise, bonito flakes, and seaweed.',
+            price: 480,
+            type: 'Non-Veg'
+        },
+        {
+            id: 19,
+            name: 'Okonomiyaki (お好み焼き)',
+            image: 'https://www.souschef.co.uk/cdn/shop/articles/pancake-blog-header-image-1570px.jpg?v=1612803899',
+            description: 'A savory pancake made from batter and cabbage, cooked with various ingredients like pork, seafood, or cheese. Vegetarian options include mushrooms, corn, and cheese, topped with okonomiyaki sauce and bonito flakes.',
+            price: 990,
+            type: 'Veg'
+        },
+        {
+            id: 20,
+            name: 'Gyoza (餃子)',
+            image: 'https://cardamommagazine.com/wp-content/uploads/2021/04/chicken-gyoza.jpg',
+            description: 'Pan-fried dumplings filled with minced meat and vegetables, served with a soy-based dipping sauce. Vegetarian options are available with a mix of finely chopped vegetables and tofu.',
+            price: 320,
+            type: 'Veg'
+        },
+        {
+        id: 21,
+            name: 'Natto (納 豆)',
+            image: 'https://www.japanesecooking101.com/wp-content/uploads/2014/02/IMG_8021.jpg',
+            description:'Fermented soybeans with a strong smell and sticky texture, served over rice with soy sauce and mustard.',
+            price: 780,
+            type: 'Veg'
+        },
+        {
+        id: 22,
+            name: 'Miso Soup (味 噌 汁)',
+            image: 'https://www.crowdedkitchen.com/wp-content/uploads/2020/08/vegan-miso-soup.jpg',
+            description:'A rich and creamy ice cream flavored with matcha, a finely ground powder of green tea leaves',
+            price: 480,
+            type: 'Veg'
+        },
+        {
+        id: 22,
+            name: 'Kaiseki (懐 石)',
+            image: 'https://takimotokan.co.jp/wp-content/uploads/2020/03/%E2%91%A02020%E6%98%A507_D%E4%B8%8A%E8%86%B31500%C3%971000.jpg',
+            description:"A traditional multi-course Japanese meal showcasing seasonal ingredients, prepared in various ways. It's an elaborate dining experience with a focus on harmony, balance, and presentation.",
+            price: 5900,
+            type: 'Non-Veg'
+        },
+        {
+        id:23,
+        name: 'Sakizuke (先 付 け)',
+        image: 'https://i.pinimg.com/474x/c6/b6/ba/c6b6bafaec7d6cacba82fbf88a26545a.jpg',
+        description: ' It is a Japanese culinary term that refers to a small, elegant appetizer served at the beginning of a meal. It is designed to stimulate the appetite and set the tone for the rest of the dining experience. Typically, sakizuke features seasonal ingredients and is presented in a refined, artistic manner.',
+        price: 3000,
+        type: 'Non-Veg'
+        },
+        ];
+    
+        let listCarts = [];
+        let originalProducts = [...products]; // Store the original list
+    
+        function initApp() {
+            renderProducts('all'); // Show all products initially
+        }
+    
+        function addToCart(index) {
+            if (listCarts[index] == null) {
+                // Copy product from list to listCart
+                listCarts[index] = JSON.parse(JSON.stringify(products[index]));
+                listCarts[index].quantity = 1;
+            }
+            reloadCart();
+        }
+    
+        function reloadCart() {
+            listCart.innerHTML = '';
+            let count = 0;
+            let totalPrice = 0;
+            listCarts.forEach((item, index) => {
+                if (item != null) {
+                    totalPrice += item.price * item.quantity;
+                    count += item.quantity;
+                    let newDiv = document.createElement('li');
+                    newDiv.innerHTML = `
+                        <div><img src="${item.image}"/></div>
+                        <div>${item.name}</div>
+                        <div>${(item.price * item.quantity).toLocaleString()}</div>
+                        <div>
+                            <button onclick="changeQuantity(${index}, ${item.quantity - 1})">-</button>
+                            <div class="count">${item.quantity}</div>
+                            <button onclick="changeQuantity(${index}, ${item.quantity + 1})">+</button>
+                        </div>`;
+                    listCart.appendChild(newDiv);
+                }
+            });
+            total.innerText = totalPrice.toLocaleString();
+            quantity.innerText = count;
+        }
+    
+        function changeQuantity(index, quantity) {
+            if (quantity <= 0) {
+                delete listCarts[index];
+            } else {
+                listCarts[index].quantity = quantity;
+                listCarts[index].price = quantity * products[index].price;
+            }
+            reloadCart();
+        }
+    
+        function searchMenu() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filteredProducts = originalProducts.filter(product =>
+                product.name.toLowerCase().includes(searchInput) ||
+                product.description.toLowerCase().includes(searchInput)
+            );
+            displayFilteredMenu(filteredProducts);
+        }
+    
+        function displayFilteredMenu(filteredProducts) {
+            list.innerHTML = ''; // Clear existing items
+            filteredProducts.forEach(product => {
+                const newDiv = document.createElement('div');
+                newDiv.classList.add('item');
+                newDiv.innerHTML = `
+                    <img src="${product.image}">
+                    <div class="title">${product.name}</div>
+                    <div class="price">${product.price.toLocaleString()}</div>
+                    <div class="description">${product.description}</div>
+                    <button onclick="addToCart(${product.id - 1})">Add To Cart</button>`;
+                list.appendChild(newDiv);
+            });
+        }
+    
+        function renderProducts(filter) {
+            list.innerHTML = ''; // Clear existing items
+            products.forEach(product => {
+                if (filter === 'all' || product.type === filter) {
+                    const newDiv = document.createElement('div');
+                    newDiv.classList.add('item');
+                    newDiv.innerHTML = `
+                        <img src="${product.image}">
+                        <div class="title">${product.name}</div>
+                        <div class="price">${product.price.toLocaleString()}</div>
+                        <div class="description">${product.description}</div>
+                        <button onclick="addToCart(${product.id - 1})">Add To Cart</button>`;
+                    list.appendChild(newDiv);
+                }
+            });
+        }
+    
+        function showVeg() {
+            renderProducts('Veg');
+        }
+    
+        function showNonVeg() {
+            renderProducts('Non-Veg');
+        }
+        function showAll() {
+        renderProducts('all');
+    }
+    
+    
+        // Initialize app
+        initApp();
+    
+        // Event listeners
+        openShopping.addEventListener('click', () => {
+            body.classList.add('active');
+        });
+    
+        closeShopping.addEventListener('click', () => {
+            body.classList.remove('active');
+        });
+    
+        // Handle search input
+        document.getElementById('searchInput').addEventListener('input', searchMenu);
+    
+    
+    
+    
+        function addToCart(index) {
+        if (listCarts[index] == null) {
+            // Copy product from list to listCart
+            listCarts[index] = JSON.parse(JSON.stringify(products[index]));
+            listCarts[index].quantity = 1;
+        }
+        saveCartToLocalStorage();
+        reloadCart();
+    }
+    
+    function changeQuantity(index, quantity) {
+        if (quantity <= 0) {
+            delete listCarts[index];
+        } else {
+            listCarts[index].quantity = quantity;
+            listCarts[index].price = quantity * products[index].price;
+        }
+        saveCartToLocalStorage();
+        reloadCart();
+    }
+    
+    function saveCartToLocalStorage() {
+        localStorage.setItem('cart', JSON.stringify(listCarts));
+    }
+    
+    function loadCartFromLocalStorage() {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+            listCarts = JSON.parse(storedCart);
+            reloadCart();
+        }
+    }
+    
+    // Call this function when initializing the app
+    function initApp() {
+        loadCartFromLocalStorage();
+        renderProducts('all'); // Show all products initially
+    }
+    
+    
+    
+    
+    </script>
+    
+    <footer>
+        <p>&copy; 2024 NINETAILS KITCHEN </p>
+    </footer>
 </body>
 </html>
