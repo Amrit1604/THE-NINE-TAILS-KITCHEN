@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - The Nine Tails Kitchen</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fbf5e5;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        header {
+            background-color: #f8c471;
+            color: #4a2c2a;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-family: 'Lucida Calligraphy', cursive;
+            letter-spacing: 2px;
+        }
+
+        #feedback-section {
+            text-align: center;
+            padding: 50px;
+            color: #333;
+            position: relative;
+            background: #fff3e6;
+            animation: slideUp 1.5s ease-in-out;
+            min-height: calc(100vh - 100px); /* Adjust for header and footer height */
+        }
+
+        #feedback-section h2 {
+            font-family: 'Lucida Handwriting', cursive;
+            font-size: 2.5rem;
+            color: #b03a2e;
+        }
+
+        #feedback-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Gap between iframe and side images */
+            margin-top: 50px;
+            position: relative;
+        }
+
+        iframe {
+            width: 1000px; /* Reduce width to make room for side images */
+            height: 800px;
+            border: 2px solid #f8c471;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .side-image {
+            width: 300px; /* Fixed width for side images */
+            height: 800px;
+            object-fit: cover;
+            position: relative;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        .side-image-left {
+            animation: slideInLeft 2s ease-in-out;
+        }
+
+        .side-image-right {
+            animation: slideInRight 2s ease-in-out;
+        }
+
+        /* Animations for sliding in */
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Button style */
+        .scroll-btn {
+            display: inline-block;
+            background-color: #b03a2e;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .scroll-btn:hover {
+            background-color: #922b21;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #4a2c2a;
+            color: #fbf5e5;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            height: 50px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Ensuring the iframe doesn’t overlap the footer */
+        .content {
+            padding-bottom: 100px; /* Adjust for footer height */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Nine Tails Kitchen</h1>
+    </header>
+
+    <div id="feedback-section" class="content">
+        <h2>We Value Your Feedback</h2>
+        <p>Help us improve by filling out the form below!</p>
+        <button class="scroll-btn" onclick="scrollToForm()">Go to Feedback Form</button>
+
+        <div class="iframe-container">
+            <!-- Left side image with animation -->
+            <img class="side-image side-image-left" src="demonSlayer.jpeg" alt="Left image">
+            
+            <!-- Feedback form iframe -->
+            <iframe id="googleForm" src="https://forms.gle/hUJNw3Td9AXR7USy5"></iframe>
+            
+            <!-- Right side image with animation -->
+            <img class="side-image side-image-right" src="ichigo2.jpg" alt="Right image">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 The Nine Tails Kitchen - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Scroll to feedback form
+        function scrollToForm() {
+            document.getElementById('googleForm').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Automatically scroll to the form on page load
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('googleForm').scrollIntoView({ behavior: 'smooth' });
+            }, 1500); // Delay for a smoother experience
+        };
+    </script>
+</body>
+</html>
