@@ -246,56 +246,58 @@ z-index: -1;
   width: 200px;
   height: 150px;
 }
-        footer{
-            background-image: url(images/footer\ for\ anime\ restraunt.png);
-            margin: 10px;
-            background-size: cover; /* Ensures the image covers the entire background */
-            background-position: center; /* Centers the background image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
-            padding: 20px; /* Adjust padding as needed */
-            color: white; /* Text color on top of the image */
-        }
-        .Footer_container {
-            display: flex;
-            gap: 5rem;
-            backdrop-filter: blur(4px) saturate(188%);
-            -webkit-backdrop-filter: blur(4px) saturate(188%);
-            background-color: rgba(68, 65, 54, 0.603);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.241);
-            margin-left: 30px;
-            margin-right: 70vh;
-            padding: 20px;
-            }
+footer {
+    width: 100%; /* Set footer to full width */
+    background-image: url(images/footer\ for\ anime\ restraunt.png);
+    margin: 10px 0; /* Adjust margins as needed */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 20px; /* Adjust padding as needed */
+    color: white; /* Text color on top of the image */
+    min-height: 100px; /* Minimum height */
+    height: auto; /* Allows height to vary with content */
+}
 
-            .links_content ul,
-            .About ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            }
+.Footer_container {
+    display: flex;
+    gap: 5rem;
+    backdrop-filter: blur(4px) saturate(188%);
+    -webkit-backdrop-filter: blur(4px) saturate(188%);
+    background-color: rgba(68, 65, 54, 0.603);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.241);
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    width: 90%; /* Responsive width */
+}
 
-            .links_content ul li,
-            .About ul li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            }
+.links_content ul,
+.About ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-            .About img {
-            width: 20px;
-            margin-right: 10px;
-            }
+.links_content ul li,
+.About ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-            .About p {
-            margin: 0;
-            }
-    @media (min-height: 1300px) {
-            footer{
-                min-height: 200px;
-            }
+.About img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.About p {
+    margin: 0;
+}
+
+            @media (min-width: 1440px) {
             .moresvg img {
-              width: 250px;
+              width: 10vw;
             }
             .header p{
               font-size: 40px;
@@ -310,17 +312,19 @@ z-index: -1;
               width: 700px;
               height: 900px;
             }
-              .svg-container img {
-                width: 700px;
-                
+            .svg-container img {
+                width: 70vw;
+                max-width: 700px;
               }
+
               .svg2-container{
                 left: -140px;
                 width: 850px;
                 
               }
               .svg2-container img {
-                  width: 750px;
+                width: 60vw;
+                max-width: 750px;
               }
     }
     @media (max-width: 1366px) {
@@ -373,8 +377,134 @@ z-index: -1;
             .end-cover{
               margin-top: 150px;
             }
-            
         }
+    @media (max-width: 1044px) {
+    
+    .svg-container img {
+                width: 40vw;
+                max-width: 700px;
+                margin-right: 100000px;
+              }
+    .svg2-container img {
+                width: 40vw;
+                max-width: 700px;
+              }
+    .svg2-container{
+                left: -140px;
+                width: 850px;
+                
+              }
+}
+@media (max-width: 442px) {
+    .navbar {
+        margin: 1rem; /* Reduce margin */
+        height: auto;
+    }
+
+    .logo {
+        width: 55px; /* Smaller logo */
+        margin: 0 2rem; /* Smaller margin for logo */
+    }
+
+    .navlist {
+        flex-direction: row ; /* Stack nav items vertically */
+        align-items: center;
+        padding: 0;
+    }
+
+    .navlist li {
+        width: auto; /* Adjust width to fit content */
+        margin: 10px 0; /* Space out vertically */
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .navlist li a {
+        font-size: 40%; /* Adjust link font size */
+        padding: 5px; /* Add some padding for touch targets */
+    }
+    .svg-container{
+      width: 200px;
+      height:300px ;
+    }
+    .svg-container img {
+                width: 40vw;
+                max-width: 700px;
+              
+              }
+    .svg2-container img {
+                width: 48vw;
+                max-width: 700px;
+               
+              }
+    .svg2-container{
+                left: -80px;
+                width: 300px; 
+                margin-top: 5rem; 
+               
+              }
+    .moresvg img {
+              width: 30vw;
+            }
+
+    .end-cover {
+      --b: 0.5rem; /* border width */
+      --c: 4.5rem; /* corner size */
+      --r: 2.5rem;
+      margin-top:0 ; 
+    }
+    footer {
+        padding: 10px; /* Adjust padding for smaller screens */
+        min-height: 80px; /* Reduce minimum height */
+    }
+    .header p{
+      font-size: 0.75rem;
+    }
+    .subheader h1{
+      font-size: large;
+    }
+    .button{
+      height: 2rem;
+      width: 4.5rem;
+      font-size: 50%;
+    }
+    .button::before {
+      height: 2.7rem;
+      width: 5rem;
+    }
+    .info h1{
+      font-size: 2.5vh;
+    }
+    .info p{
+      font-size: 2vh;
+      margin-bottom: 4rem;
+    }
+    .Footer_container {
+        flex-direction: row; /* Stack items vertically */
+        gap: 0.25rem; /* Reduce gap between items */
+        padding: 10px; /* Adjust padding */
+        width: 95%; /* Slightly wider on small screens */
+    }
+    .Footer_container iframe{
+      width: 60%;
+      margin-left: 30px;
+    }
+    .links_content ul li,
+    .About ul li {
+        flex-direction: row; /* Ensure items are in a row */
+        justify-content: flex-start; /* Align items to the start */
+        font-size: 1rem;
+        margin: 0;
+
+    }
+
+    .About img {
+        width: 15px; /* Smaller icon size */
+    }
+
+    .About p {
+        font-size: px; /* Adjust text size for smaller screens */
+    }
+}
 
 
 
@@ -443,7 +573,7 @@ z-index: -1;
     <h1>𝐖𝐇𝐄𝐓𝐇𝐄𝐑 𝐘𝐎𝐔'𝐑𝐄 𝐕𝐀𝐂𝐀𝐓𝐈𝐎𝐍𝐈𝐍𝐆 𝐀𝐋𝐎𝐍𝐄, <br>𝐎𝐔𝐓 𝐖𝐈𝐓𝐇 𝐅𝐑𝐈𝐄𝐍𝐃𝐒, <br>𝐎𝐑 𝐏𝐋𝐀𝐍𝐍𝐈𝐍𝐆 𝐀 𝐇𝐎𝐋𝐈𝐃𝐀𝐘 𝐏𝐀𝐑𝐓𝐘,<br> 𝐖𝐄'𝐑𝐄 𝐒𝐔𝐑𝐄 𝐖𝐄 𝐂𝐀𝐍 𝐀𝐂𝐂𝐎𝐌𝐌𝐎𝐃𝐀𝐓𝐄 𝐘𝐎𝐔👍</h1>
     <p style="font-size: larger;">After all hospitality is what we do !</p>
   </div><br>
-  <a href="booking.html" class="button-link" style="text-decoration: none;">
+  <a href="#" class="button-link" style="text-decoration: none;">
     <button class="button" style=" z-index: 1;">
       BOOK NOW !
     </button>
@@ -473,7 +603,7 @@ z-index: -1;
                 </ul>
         </div>
         <div class="About">
-            <h2>About</h2><br>
+            <h2>Contact Us</h2><br>
             <ul>
                 <li><img src="images/icons8-location-48.png" alt="" srcset=""><p>Chandigarh-Patiala National Highway (NH-64)
                     Punjab- 140 401, India</p></li><br>
