@@ -5,340 +5,362 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE NINE-TAILS KITCHEN - FOR GUESTS</title>
     <link rel="icon" href="logonew.png" type="image/x-icon"/>
+
+    <!-- Import a Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <style>
-        /* CSS code here */
-        body{
-      background-image: linear-gradient(90deg, #fbf5e5 50%, transparent 50%, transparent 51%, #fbf5e5 51%);
-      background-size: cover;
-      background-color: #fbf5e5;
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      display: flex; 
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: space-between;
-      overflow-x: hidden;
-      
+        /* General Styles */
+        body {
+            background-image: linear-gradient(90deg, #fbf5e5 50%, transparent 50%, transparent 51%, #fbf5e5 51%);
+            background-color: #fbf5e5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+            overflow-x: hidden;
+            font-family: 'Ubuntu', sans-serif;
+            color: #333;
+        }
+
+        /* Navbar */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #fbf5e5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav span {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: orange;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #fbf5e5;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .button:hover {
+            background-color: #e0d7c5;
+        }
+
+
+        /* Button */
+        .button-link {
+            text-decoration: none;
+        }
+
+        .button {
+            position: relative;
+            width: 160px;
+            height: 50px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            left: -4px;
+            top: -1px;
+            margin: auto;
+            width: 168px;
+            height: 58px;
+            border-radius: 12px;
+            background: linear-gradient(-45deg, #000000 0%, #943377 100%);
+            z-index: -1;
+            pointer-events: none;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Guest Perks Section */
+
+        /* Background Animation for guest-perks */
+@keyframes backgroundScroll {
+    0% {
+        background-position: center center;
     }
-
-
-
-
-    
-    .logo {
-      display: flex;
-      justify-content: center;
-      padding: 2em 0; 
+    100% {
+        background-position: center top;
     }
-
-    .logo a {
-      max-width: 100%;
-      height: auto; 
-    }
-    .logonav img{
-        width: 500px;
-        object-fit: contain;
-        max-width: 230px;
-        margin-top: 10px;
-        z-index: 1;
-        border-radius: 50%;
-
-    }
-
-    .svg-container {
-      position: absolute;
-      right: 0;
-      width: 30vw;
-      height: 400%;
-      display: flex;
-      align-items: center;
-      display: block;
-      overflow: hidden;
-      height: calc(100% - 70px);
-      top: 40px;
-    }
-
-
-    .svg-container img {
-      width: 700px;
-      height: 1000px;
-      object-fit: cover; 
-      animation: moveSVG 5s ease-in-out infinite;
-      margin-top: 10px;
-      max-width:max-content;
-      overflow: hidden;
-
-    }
-
-    .svg2-container{
-  position: absolute;
-  left: -170px;
-  width: 150px;
-  height: 300%;
-  display: flex;
-  align-items: center;
-  display: block;
-}
-
-
-.svg2-container img {
-    width: 700px;
-    height: 1000px;
-    animation: moveSVG 5s ease-in-out infinite;
-    margin-top: 100px;
-    max-width: max-content;
-    position: relative;
-    margin-top: -70px;
-    z-index: -1;
-}
-
-    @keyframes moveSVG {
-      0% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(-20px);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    .moresvg {
-      text-align: center;
-      margin-top: -50px; 
-    }
-
-    .moresvg img {
-      width: 200px;
-    }
-    .header p{
-      font-size: x-large;
-
-    }
-    .subheader h1{
-      font-size: xxx-large;
-    }
-    .box a{
-      text-decoration: none;
-    }
-    .nav{
-      justify-content: space-between;
-      display: flex;
-    }
-
-
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    background-color: #fbf5e5;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
-.end-cover {
-	--b: 1em; /* border width */
-	--c: 8em; /* corner size */
-	--r: 3em; /* corner rounding */
-	position: relative;
-	margin: 3em auto;
-	border: solid var(--b) transparent;
-	padding: 1em;
-	max-width: 70%;
-	font: 1.25em ubuntu, sans-serif;
-	
-	&::before {
-		position: absolute;
-		z-index: -1;
-		inset: calc(-1*var(--b));
-		border: inherit;
-		border-radius: var(--r);
-		background: linear-gradient(orange, deeppink, purple) border-box;
-		--corner: 
-			conic-gradient(from -90deg at var(--c) var(--c), red 25%, #0000 0) 
-				0 0/ calc(100% - var(--c))  calc(100% - var(--c)) border-box;
-		--inner: conic-gradient(red 0 0) padding-box;
-		-webkit-mask: var(--corner), var(--inner);
-		-webkit-mask-composite: source-out;
-						mask: var(--corner) subtract, var(--inner);
-		content: ''
-	}
-  
-}
-
-.end-cover video {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-}
-
-.parallax {
-  background-image: url('https://cdn.vox-cdn.com/thumbor/LBdZXAf2HK1x-UU3_wlJGAgBdU0=/0x0:1920x1038/1200x675/filters:focal(997x304:1303x610)/cdn.vox-cdn.com/uploads/chorus_image/image/72895559/spirited_awaybr_disneyscreencaps.com_8513.0.jpg');
-
-
-  height: 100%; 
-
-  /* scroller */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}
-.button {
-  position: relative;
-  width: 120px;
-  height: 40px;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  color: white;
-  flex-direction: column;
-  justify-content: center;
-  border: none;
-  padding: 12px;
-  gap: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  left: -4px;
-  top: -1px;
-  margin: auto;
-  width: 128px;
-  height: 48px;
-  border-radius: 10px;
-  background: linear-gradient(-45deg, #000000 0%, #40c9ff 100% );
-  z-index: -1;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-decoration: none;
-}
-
-.button::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
-  transform: translate3d(0, 0, 0) scale(0.95);
-  filter: blur(20px);
-}
-
-.button:hover::after {
-  filter: blur(30px);
-}
-
-.button:hover::before {
-  transform: rotate(-180deg);
-}
-
-.button:active::before {
-  scale: 0.7;
-}
-.section2{
-  background-image: url(https://images.wallpapersden.com/image/download/dark-natural-landscape-hd-black-aesthetic_bmZmbGuUmZqaraWkpJRnamtorWZpaGs.jpg);
-   z-index: -1; 
-   object-fit:cover;
-}
-.logonav {
-  float: right;
-  margin: 20px 10px;
 }
 
 #guest-perks {
-  text-align: center; /* center the heading */
+    background-image: url('https://www.toonsmag.com/wp-content/uploads/2023/09/IMG_4975.jpeg');
+    background-size: cover;
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    animation: backgroundScroll 10s ease-in-out infinite alternate; /* Animate background */
+}
+
+/* Text Animation Keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start text 30px below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+#guest-perks h2, #guest-perks p {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    display: inline-block;
+    max-width: 80%;
+    margin: 10px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Initially hidden for the fade-in effect */
+    animation: fadeInUp 2s ease-out forwards; /* Animation for fade in */
 }
 
 #guest-perks h2 {
-  margin-bottom: 20px; /* add some space between the heading and the cards */
+    font-size: 3rem;
+    animation-delay: 0.5s; /* Delay h2 slightly */
 }
 
-.perks-cards {
-  overflow-x: auto; /* enable horizontal scrolling */
-  white-space: nowrap; /* prevent cards from wrapping to a new line */
-  padding: 20px; /* add some padding to the container */
+#guest-perks p {
+    font-size: 1.3rem;
+    animation-delay: 1.5s; /* Delay p to appear after h2 */
 }
 
-.perk-card {
-  
-  display: inline-block; /* display cards in a line */
-  margin-right: 40px; /* add some space between the cards */
-  width: 500px; /* set the width of each card */
-  height: 500px; /* set the height of each card */
-}
+        /* Scroll Container Styles */
+        .scroll-container {
+            position: relative;
+            height: 400vh; /* Adjust based on the number of slides */
+        }
 
-.perk-card img {
-  width: 100%; /* set image width to 100% */
-  height: 100%; /* maintain image aspect ratio */
-  object-fit: cover; /* ensure image covers entire card */
-}
+        .perk-card.slide {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-.card {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  width: 300px;
-}
+        .scroll-container .slide:nth-child(1) {
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
 
-.card-image {
-  border-radius: 5px 5px 0 0;
-  width: 100%;
-}
+        .scroll-container .slide:nth-child(2) {
+            opacity: 1;
+            transition-delay: 1s;
+        }
 
-.card-content {
-  padding: 10px;
-}
+        .scroll-container .slide:nth-child(3) {
+            opacity: 1;
+            transition-delay: 1.8s;
+        }
 
-.guest-testimonials {
-  overflow-x: auto;
-  white-space: nowrap;
-}
+        .scroll-container .slide:nth-child(4) {
+            opacity: 1;
+            transition-delay: 2.6s;
+        }
 
-.card {
-  display: inline-block;
-  margin-right: 20px;
-  width: 300px; /* adjust the width as needed */
-}
+        /* Adjust z-index to make sure slides display properly */
+        #slide1, #slide2, #slide3, #slide4 {
+            z-index: 1;
+        }
 
-.card-image {
-  width: 100%;
-  height: 200px; /* adjust the height as needed */
-  object-fit: cover;
-}
+        /* Adjust image size to be enlarged and rectangular */
+        .card {
+            width: 80vh; /* Large width for rectangular shape */
+            height: 80vh; /* Adjusted height to maintain rectangular aspect */
+            object-fit: cover; /* Ensure the image covers the container without distortion */
+            border-radius: 10px; /* Optional: Add rounded corners to make it visually appealing */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for a 3D effect */
+        }
 
-.card-content {
-  padding: 20px;
-}
-.guest-testimonials {
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-.card-image {
-  width: 100%; /* set the width to 100% of the parent element */
-  height: 100%; /* set the height to 100% of the parent element */
-  object-fit: contain; /* scale the image to cover the entire parent element */
-}
-.card {
-  width: 500px; /* adjust the width to your desired size */
-  height: 500px; /* adjust the height to your desired size */
-  padding: 10px; /* add some padding to make the content more readable */
-}
 
+        
+
+
+        /* Testimonials Section */
+        .guest-testimonials {
+            padding: 60px 10%;
+            background-color: #fbf5e5;
+            text-align: center;
+        }
+
+        .guest-testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #0d0c0c;
+            animation: fadeInUp 1s ease;
+        }
+
+        .guest-testimonials .card {
+            display: inline-block;
+            margin-right: 20px;
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .guest-testimonials .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .guest-testimonials .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .guest-testimonials {
+        padding: 60px 10%;
+        background-color: #fbf5e5;
+        text-align: center;
+        position: relative; /* Establish stacking context */
+        z-index: 0; /* Ensure the section itself is at a lower z-index */
+        }
+
+        .guest-testimonials img {
+        position: relative;
+        z-index: 1; /* Ensure images are above the background */
+        }
+
+        .guest-testimonials img[alt="Left Image"], 
+        .guest-testimonials img[alt="Right Image"] {
+        z-index: 2; /* Ensure left and right images are above the background */
+        }
+
+
+        /* Footer */
+        footer {
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .guest-hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 5%;
+            }
+
+            .guest-hero img {
+                margin-bottom: 30px;
+            }
+
+            .guest-hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .guest-hero-text p {
+                font-size: 1rem;
+            }
+
+            .guest-hero-text {
+                margin-bottom: 20px;
+            }
+
+            .perk-card {
+                width: 90%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .guest-testimonials .card {
+                width: 90%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -351,90 +373,84 @@
         <span class="box" style="margin-right: 10px;"><a href="ContactUs.html">CONTACT US</a></span>
     </div>
 
-    <center><div class="logo"><a href="#home"><img src="logonew.png" alt="Logo"></a></div></center>
+<div class="guest-perks" id="guest-perks">
+    <center><h2>WELCOME GUESTS!</h2>
+        <p>Experience the ultimate fusion of traditional Japanese cuisine and anime-inspired creativity at The Nine Tails Kitchen.</p></center>
     
-    <div class="guest-hero">
-      <img src="https://static.tildacdn.com/tild3564-3264-4664-b535-623032306135/Frame_169.svg" style="float: left; margin: 150px;" width="400" height="400" alt="Hero Image">
-        <div class="logonav" style="float: right; margin: 150px;">
-            <div class="guest-hero-text">
-                <h1>WELCOME, GUESTS!</h1>
-                <p>We're thrilled to have you at THE NINE-TAILS KITCHEN!</p>
-                <a href="#guest-perks" class="button-link">
-                    <button class="button">EXPLORE GUEST PERKS</button>
-                </a>
-            </div>
-        </div>    
+    <!-- Scroll Container -->
+    <div class="scroll-container">
+        <div class="perk-card slide" id="slide1">
+            <img src="discount.png" alt="perks" class="card">
+        </div>
+        <div class="perk-card slide" id="slide2">
+            <img src="Estelle Darcy.png" alt="perks" class="card">
+        </div>
+        <div class="perk-card slide" id="slide3">
+            <img src="CHef’s special.png" alt="perks" class="card">
+        </div>
+        <div class="perk-card slide" id="slide4">
+            <img src="Collective membership.png" alt="perks" class="card">
+        </div>
+    </div>
+</div>
+
+<div class="guest-testimonials" style="background-image: url('https://static.tildacdn.com/tild6135-3237-4465-a430-653066333038/2bfda8723063555be2f0.svg'); background-size: cover; background-position: center; padding: 20px; border-radius: 10px;">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+        <img src="https://static.tildacdn.com/tild6566-3837-4836-a535-386265336632/Vector.svg" alt="Left Image" style="flex: 1; max-width: 400px;">
+        <center><h2 style="margin: 0; font-size: 3rem;">ゲストの声!</h2></center>
+        <img src="https://static.tildacdn.com/tild6534-3739-4436-a430-666631303564/Vector_1.svg" alt="Right Image" style="flex: 1; max-width: 400px;">
+    </div>
+    
+    <div class="card">
+        <img src="Brown Modern Minimalist Food Review Instagram Post.png" alt="Testimonial" class="card-image">
+        <div class="card-content"></div>
     </div>
 
-    <div class="guest-perks" id="guest-perks">
-        <center><h2>GUEST PERKS</h2></center>
-        <div class="perks-cards">
-          <div class="perk-card">
-            <img src="discount.png" alt="perks" class="card">
-          </div>
-          <div class="perk-card">
-            <img src="Estelle Darcy.png" alt="perks" class="card">
-          </div>
-          <div class="perk-card">
-            <img src="CHef’s special.png" alt="perks" class="card">
-          </div>
-          <div class="perk-card">
-            <img src="Collective membership.png" alt="perks" class="card">
-          </div>
-        </div>
-      </div>
-      <center><h2>WHAT OUR GUESTS SAY</h2></center>
-    <div class="guest-testimonials">        
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-        </div>
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post-2.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-        </div>
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post-3.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-        </div>
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post-4.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-        </div>
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post-5.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-        </div>
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post-6.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-        </div>
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post-7.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-        </div>
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post-8.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-        </div>
-        <div class="card">
-          <img src="Brown Modern Minimalist Food Review Instagram Post-9.png" alt="Testimonial" class="card-image">
-          <div class="card-content">
-          </div>
-      </div>
-      </div>        
+    <div class="card">
+        <img src="Brown Modern Minimalist Food Review Instagram Post-2.png" alt="Testimonial" class="card-image">
+        <div class="card-content"></div>
+    </div>
+    
+    <div class="card">
+        <img src="Brown Modern Minimalist Food Review Instagram Post-3.png" alt="Testimonial" class="card-image">
+        <div class="card-content"></div>
+    </div>
+    
+    <div class="card">
+        <img src="Brown Modern Minimalist Food Review Instagram Post-4.png" alt="Testimonial" class="card-image">
+        <div class="card-content"></div>
+    </div>
+    
+    <div class="card">
+        <img src="Brown Modern Minimalist Food Review Instagram Post-5.png" alt="Testimonial" class="card-image">
+        <div class="card-content"></div>
+    </div>
+    
+    <div class="card">
+        <img src="Brown Modern Minimalist Food Review Instagram Post-6.png" alt="Testimonial" class="card-image">
+        <div class="card-content"></div>
+    </div>
+    
+    <div class="card">
+        <img src="Brown Modern Minimalist Food Review Instagram Post-7.png" alt="Testimonial" class="card-image">
+        <div class="card-content"></div>
+    </div>
+    
+    <div class="card">
+        <img src="Brown Modern Minimalist Food Review Instagram Post-8.png" alt="Testimonial" class="card-image">
+        <div class="card-content"></div>
+    </div>
+
+    <a href="booking.html" class="button-link">
+        <center><button class="button">BOOK TABLE</button></center>
+    </a>
+    
+</div>
+
 </body>
 <footer>
-  <center>
-    <p>&copy; [1969] [THE NINE-TAILS KITCHEN]. All rights reserved.</p>
-  </center>
+<center>
+<p>&copy; [1969] [THE NINE-TAILS KITCHEN]. All rights reserved.</p>
+</center>
 </footer>
 </html>
