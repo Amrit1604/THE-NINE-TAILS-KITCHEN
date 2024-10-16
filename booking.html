@@ -10,7 +10,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff; 
+  background-color: #fbf5e5; 
   color: #2d2d2d;
   overflow-x: hidden;
   position: relative;
@@ -92,7 +92,7 @@ body {
   background-image: url(https://static.vecteezy.com/system/resources/thumbnails/026/518/009/small_2x/look-of-a-young-boy-in-manga-and-anime-style-free-vector.jpg);
   background-size: cover;
   background-position: center;
-  filter: blur(1px); 
+  filter: blur(3.231s); 
   z-index: -1;
   opacity: 0.9; /* Adjust the opacity for better visibility */
 }
@@ -126,14 +126,15 @@ body {
   z-index: 1;
 }
 
-    .booking-form {
-      background-color: #fbf5e5;
+.booking-form {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05)); /* Gradient overlay */
   padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  max-width: 500px;
-  font-family: 'Raleway', sans-serif;
-  z-index: 1;
+  border-radius: 20px;
+  backdrop-filter: blur(20px); /* Stronger blur */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Deeper shadow for better depth */
+  max-width: 550px;
+  border: 2px solid rgba(38, 65, 67, 0.5); /* Subtle, semi-transparent border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 
@@ -212,21 +213,25 @@ label {
 input, select, textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 6px;
   transition: border-color 0.3s ease;
   font-size: 14px;
+  background-color:#ffd9e5;
 }
 
+
 input:focus, select:focus, textarea:focus {
-  border-color: #ff4081;
-  outline: none;
+  border-color: #264143;
+  box-shadow: 0 4px 20px rgba(38, 65, 67, 0.5); /* More pronounced glow effect */
+  background: rgba(150, 147, 147, 0.9); /* More opacity on focus */
+  transform: scale(1.01); /* Slightly expand on focus */
 }
 
 .submit-btn {
   width: 100%;
   padding: 14px;
-  background-color: #ff4081;
+  background-color: #264143;
   color: white;
   border: none;
   border-radius: 8px;
@@ -237,7 +242,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .submit-btn:hover {
-  background-color: #ff79a2;
+  background-color: #000000;
 }
 
 .error {
@@ -258,7 +263,7 @@ input:focus, select:focus, textarea:focus {
     flex-direction: column;
   }
 }
-<style>
+
 /* Container to hold the slider */
 .slider-container {
   width: 100%;
@@ -350,6 +355,137 @@ input:focus, select:focus, textarea:focus {
     animation: slide 35s linear infinite;
   }
 }
+
+footer{
+            background-image: url(images/footer\ for\ anime\ restraunt.png);
+            margin: 10px;
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            padding: 20px; /* Adjust padding as needed */
+            color: white; /* Text color on top of the image */
+        }
+        .Footer_container {
+            display: flex;
+            gap: 5rem;
+            backdrop-filter: blur(4px) saturate(188%);
+            -webkit-backdrop-filter: blur(4px) saturate(188%);
+            background-color: rgba(68, 65, 54, 0.603);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.241);
+            margin-left: 30px;
+            margin-right: 70vh;
+            padding: 20px;
+            }
+
+            .links_content ul,
+            .About ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
+
+            .links_content ul li,
+            .About ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            }
+
+            .About img {
+            width: 20px;
+            margin-right: 10px;
+            }
+
+            .About p {
+            margin: 0;
+            }
+    @media (min-height: 1300px) {
+            footer{
+                min-height: 200px;
+            }
+            .moresvg img {
+              width: 250px;
+            }
+            .header p{
+              font-size: 40px;
+            }
+            .subheader h1{
+              font-size: 50px;
+            }
+            .end-cover{
+              margin-top: 150px;
+            }
+            .svg-container {
+              width: 700px;
+              height: 900px;
+            }
+              .svg-container img {
+                width: 700px;
+                
+              }
+              .svg2-container{
+                left: -140px;
+                width: 850px;
+                
+              }
+              .svg2-container img {
+                  width: 750px;
+              }
+    }
+    @media (max-width: 1366px) {
+            .navlist li img{
+                margin-left: 0px;
+                margin-right: 0px;
+                max-width: 150px;
+            }
+            .text-content p {
+                font-size: 20px;
+            }
+            .text-content h1{
+                font-size: 60px;
+            }
+            .image-content{
+                width: 500px;
+            }
+            footer{
+                max-height: 350px;
+                padding: 5px;
+            }
+            .Footer_container{
+                max-height: 200px;
+                padding: 3px;
+            }
+            .Footer_container .logo{
+                max-width: 80px;
+        
+            }
+            .Footer_container iframe{
+                max-height: 100px;
+    
+            }
+            .Footer_container h2{
+                font-size: 15px;
+            }
+            .About{
+                max-height:180px ;
+            }
+            .links_content button{
+                margin: 0;
+                font-size: 10px;
+            }
+            .About p{
+                font-size: 10px;
+            }
+            .About li{
+                margin: 0;
+            }
+            .end-cover{
+              margin-top: 150px;
+            }
+            
+        }
+        
 </style>
 
   </style>
@@ -384,17 +520,24 @@ input:focus, select:focus, textarea:focus {
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
-      <h1 style="color: #ff4081; background-color: rgba(255, 255, 255, 0.3); padding: 10px 20px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); border-radius: 8px; font-family: 'Arial', sans-serif; font-weight: bold; backdrop-filter: blur(10px);">
-        Reserve Your Table Today!
-      </h1>
-      
-      
-      <p> </p>
+      <h1 style="color: #e60303; display:inline; background-color: rgba(0, 0, 0, 0.3); padding: 1px 10px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); border: 3px solid #ff4081; border-radius: 8px; font-family:'Times New Roman', Times, serif; font-weight: bolder; backdrop-filter: blur(10px);">
+        𝐑𝐄𝐒𝐄𝐑𝐕𝐄 𝐘𝐎𝐔𝐑 𝐓𝐀𝐁𝐋𝐄 𝐓𝐎𝐃𝐀𝐘 !
+      </h1><br><br><br>
+      <p style="color: #ffffff;border: 3px solid #ff4081; font-family: 'Arial', sans-serif; font-size: 18px; background-color: rgba(0, 0, 0, 0.5); padding: 10px 20px; border-radius: 8px; margin-top: 10px;">
+        We take reservations for groups of any size.
+        <br> You are very welcome to come along as a walk-in, and we will get you seated as quickly as possible,<br> but at busy times there may be a wait.
+      </p>
       <button style="background: linear-gradient(90deg, #ff4081, #ff79a1); color: white; padding: 12px 25px; border: none; border-radius: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); font-size: 16px; font-weight: bold; font-family: 'Arial', sans-serif; cursor: pointer; transition: background 0.3s ease, box-shadow 0.3s ease;"
       onmouseover="this.style.background='linear-gradient(90deg, #ff79a1, #ff4081)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.5)';"
       onmouseout="this.style.background='linear-gradient(90deg, #ff4081, #ff79a1)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.3)';">
         Book Now
       </button>
+    </div>
+  </section>
+  
+  
+      
+
       
       
     </div>
@@ -517,7 +660,34 @@ input:focus, select:focus, textarea:focus {
       </div>
     </div>
     
-
+    <Footer>
+      <div class="Footer_container">
+          <div >
+              <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" style="width: 100px;"><br>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13748.700537259449!2d76.6597778!3d30.5160865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1722535334365!5m2!1sen!2sin" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              
+          </div>
+          <div class="links_content">
+              <h2>Links</h1>
+                  <ul>
+                      <li><button>Home</button></li><br>
+                      <li><button>Menu</button></li><br>
+                      <li><button>Our Story</button></li><br>
+                      <li><button>Contact us</button></li>
+                  </ul>
+          </div>
+          <div class="About">
+              <h2>About</h2><br>
+              <ul>
+                  <li><img src="images/icons8-location-48.png" alt="" srcset=""><p>Chandigarh-Patiala National Highway (NH-64)
+                      Punjab- 140 401, India</p></li><br>
+                  <li><img src="images/icons8-phonecall-100.png" alt="" srcset=""><p>+91 98274 ****3 ,+91 86778 ****0</p></li><br>
+                  <li><img src="images/icons8-sent-64.png" alt="" srcset=""><p>TheNineTailRestro@X</p></li><br>
+              </ul>
+  
+          </div>
+      </div>
+  </Footer>
     
   <script>
 
