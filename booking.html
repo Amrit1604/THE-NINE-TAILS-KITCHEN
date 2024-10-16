@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOKING </title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@300&family=Raleway:wght@700&display=swap" rel="stylesheet">
+  <style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff; 
+  color: #2d2d2d;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#video-background {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1; 
+  opacity: 1.9; 
+}
+
+.navlist li h1 a:hover{
+
+  width: auto;
+  color: rgb(212, 24, 149);
+  }
+  .navbar{
+            margin: 1rem 10rem 2rem 10rem ;
+        }
+        .navlist{
+            padding-left: 0px;
+            display:flex;
+            justify-content: center;
+        }
+        .navlist li{
+            align-content: center;
+            width: 500px;
+            /* margin-left: 40px; */
+            margin-right: 40px;
+            list-style: none;
+            font-size: 15px;
+        }
+
+        .logo{
+            margin-right: 5rem;
+            margin-left: 5rem;
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .navlist li a{
+            
+            text-decoration: none;
+            color: black;
+        }
+
+
+.hero {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  padding: 40px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: 'Raleway', sans-serif;
+  z-index: 1;
+}
+
+.hero-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/026/518/009/small_2x/look-of-a-young-boy-in-manga-and-anime-style-free-vector.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px); 
+  z-index: -1;
+  opacity: 0.9; /* Adjust the opacity for better visibility */
+}
+
+.hero-text p {
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffd600;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.hero-btn:hover {
+  background-color: #ffea00;
+}
+
+.booking-section {
+  padding: 40px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+    .booking-form {
+      background-color: #fbf5e5;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  font-family: 'Raleway', sans-serif;
+  z-index: 1;
+}
+
+
+    .form-image {
+  position: absolute;
+  margin-left: 300px;
+  top: 32%; /* Adjust this value to control vertical position */
+  width: 100%; /* Adjust width to fit your design */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+    .booking-img {
+      width: 1200px; /* Responsive image */
+      height: 700px;
+    }
+
+
+
+.left-pic{
+    width: auto;
+    height: auto;
+    margin-left: -1500px;
+    top: 30%;
+    position: absolute;
+}
+
+
+
+/* Initial hidden state off-screen */
+.left-pic, .booking-img {
+  opacity: 0; /* Hidden initially */
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Class to animate to visible position */
+.show-left-pic {
+  opacity: 1;
+  transform: translateX(0); /* Move to the original position */
+}
+
+.booking-img {
+  opacity: 0; /* Hidden initially */
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.show-booking-img {
+  opacity: 1;
+  transform: translateX(0); /* Move to the original position */
+}
+
+
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #ff4081;
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ff79a2;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.confirmation {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+<style>
+/* Container to hold the slider */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 50px auto;
+}
+
+/* Slider row (flex) */
+.slider {
+  display: flex;
+  width: max-content;
+  animation: slide 20s linear infinite; /* Looping animation */
+}
+
+/* Each box in the slider */
+.slide {
+  width: 250px;
+  height: 250px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the box without distortion */
+  transition: transform 0.3s ease; /* Smooth image zoom effect on hover */
+}
+
+.slide img:hover {
+  transform: scale(1.1); /* Zoom in slightly when hovered */
+}
+
+/* Sliding animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Slide halfway (to show the duplicated content) */
+  }
+}
+
+/* Responsive Styles */
+
+/* For smaller screens (tablets) */
+@media (max-width: 1024px) {
+  .slide {
+    width: 200px;
+    height: 200px;
+    margin-right: 15px;
+  }
+
+  .slider-container {
+    padding: 0 20px;
+  }
+
+  .slider {
+    animation: slide 25s linear infinite;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .slide {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+  }
+
+  .slider {
+    animation: slide 30s linear infinite;
+  }
+}
+
+/* For very small screens (phones) */
+@media (max-width: 480px) {
+  .slide {
+    width: 120px;
+    height: 120px;
+    margin-right: 5px;
+  }
+
+  .slider {
+    animation: slide 35s linear infinite;
+  }
+}
+</style>
+
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="video-background">
+    <!-- <source src="back.mp4" type="video/mp4"> -->
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <div class="navContent" >
+        <div class="pointer">
+        <ul class="navlist">
+            <li><h1><a href="index.html">Home</a></h1></li>
+            <li><h1><a href="menu.html">Menu</a></h1></li>
+            <li><h1><a href="newlogin.html">Login/Signup</a></h1></li>
+            <li>
+                <img class="logo" src="logonew.png" alt="" class="logo" >
+            </li>
+            <li><h1><a href="OurStory.html">Our Story</a></h1></li>
+            <li><h1> <a href="ContactUs.html">Contact us</a></h1></li>
+            <li><h1><a href="guest.html">For guests</a></h1></li>
+        </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1 style="color: #ff4081; background-color: rgba(255, 255, 255, 0.3); padding: 10px 20px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); border-radius: 8px; font-family: 'Arial', sans-serif; font-weight: bold; backdrop-filter: blur(10px);">
+        Reserve Your Table Today!
+      </h1>
+      
+      
+      <p> </p>
+      <button style="background: linear-gradient(90deg, #ff4081, #ff79a1); color: white; padding: 12px 25px; border: none; border-radius: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); font-size: 16px; font-weight: bold; font-family: 'Arial', sans-serif; cursor: pointer; transition: background 0.3s ease, box-shadow 0.3s ease;"
+      onmouseover="this.style.background='linear-gradient(90deg, #ff79a1, #ff4081)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.5)';"
+      onmouseout="this.style.background='linear-gradient(90deg, #ff4081, #ff79a1)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.3)';">
+        Book Now
+      </button>
+      
+      
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <center>
+    <section id="booking" class="booking-section">
+      <div class="booking-form">
+        <center><h2>Book a Table</h2></center>
+
+        <!-- EMAIL FORM SUBMISSION USING WEB3 FORM API -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+          <!-- Replace with your Access Key -->
+          <input type="hidden" name="access_key" value="18ef18e0-4998-4505-a0b4-b06521f5df7e">
+          
+          
+          <!-- remember to make sure redirectit to our page  -->
+          
+          
+          <!-- Row 1: Select Date and Select Time -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Select Date:</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+
+<div class="form-group">
+  <label for="time">SELECT YOUR TIME SLOT:</label>
+  <select id="time" name="DURATION" required multiple size="6">
+    <option value="07:00">7:00 AM - 8:00 AM</option>
+    <option value="08:00">8:00 AM - 9:00 AM</option>
+    <option value="09:00">9:00 AM - 10:00 AM</option>
+    <option value="10:00">10:00 AM - 11:00 AM</option>
+    <option value="11:00">11:00 AM - 12:00 PM</option>
+    <option value="12:00">12:00 PM - 1:00 PM</option>
+    <option value="13:00">1:00 PM - 2:00 PM</option>
+    <option value="14:00">2:00 PM - 3:00 PM</option>
+    <option value="15:00">3:00 PM - 4:00 PM</option>
+    <option value="16:00">4:00 PM - 5:00 PM</option>
+    <option value="17:00">5:00 PM - 6:00 PM</option>
+    <option value="18:00">6:00 PM - 7:00 PM</option>
+    <option value="19:00">7:00 PM - 8:00 PM</option>
+    <option value="20:00">8:00 PM - 9:00 PM</option>
+    <option value="21:00">9:00 PM - 10:00 PM</option>
+    <option value="22:00">10:00 PM - 11:00 PM</option>
+  </select>
+</div>
+
+          </div>
+
+          <!-- Row 2: Number of Guests and Seating Preference -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guests">Number of Guests:</label>
+              <input type="number" id="guests" name="guests" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+              <label for="preference">Seating Preference:</label>
+              <select id="preference" name="preference">
+                <option value="indoor">Indoor</option>
+                <option value="outdoor">Outdoor</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 3: Name and Email -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              <div class="error" id="nameError"></div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <div class="error" id="emailError"></div>
+            </div>
+          </div>
+
+          <!-- Row 4: Special Requests -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="requests">Special Requests:</label>
+              <textarea id="requests" name="requests" rows="3" placeholder="Allergies, preferences, etc."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Booking</button>
+        </form>
+
+        <div class="confirmation" id="confirmationMessage"></div>
+      </div>
+    </section>
+    <div class="form-image">
+      <img src="svgexport-1.png" alt="Reservation" class="booking-img">
+    </div><br><br>
+
+    <center>
+     <div class="leftpic">
+      <img src="leftpic.png" alt="leftpic" class="left-pic">
+     </div>
+
+     <div class="slider-container">
+      <div class="slider">
+        <!-- Original set of slides -->
+        <div class="slide"><img src="https://static.tildacdn.com/tild3930-6565-4261-b264-363332383838/Frame_82.svg" alt="Image 1"></div>
+        <div class="slide"><img src="https://static.tildacdn.com/tild3464-3837-4233-a665-633561653839/Frame_84.svg" alt="Image 2"></div>
+        <div class="slide"><img src="https://static.tildacdn.com/tild3561-6635-4061-b535-633630393330/Frame_85.svg" alt="Image 3"></div>
+        <div class="slide"><img src="https://static.tildacdn.com/tild3437-3530-4535-a464-613262623538/Frame_89.svg" alt="Image 4"></div>
+        <div class="slide"><img src="https://static.tildacdn.com/tild3038-6163-4635-b238-353365633264/Frame_88.svg" alt="Image 5"></div>
+    
+        <!-- Duplicate set of slides to create a seamless loop -->
+        <div class="slide"><img src="https://static.tildacdn.com/tild3930-6565-4261-b264-363332383838/Frame_82.svg" alt="Image 1"></div>
+        <div class="slide"><img src="https://static.tildacdn.com/tild3464-3837-4233-a665-633561653839/Frame_84.svg" alt="Image 2"></div>
+        <div class="slide"><img src="https://static.tildacdn.com/tild3561-6635-4061-b535-633630393330/Frame_85.svg" alt="Image 3"></div>
+        <div class="slide"><img src="https://static.tildacdn.com/tild3437-3530-4535-a464-613262623538/Frame_89.svg" alt="Image 4"></div>
+        <div class="slide"><img src="https://static.tildacdn.com/tild3038-6163-4635-b238-353365633264/Frame_88.svg" alt="Image 5"></div>
+      </div>
+    </div>
+    
+
+    
+  <script>
+
+window.addEventListener('scroll', function() {
+  let leftPic = document.querySelector('.left-pic');
+  let bookingImg = document.querySelector('.booking-img');
+  let leftPicPosition = leftPic.getBoundingClientRect().top;
+  let bookingImgPosition = bookingImg.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight / 1.5;
+
+  if(leftPicPosition < screenPosition) {
+    leftPic.classList.add('show-left-pic');
+  }
+  
+  if(bookingImgPosition < screenPosition) {
+    bookingImg.classList.add('show-booking-img');
+  }
+});
+
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var date = document.getElementById("date").value;
+      var guests = document.getElementById("guests").value;
+      var preference = document.getElementById("preference").value;
+
+      // Get selected time slots
+      var selectedTimes = [];
+      var timeSelect = document.getElementById("time");
+      for (var option of timeSelect.options) {
+        if (option.selected) {
+          selectedTimes.push(option.value);
+        }
+      }
+
+      // Form validation
+      var error = false;
+
+      if (name.length < 2) {
+        document.getElementById("nameError").textContent = "Name must be at least 2 characters long.";
+        error = true;
+      } else {
+        document.getElementById("nameError").textContent = "";
+      }
+
+      if (!email.includes("@")) {
+        document.getElementById("emailError").textContent = "Please enter a valid email.";
+        error = true;
+      } else {
+        document.getElementById("emailError").textContent = "";
+      }
+
+      if (!error) {
+        document.getElementById("confirmationMessage").textContent = 
+  `Thank you, ${name}! Your booking is confirmed for ${date} at ${selectedTimes.join(", ")}.`;
+ // Submits the form to Web3Forms
+      }
+    });
+  </script>
+</body>
+
+</html>
