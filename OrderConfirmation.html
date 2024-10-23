@@ -12,18 +12,7 @@
             padding: 0;
             color: #333;
         }
-        .navbar-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .navbar img {
-            height: 120px;
-            border-radius: 50%;
-        }
+       
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -82,27 +71,187 @@
         .btn:hover {
             background-color: #45a049;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+        .bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black translucent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures the overlay is on top */
+}
+
+.popup {
+    background-color: white; /* White background for the popup */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
         @media (max-width: 600px) {
             .container {
                 width: 95%;
                 margin: 10px auto;
             }
         }
+        @media (max-width: 768px) {
+    .navbar {
+        margin: 1rem 5%;
+    }
+    .navlist {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navlist li {
+        margin: 10px 0;
+        width: 100%; /* Full width on smaller screens */
+    }
+    .container {
+        width: 95%; /* Full width on smaller screens */
+    }
+    .checkout-box, .address-box {
+        padding: 15px;
+    }
+}
+@media(max-width: 1366px){
+            footer{
+                max-height: 350px;
+                padding: 5px;
+            }
+            .Footer_container{
+                max-height: 200px;
+                padding: 3px;
+            }
+            .Footer_container .logo{
+                max-width: 80px;
+        
+            }
+            .Footer_container iframe{
+                max-height: 100px;
+    
+            }
+            .Footer_container h2{
+                font-size: 15px;
+            }
+            .About{
+                max-height:180px ;
+            }
+            .links_content button{
+                margin: 0;
+                font-size: 10px;
+            }
+            .About p{
+                font-size: 10px;
+            }
+            .About li{
+                margin: 0;
+            }
+            .end-cover{
+              margin-top: 150px;
+            }
+            
+        }
+        footer{
+            background-image: url(images/footer\ for\ anime\ restraunt.png);
+            margin: 10px;
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            padding: 20px; /* Adjust padding as needed */
+            color: white; /* Text color on top of the image */
+        }
+        .Footer_container {
+            display: flex;
+            gap: 5rem;
+            backdrop-filter: blur(4px) saturate(188%);
+            -webkit-backdrop-filter: blur(4px) saturate(188%);
+            background-color: rgba(68, 65, 54, 0.603);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.241);
+            margin-left: 30px;
+            margin-right: 70vh;
+            padding: 20px;
+            }
+
+            .links_content ul,
+            .About ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
+
+            .links_content ul li,
+            .About ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            }
+
+            .About img {
+            width: 20px;
+            margin-right: 10px;
+            }
+
+            .About p {
+            margin: 0;
+            }
+
+            .navlist li h1 a:hover {
+            width: auto;
+            color: rgb(212, 24, 149);
+        }
+        .navbar {
+            margin: 1rem 10rem 2rem 10rem;
+        }
+        .navlist {
+            padding-left: 0px;
+            display: flex;
+            justify-content: center;
+        }
+        .navlist li {
+            align-content: center;
+            width: 500px;
+            margin-left: 40px;
+            margin-right: 40px;
+            list-style: none;
+            font-size: 15px;
+        }
+        .logo {
+            margin-right: 5rem;
+            margin-left: 5rem;
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .navlist li a {
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar-container">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logonew-Ld5Zy9Yl5Ue9Yl1Ld5Zy9.png" alt="The Nine Tails Kitchen Logo">
-    </nav>
+    <header>
+        <nav class="navbar">
+            <div class="navContent">
+                <ul class="navlist">
+                    <li><h1><a href="index.html">Home</a></h1></li>
+                    <li><h1><a href="menu.html">Menu</a></h1></li>
+                    <li><h1><a href="">Booking</a></h1></li>
+                    <li>
+                        <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" alt="Logo">
+                    </li>
+                    <li><h1><a href="OurStory.html">Our Story</a></h1></li>
+                    <li><h1><a href="ContactUs.html">Contact us</a></h1></li>
+                    <li><h1><a href="">For guests</a></h1></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
 
     <div class="container">
         <h1>Order Confirmation</h1>
@@ -123,7 +272,18 @@
         <div class="order-total">
             Total: <span id="totalAmount"></span>
         </div>
-        <a href="#" class="btn" id="trackOrderBtn">Track Order</a>
+        <a href="#" class="btn" id="trackOrderBtn" onclick="showTrackingPopup()">Track Order</a>
+
+    </div>
+
+    <div id="bg-div" style="display: none;" class="bg-overlay">
+        <div class="popup">
+            <h2>Track Your Order</h2>
+            <iframe id="mapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345097983!2d144.95373531531573!3d-37.81627997975135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f4b5d87%3A0x5045675218ceed30!2sMelbourne%20CBD%2C%20Melbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1632784748681!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <br>
+            <button id="close-btn" onclick="closeTrackingPopup()">Close</button>
+            <button onclick="window.location.href='index.html'">Back to Home</button>
+        </div>
     </div>
 
     <footer>
@@ -202,6 +362,13 @@
                 document.getElementById('orderItemsList').innerHTML = `<p>Your cart is empty.</p>`;
                 document.getElementById('totalAmount').textContent = '₹0.00';
             }
+        }
+        function showTrackingPopup() {
+            document.getElementById('bg-div').style.display = 'flex'; // Show the popup
+        }
+
+        function closeTrackingPopup() {
+            document.getElementById('bg-div').style.display = 'none'; // Hide the popup
         }
 
         // Load order details when the page loads
