@@ -401,122 +401,227 @@ footer{
 
 
 
+
+/* Loader styles */
+.loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; /* Allow the loader to take full width */
+            max-width: 600px; /* Limit max width for better layout */
+            height: 200px; /* Adjusted height */
+            margin-top: 300px;
+            margin-left: 350px;
+    
+            background-color: white; /* or any background color */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 9999; /* Ensures it's on top of everything */
+        }
+
+/* Initially hide the main content */
+
+
+/* Animation for knife drop */
+.knife {
+    width: 600px; /* Set a uniform size for the knives */
+            height: 500px;
+            animation: fall 1s forwards; /* Animation duration */
+            opacity: 0; /* Start invisible */
+          
+            margin: 0 45px; /* Add horizontal margin for spacing */
+        
+}
+.hidden {
+    display: none;
+}
+
+.knife:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.knife:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.knife:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg) scale(0.8); /* Start from above the viewport and slightly smaller */
+                opacity: 0; /* Start invisible */
+            }
+            50% {
+                transform: translateY(20px) rotate(180deg) scale(1.1); /* Halfway down, rotate and slightly scale up */
+            }
+            100% {
+                transform: translateY(0) rotate(360deg) scale(1); /* End at their final position, rotate full circle and scale to original size */
+                opacity: 1; /* Fade in */
+            }
+        }
+
+
+
+
+
+
+
+
 </style>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-            <div class="navContent" >
-                <div class="pointer">
-                <ul class="navlist">
-                    <li><h1><a href="index.html">Home</a></h1></li>
-                    <li><h1><a href="menu.html">Menu</a></h1></li>
-                    <li><h1><a href="booking.html">Booking</a></h1></li>
+    <div class="loader">
+        <img src="https://static.tildacdn.com/tild3562-6239-4637-a536-333433323639/Vector.png" alt="Knife 1" class="knife">
+        <img src="https://static.tildacdn.com/tild6561-3736-4738-a139-333039666463/Vector-1.png" alt="Knife 2" class="knife">
+        <img src="https://static.tildacdn.com/tild3837-3838-4733-b031-613335333065/Vector-2.png" alt="Knife 3" class="knife">
+    </div>
+ 
+    <div class="main-content hidden">
+        <header>
+            <nav class="navbar">
+                    <div class="navContent" >
+                        <div class="pointer">
+                        <ul class="navlist">
+                            <li><h1><a href="index.html">Home</a></h1></li>
+                            <li><h1><a href="menu.html">Menu</a></h1></li>
+                            <li><h1><a href="booking.html">Booking</a></h1></li>
+                            
+                            <li>
+                                <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" alt="" class="logo" >
+                            </li>
+                            <li><h1><a href="OurStory.html">Our Story</a></h1></li>
+                            <li><h1> <a href="ContactUs.html">Contact us</a></h1></li>
+                            <li><h1><a href="guest.html">For guests</a></h1></li>
+                            <li><h1><a href="newlogin.html">Login/Signup</a></h1></li>
+                        </ul>
+                        </div>
+                    </div>
+            </nav>
+        </header>
+        <section1>
+          <div class="First-container" >
+              <div class="svg-container">
+                <img src="https://static.tildacdn.com/tild3631-3464-4534-b234-363539663736/Vector.svg" alt="SVG Logo">
+            </div>
+            <div class="svg2-container" >
+                <img src="https://static.tildacdn.com/tild3135-6339-4338-a161-653430623733/Group_2922.svg" alt="SVG 2 LOGO">
+            </div><br><br><br><br>
+            <div class="First-Content">
+              <center>
+                <div class="header">
                     
-                    <li>
-                        <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" alt="" class="logo" >
-                    </li>
-                    <li><h1><a href="OurStory.html">Our Story</a></h1></li>
-                    <li><h1> <a href="ContactUs.html">Contact us</a></h1></li>
-                    <li><h1><a href="guest.html">For guests</a></h1></li>
-                    <li><h1><a href="newlogin.html">Login/Signup</a></h1></li>
-                </ul>
+                <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/VEhFICBOSU5FICBUQUlMUyAgS0lUQ0hFTg/ninja-naruto.png?r=fs&h=45&w=1250&fg=000000&bg=FFFFFF&tb=1&s=36" alt="Anime fonts" style="width: 600px;"></a> </div> <br><br><br><br><br><br>
+                <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/WW91IEhhdmUgV2F0Y2hlZCBJdCAg/ninja-naruto.png?r=fs&h=34&w=1250&fg=000000&bg=FFFFFF&tb=1&s=27" alt="Anime fonts" style="width: 300px;"></a>  <br>   
+                <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/Tm93IFlvdSBDYW4gVGFzdGUgSXQ/ninja-naruto.png?r=fs&h=34&w=1250&fg=000000&bg=FFFFFF&tb=1&s=27" alt="Anime fonts"></a> <br><br><br><br><br><br><br>
+                        <div class="subheader">
+                  <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/QlJJTkdJTkcgIEFOSU1FICAgRk9PRCA/ninja-naruto.png?r=fs&h=34&w=1250&fg=000000&bg=FFFFFF&tb=1&s=27" alt="Anime fonts"></a><br>
+                  <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/VE8gIExJRkUg/ninja-naruto.png?r=fs&h=34&w=1250&fg=000000&bg=FFFFFF&tb=1&s=27" alt="Anime fonts"></a>
+                    </div>
+                    <a href="menu.html" class="button-link" style=" text-decoration: none;">
+                      <button class="button" style=" color: #de719e;">
+                        MENU
+                      </button>
+                    </a>
+                  </div>
+        
+                <div class="moresvg">
+                    <img src="https://static.tildacdn.com/tild6466-3561-4861-b061-386135343631/Vector-2.svg" alt="svg3">
+                </div>
+          </center>
+            </div>
+           <br>
+        
+        </section1>
+          <div class="section2" style="margin-top: -80px;">
+            <div class="end-cover">
+              <video autoplay muted loop plays-inline class = "backgroundvideo">
+                <source src = "https://dl.dropboxusercontent.com/s/ol94rl37gaeagx8/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE-%D1%80%D0%B0%D0%BC%D0%B5%D0%BD.mp4?dl=0" type = "video/mp4">
+              </video>
+            </div>
+            </div>
+        
+        
+            <iframe style="width: 100%;height: 100vh;border: none;" src="gallary.html" class="gallary-container" scrolling="no"></iframe>
+        
+        
+          <center>
+          <div class="info" style="font-size: smaller; margin-left: 100px; margin-right: 100px;">
+            <h1>𝐖𝐇𝐄𝐓𝐇𝐄𝐑 𝐘𝐎𝐔'𝐑𝐄 𝐕𝐀𝐂𝐀𝐓𝐈𝐎𝐍𝐈𝐍𝐆 𝐀𝐋𝐎𝐍𝐄, <br>𝐎𝐔𝐓 𝐖𝐈𝐓𝐇 𝐅𝐑𝐈𝐄𝐍𝐃𝐒, <br>𝐎𝐑 𝐏𝐋𝐀𝐍𝐍𝐈𝐍𝐆 𝐀 𝐇𝐎𝐋𝐈𝐃𝐀𝐘 𝐏𝐀𝐑𝐓𝐘,<br> 𝐖𝐄'𝐑𝐄 𝐒𝐔𝐑𝐄 𝐖𝐄 𝐂𝐀𝐍 𝐀𝐂𝐂𝐎𝐌𝐌𝐎𝐃𝐀𝐓𝐄 𝐘𝐎𝐔👍</h1>
+            <p style="font-size: larger;">After all hospitality is what we do !</p>
+          </div><br>
+          <a href="#" class="button-link" style="text-decoration: none;">
+            <button class="button" style=" z-index: 1;">
+              BOOK NOW !
+            </button>
+          </a>
+        
+          
+        
+        </center>
+          <div class="end-cover1" style="display: flex; justify-content: center; margin-top: 20px;">
+            <div class="col" style="display: flex; justify-content: center; align-items: center; width: 100%; overflow: hidden; margin-top: -200px; z-index: -1;">
+                <img src="groupnew.png" style="width: 100%; height: auto;" alt="groupnew">
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Footer>
+            <div class="Footer_container">
+                <div >
+                    <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" style="width: 100px;"><br>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13748.700537259449!2d76.6597778!3d30.5160865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1722535334365!5m2!1sen!2sin" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                </div>
+                <div class="links_content">
+                    <h2>Links</h1>
+                        <ul>
+                            <li><button>Home</button></li><br>
+                            <li><button>Menu</button></li><br>
+                            <li><button>Our Story</button></li><br>
+                            <li><button>Contact us</button></li>
+                        </ul>
+                </div>
+                <div class="About">
+                    <h2>About</h2><br>
+                    <ul>
+                        <li><img src="images/icons8-location-48.png" alt="" srcset=""><p>Chandigarh-Patiala National Highway (NH-64)
+                            Punjab- 140 401, India</p></li><br>
+                        <li><img src="images/icons8-phonecall-100.png" alt="" srcset=""><p>+91 98274 ****3 ,+91 86778 ****0</p></li><br>
+                        <li><img src="images/icons8-sent-64.png" alt="" srcset=""><p>TheNineTailRestro@X</p></li><br>
+                    </ul>
+        
                 </div>
             </div>
-    </nav>
-</header>
-<section1>
-  <div class="First-container" >
-      <div class="svg-container">
-        <img src="https://static.tildacdn.com/tild3631-3464-4534-b234-363539663736/Vector.svg" alt="SVG Logo">
-    </div>
-    <div class="svg2-container" >
-        <img src="https://static.tildacdn.com/tild3135-6339-4338-a161-653430623733/Group_2922.svg" alt="SVG 2 LOGO">
-    </div><br><br><br><br>
-    <div class="First-Content">
-      <center>
-        <div class="header">
-            
-        <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/VEhFICBOSU5FICBUQUlMUyAgS0lUQ0hFTg/ninja-naruto.png?r=fs&h=45&w=1250&fg=000000&bg=FFFFFF&tb=1&s=36" alt="Anime fonts" style="width: 600px;"></a> </div> <br><br><br><br><br><br>
-        <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/WW91IEhhdmUgV2F0Y2hlZCBJdCAg/ninja-naruto.png?r=fs&h=34&w=1250&fg=000000&bg=FFFFFF&tb=1&s=27" alt="Anime fonts" style="width: 300px;"></a>  <br>   
-        <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/Tm93IFlvdSBDYW4gVGFzdGUgSXQ/ninja-naruto.png?r=fs&h=34&w=1250&fg=000000&bg=FFFFFF&tb=1&s=27" alt="Anime fonts"></a> <br><br><br><br><br><br><br>
-                <div class="subheader">
-          <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/QlJJTkdJTkcgIEFOSU1FICAgRk9PRCA/ninja-naruto.png?r=fs&h=34&w=1250&fg=000000&bg=FFFFFF&tb=1&s=27" alt="Anime fonts"></a><br>
-          <a href="https://www.fontspace.com/category/anime"><img src="https://see.fontimg.com/api/rf5/YOn4/MzkyNGU5ZDQ1OTBjNDQ0M2E3YWZjZDVlNzljMjE0NzgudHRm/VE8gIExJRkUg/ninja-naruto.png?r=fs&h=34&w=1250&fg=000000&bg=FFFFFF&tb=1&s=27" alt="Anime fonts"></a>
-            </div>
-            <a href="menu.html" class="button-link" style=" text-decoration: none;">
-              <button class="button" style=" color: #de719e;">
-                MENU
-              </button>
-            </a>
-          </div>
-
-        <div class="moresvg">
-            <img src="https://static.tildacdn.com/tild6466-3561-4861-b061-386135343631/Vector-2.svg" alt="svg3">
-        </div>
-  </center>
-    </div>
-  </div> <br>
-
-</section1>
-  <div class="section2" style="margin-top: -80px;">
-    <div class="end-cover">
-      <video autoplay muted loop plays-inline class = "backgroundvideo">
-        <source src = "https://dl.dropboxusercontent.com/s/ol94rl37gaeagx8/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE-%D1%80%D0%B0%D0%BC%D0%B5%D0%BD.mp4?dl=0" type = "video/mp4">
-      </video>
+        </Footer>
     </div>
 
 
-    <iframe style="width: 100%;height: 100vh;border: none;" src="gallary.html" class="gallary-container" scrolling="no"></iframe>
 
+<script>
+window.addEventListener('load', function() {
+    // Show the loader and hide the main content initially
+    const loader = document.querySelector('.loader');
+    const mainContent = document.querySelector('.main-content');
 
-  <center>
-  <div class="info" style="font-size: smaller; margin-left: 100px; margin-right: 100px;">
-    <h1>𝐖𝐇𝐄𝐓𝐇𝐄𝐑 𝐘𝐎𝐔'𝐑𝐄 𝐕𝐀𝐂𝐀𝐓𝐈𝐎𝐍𝐈𝐍𝐆 𝐀𝐋𝐎𝐍𝐄, <br>𝐎𝐔𝐓 𝐖𝐈𝐓𝐇 𝐅𝐑𝐈𝐄𝐍𝐃𝐒, <br>𝐎𝐑 𝐏𝐋𝐀𝐍𝐍𝐈𝐍𝐆 𝐀 𝐇𝐎𝐋𝐈𝐃𝐀𝐘 𝐏𝐀𝐑𝐓𝐘,<br> 𝐖𝐄'𝐑𝐄 𝐒𝐔𝐑𝐄 𝐖𝐄 𝐂𝐀𝐍 𝐀𝐂𝐂𝐎𝐌𝐌𝐎𝐃𝐀𝐓𝐄 𝐘𝐎𝐔👍</h1>
-    <p style="font-size: larger;">After all hospitality is what we do !</p>
-  </div><br>
-  <a href="#" class="button-link" style="text-decoration: none;">
-    <button class="button" style=" z-index: 1;">
-      BOOK NOW !
-    </button>
-  </a>
+    // After 3 seconds, hide the loader and show the main content
+    setTimeout(function() {
+        loader.style.display = 'none'; // Hide loader
+        mainContent.classList.remove('hidden'); // Show main content
+    }, 2000); // 3 seconds delay
+});
 
-  
-
-</center>
-  <div class="end-cover1" style="display: flex; justify-content: center; margin-top: 20px;">
-    <div class="col" style="display: flex; justify-content: center; align-items: center; width: 100%; overflow: hidden; margin-top: -200px; z-index: -1;">
-        <img src="groupnew.png" style="width: 100%; height: auto;" alt="groupnew">
-    </div>
-</div>
+    
+    </script>
 </body>
-<Footer>
-    <div class="Footer_container">
-        <div >
-            <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" style="width: 100px;"><br>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13748.700537259449!2d76.6597778!3d30.5160865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1722535334365!5m2!1sen!2sin" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
-        </div>
-        <div class="links_content">
-            <h2>Links</h1>
-                <ul>
-                    <li><button>Home</button></li><br>
-                    <li><button>Menu</button></li><br>
-                    <li><button>Our Story</button></li><br>
-                    <li><button>Contact us</button></li>
-                </ul>
-        </div>
-        <div class="About">
-            <h2>About</h2><br>
-            <ul>
-                <li><img src="images/icons8-location-48.png" alt="" srcset=""><p>Chandigarh-Patiala National Highway (NH-64)
-                    Punjab- 140 401, India</p></li><br>
-                <li><img src="images/icons8-phonecall-100.png" alt="" srcset=""><p>+91 98274 ****3 ,+91 86778 ****0</p></li><br>
-                <li><img src="images/icons8-sent-64.png" alt="" srcset=""><p>TheNineTailRestro@X</p></li><br>
-            </ul>
-
-        </div>
-    </div>
-</Footer>
 </html>
