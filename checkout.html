@@ -12,43 +12,44 @@
             padding: 0;
             color: #333;
         }
-        .navlist li h1 a:hover{
-
-width: auto;
-color: rgb(212, 24, 149);
-}
-.navbar{
-          margin: 1rem 10rem 2rem 10rem ;
-      }
-      .navlist{
-          padding-left: 0px;
-          display:flex;
-          justify-content: center;
-      }
-      .navlist li{
-          align-content: center;
-          width: 500px;
-          margin-left: 40px;
-          margin-right: 40px;
-          list-style: none;
-          font-size: 15px;
-      }
-      .logo{
-          margin-right: 5rem;
-          margin-left: 5rem;
-          width: 150px;
-          height: auto;
-          border-radius: 50%;
-      }
-      .navlist li a{
-          
-          text-decoration: none;
-          color: black;
-      }
+        .navlist li h1 a:hover {
+            width: auto;
+            color: rgb(212, 24, 149);
+        }
+        .navbar {
+            margin: 1rem 10rem 2rem 10rem;
+        }
+        .navlist {
+            padding-left: 0px;
+            display: flex;
+            justify-content: center;
+        }
+        .navlist li {
+            align-content: center;
+            width: 500px;
+            margin-left: 40px;
+            margin-right: 40px;
+            list-style: none;
+            font-size: 15px;
+        }
+        .logo {
+            margin-right: 5rem;
+            margin-left: 5rem;
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .navlist li a {
+            text-decoration: none;
+            color: black;
+        }
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between address box and checkout box */
         }
         .checkout-box {
             background: #fff;
@@ -57,6 +58,11 @@ color: rgb(212, 24, 149);
             padding: 20px;
             margin-top: 20px;
             animation: fadeIn 1s ease-out;
+        }
+        .address-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between form elements */
         }
         .checkout-item {
             display: flex;
@@ -136,14 +142,14 @@ color: rgb(212, 24, 149);
         button:hover {
             background-color: #218838;
         }
-        footer{
+        footer {
             background-image: url(images/footer\ for\ anime\ restraunt.png);
             margin: 10px;
-            background-size: cover; /* Ensures the image covers the entire background */
-            background-position: center; /* Centers the background image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
-            padding: 20px; /* Adjust padding as needed */
-            color: white; /* Text color on top of the image */
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            padding: 20px; 
+            color: white; 
         }
         .Footer_container {
             display: flex;
@@ -156,166 +162,424 @@ color: rgb(212, 24, 149);
             margin-left: 30px;
             margin-right: 70vh;
             padding: 20px;
-            }
-
-            .links_content ul,
-            .About ul {
+        }
+        .links_content ul, .About ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            }
-
-            .links_content ul li,
-            .About ul li {
+        }
+        .links_content ul li, .About ul li {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            }
-
-            .About img {
+        }
+        .About img {
             width: 20px;
             margin-right: 10px;
-            }
-
-            .About p {
+        }
+        .About p {
             margin: 0;
-            }
-
-            
-
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        form {
+            width: 100%; /* Full width */
+            max-width: 800px; /* Set maximum width */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        #savedAddress {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px dashed #ccc;
+    font-size: 1em;
+    line-height: 1.5em;
+    background-color: #f9f9f9;
+}
+
+        @media (max-width: 768px) {
+    .navbar {
+        margin: 1rem 5%;
+    }
+    .navlist {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navlist li {
+        margin: 10px 0;
+        width: 100%; /* Full width on smaller screens */
+    }
+    .container {
+        width: 95%; /* Full width on smaller screens */
+    }
+    .checkout-box, .address-box {
+        padding: 15px;
+    }
+}
+
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-                <div class="navContent" >
-                    <div class="pointer">
-                    <ul class="navlist">
-                        <li><h1><a href="index.html">Home</a></h1></li>
-                        <li><h1><a href="menu.html">Menu</a></h1></li>
-                        <li><h1><a href="">Booking</a></h1></li>
-                        <li>
-                            <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" alt="" class="logo" >
-                        </li>
-                        <li><h1><a href="OurStory.html">Our Story</a></h1></li>
-                        <li><h1> <a href="ContactUs.html">Contact us</a></h1></li>
-                        <li><h1><a href="">For guests</a></h1></li>
-                    </ul>
-                    </div>
-                </div>
+            <div class="navContent">
+                <ul class="navlist">
+                    <li><h1><a href="index.html">Home</a></h1></li>
+                    <li><h1><a href="menu.html">Menu</a></h1></li>
+                    <li><h1><a href="">Booking</a></h1></li>
+                    <li>
+                        <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" alt="Logo">
+                    </li>
+                    <li><h1><a href="OurStory.html">Our Story</a></h1></li>
+                    <li><h1><a href="ContactUs.html">Contact us</a></h1></li>
+                    <li><h1><a href="">For guests</a></h1></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <div class="container">
-        <div class="checkout-box">
-            <div id="checkoutList"></div>
-            <div class="total">Total: $<span id="totalAmount">0</span></div>
-            <button id="confirmPurchase">Confirm Purchase</button>
+        <div class="address-box">
+            <center>
+            <form id="addressForm">
+                <center>
+                <h2>Delivery Address</h2>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+
+                <label for="addressLine1">Address Line 1:</label>
+                <input type="text" id="addressLine1" name="addressLine1" placeholder="123 Main Street" required>
+
+                <label for="addressLine2">Address Line 2 (optional):</label>
+                <input type="text" id="addressLine2" name="addressLine2" placeholder="Apartment, suite, unit, etc.">
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Anytown" required>
+
+                <label for="state">State:</label>
+                <select id="state" name="state" required> 
+                    <option value="">Select State</option>
+                </select>
+
+                <label for="zipCode">Zip Code:</label>
+                <input type="text" id="zipCode" name="zipCode" placeholder="12345" pattern="\d{5}" required> 
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="0011223344" required pattern="\d{10}"> 
+
+                <button type="submit">Save Address</button>
+            </form>
+
+            <div id="savedAddress">
+                <h3>Saved Address</h3>
+                <p id="addressDisplay"></p>
+            </div>
         </div>
+
+        <div class="checkout-box" style="
+        width: 600px; 
+        padding: 20px; 
+        background-color: #f9f9f9; 
+        border: 1px solid #e0e0e0; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+        font-family: Arial, sans-serif; 
+        margin: auto; 
+        margin-top: 2px; 
+    ">
+        <div id="checkoutList" style="
+            max-height: 200px; 
+            overflow-y: auto; 
+            margin-bottom: 15px; 
+            padding: 10px; 
+            background-color: #ffffff; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+        ">
+            <!-- Cart items will be injected here -->
+        </div>
+        <div class="total" style="display: flex; justify-content: space-between; padding: 5px 0; font-weight: bold;">
+            <span>Delivery Charges:</span>
+            <span>&#8377; 20</span>
+        </div>
+        <div class="total" style="display: flex; justify-content: space-between; padding: 5px 0; font-weight: bold;">
+            <span>Tax:</span>
+            <span>&#8377; 20</span>
+        </div>
+        <div class="total" style="display: flex; justify-content: space-between; padding: 5px 0; font-weight: bold;">
+            <span>Discount:</span>
+            <span>&#8377; <span id="discountAmount">0</span></span>
+        </div>
+        <div class="total" style="color:#28a745; display: flex; justify-content: space-between; padding: 5px 0; font-size: 2em; font-weight: bold;">
+            <span>Total Amount:</span>
+            <span>&#8377; <span id="totalAmount">0</span></span>
+        </div>
+        <input type="text" id="couponCode" placeholder="Enter Coupon Code" style="
+            width: calc(100% - 24px); 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            font-size: 16px;
+        " />
+        <button id="applyCoupon" style="
+            width: 100%; 
+            padding: 10px; 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Apply Coupon</button>
+        <button id="confirmPurchase" style="
+            width: 100%; 
+            padding: 10px; 
+            background-color: #008CBA; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease; 
+            margin-top: 10px;
+        " onmouseover="this.style.backgroundColor='#007bb5'" onmouseout="this.style.backgroundColor='#008CBA'">Confirm Purchase</button>
+    </div>
+    
+        
+    </div>
+        
     </div>
 
-    <script>
-        function updateCartItemQuantity(itemIndex, newQuantity) {
-            const storedCart = localStorage.getItem('cart');
-            if (storedCart) {
-                const listCarts = JSON.parse(storedCart);
-                if (itemIndex >= 0 && itemIndex < listCarts.length) {
-                    listCarts[itemIndex].quantity = newQuantity;
-                    localStorage.setItem('cart', JSON.stringify(listCarts));
-                    loadCart();
-                }
-            }
-        }
-
-        function deleteCartItem(itemIndex) {
-            const storedCart = localStorage.getItem('cart');
-            if (storedCart) {
-                const listCarts = JSON.parse(storedCart);
-                if (itemIndex >= 0 && itemIndex < listCarts.length) {
-                    listCarts.splice(itemIndex, 1);
-                    localStorage.setItem('cart', JSON.stringify(listCarts));
-                    loadCart();
-                }
-            }
-        }
-
-        function loadCart() {
-            const checkoutList = document.getElementById('checkoutList');
-            const totalAmount = document.getElementById('totalAmount');
-            checkoutList.innerHTML = ''; // Clear the list first
-            
-            const storedCart = localStorage.getItem('cart');
-            if (storedCart) {
-                const listCarts = JSON.parse(storedCart);
-                let totalPrice = 0;
-
-                listCarts.forEach((item, index) => {
-                    if (item) {
-                        const itemDiv = document.createElement('div');
-                        itemDiv.className = 'checkout-item';
-                        itemDiv.innerHTML = `
-                            <img src="${item.image}" alt="${item.name}">
-                            <div>${item.name}</div>
-                            <div>Price: $${item.price.toFixed(2)}</div>
-                            <div class="quantity-controls">
-                                <button onclick="updateCartItemQuantity(${index}, ${item.quantity - 1})" ${item.quantity <= 1 ? 'disabled' : ''}>-</button>
-                                <input type="text" value="${item.quantity}" readonly>
-                                <button onclick="updateCartItemQuantity(${index}, ${item.quantity + 1})">+</button>
-                            </div>
-                            <div>Total: $${(item.price * item.quantity).toFixed(2)}</div>
-                            <button class="delete-button" onclick="deleteCartItem(${index})">Delete</button>
-                        `;
-                        checkoutList.appendChild(itemDiv);
-                        totalPrice += item.price * item.quantity;
-                    }
-                });
-
-                totalAmount.textContent = totalPrice.toFixed(2);
-            }
-        }
-
-        document.getElementById('confirmPurchase').addEventListener('click', () => {
-            // Handle purchase confirmation logic here
-            alert('Purchase Confirmed!');
-            localStorage.removeItem('cart'); // Clear cart after purchase
-            window.location.href = 'index.html'; // Redirect to homepage or another page
-        });
-
-        // Load cart data when the page loads
-        loadCart();
-    </script>
-      <Footer>
+    <footer>
         <div class="Footer_container">
-            <div >
-                <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" style="width: 100px;"><br>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13748.700537259449!2d76.6597778!3d30.5160865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1722535334365!5m2!1sen!2sin" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                
-            </div>
             <div class="links_content">
-                <h2>Links</h1>
-                    <ul>
-                        <li><button>Home</button></li><br>
-                        <li><button>Menu</button></li><br>
-                        <li><button>Our Story</button></li><br>
-                        <li><button>Contact us</button></li>
-                    </ul>
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
             <div class="About">
-                <h2>About</h2><br>
+                <h3>About</h3>
                 <ul>
-                    <li><img src="images/icons8-location-48.png" alt="" srcset=""><p>Chandigarh-Patiala National Highway (NH-64)
-                        Punjab- 140 401, India</p></li><br>
-                    <li><img src="images/icons8-phonecall-100.png" alt="" srcset=""><p>+91 98274 ****3 ,+91 86778 ****0</p></li><br>
-                    <li><img src="images/icons8-sent-64.png" alt="" srcset=""><p>TheNineTailRestro@X</p></li><br>
+                    <li><img src="images/about-icon.png" alt="About Icon"><p>Our Story</p></li>
+                    <li><img src="images/location-icon.png" alt="Location Icon"><p>Our Location</p></li>
                 </ul>
-    
             </div>
         </div>
-    </Footer>
+    </footer>
+
+    <script>
+
+    document.getElementById('addressForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const fullName = document.getElementById('fullName').value;
+        const addressLine1 = document.getElementById('addressLine1').value;
+        const addressLine2 = document.getElementById('addressLine2').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zipCode = document.getElementById('zipCode').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+
+        // Structured display of address
+        let formattedAddress = {
+            fullName: fullName,
+            addressLine1: addressLine1,
+            addressLine2: addressLine2,
+            city: city,
+            state: state,
+            zipCode: zipCode,
+            phoneNumber: phoneNumber
+        };
+
+        // Save address in localStorage
+        localStorage.setItem('savedAddress', JSON.stringify(formattedAddress));
+
+        // Display the formatted address
+        document.getElementById('addressDisplay').innerHTML = `
+            <strong>${formattedAddress.fullName}</strong><br>
+            ${formattedAddress.addressLine1}<br>
+            ${formattedAddress.addressLine2 ? formattedAddress.addressLine2 + '<br>' : ''}
+            ${formattedAddress.city}, ${formattedAddress.state} ${formattedAddress.zipCode}<br>
+            <strong>Phone:</strong> ${formattedAddress.phoneNumber}
+        `;
+
+        // Show the saved address section
+        document.getElementById('savedAddress').style.display = 'block';
+    });
+
+    // Function to load saved address and display it on the page
+    function loadSavedAddress() {
+        const storedAddress = localStorage.getItem('savedAddress');
+        if (storedAddress) {
+            const address = JSON.parse(storedAddress);
+            document.getElementById('addressDisplay').innerHTML = `
+                <strong>${address.fullName}</strong><br>
+                ${address.addressLine1}<br>
+                ${address.addressLine2 ? address.addressLine2 + '<br>' : ''}
+                ${address.city}, ${address.state} ${address.zipCode}<br>
+                <strong>Phone:</strong> ${address.phoneNumber}
+            `;
+            document.getElementById('savedAddress').style.display = 'block';
+        }
+    }
+
+    const states = ["Punjab", "Delhi", "Maharashtra","Uttar Pradesh"];
+    const stateSelect = document.getElementById('state');
+    states.forEach(state => {
+        const option = document.createElement('option');
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+    });
+
+    // Call loadSavedAddress when the page loads
+    window.onload = function() {
+        loadCart();
+        loadSavedAddress();
+    };
+
+    document.getElementById('confirmPurchase').addEventListener('click', () => {
+        // Get saved cart and address data
+        const storedCart = localStorage.getItem('cart');
+        const storedAddress = localStorage.getItem('savedAddress');
+
+        if (storedCart && storedAddress) {
+            // Handle purchase confirmation logic here
+            console.log('Cart:', JSON.parse(storedCart));
+            console.log('Address:', JSON.parse(storedAddress));
+            alert('Purchase Confirmed!');
+
+            // Clear cart and address after purchase
+            localStorage.removeItem('cart');
+            localStorage.removeItem('savedAddress');
+            window.location.href = 'index.html'; // Redirect to homepage or another page
+        } else {
+            alert('Please ensure both the cart and address are filled.');
+        }
+    });
+
+    function updateCartItemQuantity(itemIndex, newQuantity) {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+            const listCarts = JSON.parse(storedCart);
+            if (itemIndex >= 0 && itemIndex < listCarts.length) {
+                listCarts[itemIndex].quantity = newQuantity;
+                localStorage.setItem('cart', JSON.stringify(listCarts));
+                loadCart();
+            }
+        }
+    }
+
+    function deleteCartItem(itemIndex) {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+            const listCarts = JSON.parse(storedCart);
+            if (itemIndex >= 0 && itemIndex < listCarts.length) {
+                listCarts.splice(itemIndex, 1);
+                localStorage.setItem('cart', JSON.stringify(listCarts));
+                loadCart();
+            }
+        }
+    }
+
+    function loadCart() {
+        const checkoutList = document.getElementById('checkoutList');
+        const totalAmount = document.getElementById('totalAmount');
+        const deliveryCharges = 20; // Fixed delivery charge
+        const taxAmount = 20; // Fixed tax amount
+        
+        checkoutList.innerHTML = ''; // Clear the list first
+
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+            const listCarts = JSON.parse(storedCart);
+            let totalPrice = 0;
+
+            listCarts.forEach((item, index) => {
+                if (item) {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'checkout-item';
+                    itemDiv.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div>${item.name}</div>
+                        <div>Price: &#8377;${item.price.toFixed(2)}</div>
+                        <div class="quantity-controls">
+                            <button onclick="updateCartItemQuantity(${index}, ${item.quantity - 1})" ${item.quantity <= 1 ? 'disabled' : ''}>-</button>
+                            <input type="text" value="${item.quantity}" readonly>
+                            <button onclick="updateCartItemQuantity(${index}, ${item.quantity + 1})">+</button>
+                        </div>
+                        <div>Total: &#8377;${(item.price * item.quantity).toFixed(2)}</div>
+                        <button class="delete-button" onclick="deleteCartItem(${index})">Delete</button>
+                    `;
+                    checkoutList.appendChild(itemDiv);
+                    totalPrice += item.price * item.quantity;
+                }
+            });
+
+            const finalTotal = totalPrice + deliveryCharges + taxAmount;
+            totalAmount.textContent = finalTotal.toFixed(2);
+        }
+    }
+
+    document.getElementById('applyCoupon').addEventListener('click', () => {
+        const couponCode = document.getElementById('couponCode').value;
+        const discountAmountElement = document.getElementById('discountAmount');
+        const totalAmountElement = document.getElementById('totalAmount');
+        
+        let currentTotal = parseFloat(totalAmountElement.textContent);
+        let discount = 0;
+
+        if (couponCode === 'JOSH100') {
+            discount = 100; // Discount amount
+            discountAmountElement.textContent = discount; // Update displayed discount
+            alert(`Coupon applied! You saved ₹${discount.toFixed(2)}.`);
+        } else {
+            alert('Invalid coupon code');
+            discountAmountElement.textContent = 0; // Reset discount if code is invalid
+        }
+
+        // Update total amount after applying discount
+        const finalTotal = currentTotal - discount;
+        totalAmountElement.textContent = finalTotal.toFixed(2);
+
+        
+    });
+
+    // Load cart data when the page loads
+    loadCart();
+
+
+    </script>
+    
 </body>
 </html>
-
