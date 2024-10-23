@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE-NINE-TAILS-KITCHEN</title>
+    <link
+            rel="icon"
+            href=
+"logonew.png"
+            type="image/x-icon"
+        />
+<style>
+  body{
+      background-color: #fbf5e5;
+      margin: 0;
+      padding: 0;
+      display: flex; 
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: space-between;
+      overflow-x: hidden;
+      overflow-y:visible;
+      
+    }
+    .navlist li h1 a:hover{
+
+  width: auto;
+  color: rgb(212, 24, 149);
+  }
+  .navbar{
+            margin: 1rem 10rem 2rem 10rem ;
+        }
+        .navlist{
+            padding-left: 0px;
+            display:flex;
+            justify-content: center;
+        }
+        .navlist li{
+            align-content: center;
+            width: 500px;
+            /* margin-left: 40px; */
+            margin-right: 40px;
+            list-style: none;
+            font-size: 15px;
+        }
+
+        .logo{
+            margin-right: 5rem;
+            margin-left: 5rem;
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .navlist li a{
+            
+            text-decoration: none;
+            color: black;
+        }
+.svg-container {
+position: absolute;
+right: 0;
+width: 500px;
+height: 650px;
+display: flex;
+align-items: center;
+display: block;
+overflow: hidden;
+top: 40px;
+z-index: -1;
+}
+
+
+.svg-container img {
+  width: 500px;
+  object-fit: cover;
+  animation: moveSVG 5s ease-in-out infinite;
+  max-width:max-content;
+  overflow: hidden;
+  margin-top: 6rem;
+  margin-left: 100px;
+}
+
+.svg2-container{
+  position: absolute;
+  left: -170px;
+  width: 150px;
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  display: block;
+}
+
+.svg2-container img {
+    width: 500px;
+    height: auto;
+    animation: moveSVG 5s ease-in-out infinite;
+    max-width: max-content;
+    position: relative;
+    margin-top: -70px;
+    z-index: -1;
+}
+
+    @keyframes moveSVG {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-20px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .moresvg {
+      text-align: center;
+      margin-top: -50px; 
+    }
+
+    .moresvg img {
+      width: 200px;
+    }
+    .header p{
+      font-size: large;
+
+    }
+    .subheader h1{
+      font-size: xx-large;
+    }
+    .box a{
+      text-decoration: none;
+    }
+.end-cover {
+	--b: 1em; /* border width */
+	--c: 8em; /* corner size */
+	--r: 3em; /* corner rounding */
+	position: relative;
+	margin: 3em auto;
+	border: solid var(--b) transparent;
+	padding: 1em;
+	max-width: 70%;
+	font: 1.25em , sans-serif;
+	
+  &::before {
+		position: absolute;
+		z-index: -1;
+		inset: calc(-1*var(--b));
+		border: inherit;
+		border-radius: var(--r);
+		background: linear-gradient(orange, deeppink, purple) border-box;
+		--corner: 
+			conic-gradient(from -90deg at var(--c) var(--c), red 25%, #0000 0) 
+				0 0/ calc(100% - var(--c))  calc(100% - var(--c)) border-box;
+		--inner: conic-gradient(red 0 0) padding-box;
+		-webkit-mask: var(--corner), var(--inner);
+						mask: var(--corner) subtract, var(--inner);
+		content: ''
+	}
+  
+}
+.end-cover video {
+  width: 100%;
+  height: auto;
+}
+
+
+.button {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  top: -1px;
+  margin: auto;
+  width: 128px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #000000 0%, #40c9ff 100% );
+  z-index: -1;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after {
+  filter: blur(30px);
+}
+
+.button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.button:active::before {
+  scale: 0.7;
+}
+.card {
+  width: fit-content;
+  height: fit-content;
+  background-color:#fbf5e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.tn-atom__img {
+  width: 200px;
+  height: 150px;
+}
+footer{
+            background-image: url(images/footer\ for\ anime\ restraunt.png);
+            margin: 10px;
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            padding: 20px; /* Adjust padding as needed */
+            color: white; /* Text color on top of the image */
+        }
+        .Footer_container {
+            display: flex;
+            gap: 5rem;
+            backdrop-filter: blur(4px) saturate(188%);
+            -webkit-backdrop-filter: blur(4px) saturate(188%);
+            background-color: rgba(68, 65, 54, 0.603);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.241);
+            margin-left: 30px;
+            margin-right: 70vh;
+            padding: 20px;
+            }
+
+            .links_content ul,
+            .About ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
+
+            .links_content ul li,
+            .About ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            }
+
+            .About img {
+            width: 20px;
+            margin-right: 10px;
+            }
+
+            .About p {
+            margin: 0;
+            }
+    @media (min-height: 1300px) {
+            footer{
+                min-height: 200px;
+            }
+            .moresvg img {
+              width: 250px;
+            }
+            .header p{
+              font-size: 40px;
+            }
+            .subheader h1{
+              font-size: 50px;
+            }
+            .end-cover{
+              margin-top: 150px;
+            }
+            .svg-container {
+              width: 700px;
+              height: 900px;
+            }
+              .svg-container img {
+                width: 700px;
+                
+              }
+              .svg2-container{
+                left: -140px;
+                width: 850px;
+                
+              }
+              .svg2-container img {
+                  width: 750px;
+              }
+    }
+    @media (max-width: 1366px) {
+            .navlist li img{
+                margin-left: 0px;
+                margin-right: 0px;
+                max-width: 150px;
+            }
+            .text-content p {
+                font-size: 20px;
+            }
+            .text-content h1{
+                font-size: 60px;
+            }
+            .image-content{
+                width: 500px;
+            }
+            footer{
+                max-height: 350px;
+                padding: 5px;
+            }
+            .Footer_container{
+                max-height: 200px;
+                padding: 3px;
+            }
+            .Footer_container .logo{
+                max-width: 80px;
+        
+            }
+            .Footer_container iframe{
+                max-height: 100px;
+    
+            }
+            .Footer_container h2{
+                font-size: 15px;
+            }
+            .About{
+                max-height:180px ;
+            }
+            .links_content button{
+                margin: 0;
+                font-size: 10px;
+            }
+            .About p{
+                font-size: 10px;
+            }
+            .About li{
+                margin: 0;
+            }
+            .end-cover{
+              margin-top: 150px;
+            }
+            
+        }
+
+
+
+</style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+            <div class="navContent" >
+                <div class="pointer">
+                <ul class="navlist">
+                    <li><h1><a href="index.html">Home</a></h1></li>
+                    <li><h1><a href="menu.html">Menu</a></h1></li>
+                    <li><h1><a href="newlogin.html">Login/Signup</a></h1></li>
+                    <li>
+                        <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" alt="" class="logo" >
+                    </li>
+                    <li><h1><a href="OurStory.html">Our Story</a></h1></li>
+                    <li><h1> <a href="ContactUs.html">Contact us</a></h1></li>
+                    <li><h1><a href="guest.html">For guests</a></h1></li>
+                </ul>
+                </div>
+            </div>
+    </nav>
+</header>
+<section1>
+  <div class="First-container" >
+      <div class="svg-container">
+        <img src="https://static.tildacdn.com/tild3631-3464-4534-b234-363539663736/Vector.svg" alt="SVG Logo">
+    </div>
+    <div class="svg2-container" >
+        <img src="https://static.tildacdn.com/tild3135-6339-4338-a161-653430623733/Group_2922.svg" alt="SVG 2 LOGO">
+    </div>
+    <div class="First-Content">
+      <center>
+        <div class="header">
+            <h1 style=" color: orangered;  border: 3px solid black;  padding: 2px 5px;  border-radius: 20px;  background-color: #fff5e1;  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);  font-family:'Times New Roman', Times, serif;  font-size: 36px; text-align: center; letter-spacing: 2px;font-weight: bold; object-fit: contain; display: inline-block;"> THE NINE-TAILS KITCHEN</h1><br>
+          
+            <p>█▓▒▒░░░ YOU HAVE WATCHED IT <br> NOW YOU CAN TASTE IT ░░░▒▒▓█</p><br>
+        </div>
+        <div class="subheader">
+            <h1>🅱🆁🅸🅽🅶🅸🅽🅶 🅰🅽🅸🅼🅴 <br> 🅵🅾🅾🅳  🆃🅾  🅻🅸🅵🅴💟</h1>
+            </div>
+            <a href="menu.html" class="button-link" style=" text-decoration: none;">
+              <button class="button" style=" color: #de719e;">
+                MENU
+              </button>
+            </a>
+          </div>
+
+        <div class="moresvg">
+            <img src="https://static.tildacdn.com/tild6466-3561-4861-b061-386135343631/Vector-2.svg" alt="svg3">
+        </div>
+  </center>
+    </div>
+  </div>
+
+</section1>
+  <div class="section2">
+    <div class="end-cover">
+      <video autoplay muted loop plays-inline class = "backgroundvideo">
+        <source src = "https://dl.dropboxusercontent.com/s/ol94rl37gaeagx8/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE-%D1%80%D0%B0%D0%BC%D0%B5%D0%BD.mp4?dl=0" type = "video/mp4">
+      </video>
+    </div>
+
+
+    <iframe style="width: 100%;height: 100vh;border: none;" src="gallary.html" class="gallary-container" scrolling="no"></iframe>
+
+
+  <center>
+  <div class="info" style="font-size: smaller; margin-left: 100px; margin-right: 100px;">
+    <h1>𝐖𝐇𝐄𝐓𝐇𝐄𝐑 𝐘𝐎𝐔'𝐑𝐄 𝐕𝐀𝐂𝐀𝐓𝐈𝐎𝐍𝐈𝐍𝐆 𝐀𝐋𝐎𝐍𝐄, <br>𝐎𝐔𝐓 𝐖𝐈𝐓𝐇 𝐅𝐑𝐈𝐄𝐍𝐃𝐒, <br>𝐎𝐑 𝐏𝐋𝐀𝐍𝐍𝐈𝐍𝐆 𝐀 𝐇𝐎𝐋𝐈𝐃𝐀𝐘 𝐏𝐀𝐑𝐓𝐘,<br> 𝐖𝐄'𝐑𝐄 𝐒𝐔𝐑𝐄 𝐖𝐄 𝐂𝐀𝐍 𝐀𝐂𝐂𝐎𝐌𝐌𝐎𝐃𝐀𝐓𝐄 𝐘𝐎𝐔👍</h1>
+    <p style="font-size: larger;">After all hospitality is what we do !</p>
+  </div><br>
+  <a href="#" class="button-link" style="text-decoration: none;">
+    <button class="button" style=" z-index: 1;">
+      BOOK NOW !
+    </button>
+  </a>
+
+  
+
+</center>
+  <div class="end-cover1" style="display: flex; justify-content: center; margin-top: 20px;">
+    <div class="col" style="display: flex; justify-content: center; align-items: center; width: 100%; overflow: hidden; margin-top: -200px; z-index: -1;">
+        <img src="groupnew.png" style="width: 100%; height: auto;" alt="groupnew">
+    </div>
+</div>
+</body>
+<Footer>
+    <div class="Footer_container">
+        <div >
+            <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" style="width: 100px;"><br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13748.700537259449!2d76.6597778!3d30.5160865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1722535334365!5m2!1sen!2sin" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+        </div>
+        <div class="links_content">
+            <h2>Links</h1>
+                <ul>
+                    <li><button>Home</button></li><br>
+                    <li><button>Menu</button></li><br>
+                    <li><button>Our Story</button></li><br>
+                    <li><button>Contact us</button></li>
+                </ul>
+        </div>
+        <div class="About">
+            <h2>About</h2><br>
+            <ul>
+                <li><img src="images/icons8-location-48.png" alt="" srcset=""><p>Chandigarh-Patiala National Highway (NH-64)
+                    Punjab- 140 401, India</p></li><br>
+                <li><img src="images/icons8-phonecall-100.png" alt="" srcset=""><p>+91 98274 ****3 ,+91 86778 ****0</p></li><br>
+                <li><img src="images/icons8-sent-64.png" alt="" srcset=""><p>TheNineTailRestro@X</p></li><br>
+            </ul>
+
+        </div>
+    </div>
+</Footer>
+</html>
