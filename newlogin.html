@@ -298,48 +298,87 @@
         text-decoration: underline;
     }
     footer{
-        background-image: url(images/footer\ for\ anime\ restraunt.png);
-        margin: 10px;
-        background-size: cover; /* Ensures the image covers the entire background */
-        background-position: center; /* Centers the background image */
-        background-repeat: no-repeat; /* Prevents the image from repeating */
-        padding: 20px; /* Adjust padding as needed */
-        color: white; /* Text color on top of the image */
-    }
-    .Footer_container {
-        display: flex;
-        gap: 5rem;
-        backdrop-filter: blur(4px) saturate(188%);
-        -webkit-backdrop-filter: blur(4px) saturate(188%);
-        background-color: rgba(255, 0, 0, 0.5); /* Reddish tint for glassmorphism */
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.241);
-        margin-left: 30px;
-        margin-right: 70vh;
-        padding: 20px;
-    }
+            background-image: url(images/footer\ for\ anime\ restraunt.png);
+            margin: 10px;
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            padding: 20px; /* Adjust padding as needed */
+            color: white; /* Text color on top of the image */
+        }
+        .Footer_container {
+            display: flex;
+            gap: 5rem;
+            backdrop-filter: blur(4px) saturate(188%);
+            -webkit-backdrop-filter: blur(4px) saturate(188%);
+            background-color: rgba(68, 65, 54, 0.603);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.241);
+            margin-left: 30px;
+            margin-right: 70vh;
+            padding: 20px;
+            }
+
+            .links_content ul,
+            .About ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
+
+            .links_content ul li,
+            .About ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            }
+
+            .About img {
+            width: 20px;
+            margin-right: 10px;
+            }
+
+            .About p {
+            margin: 0;
+            }
+@media(max-width: 1366px);{
+            footer{
+                max-height: 350px;
+                padding: 5px;
+            }
+            .Footer_container{
+                max-height: 200px;
+                padding: 3px;
+            }
+            .Footer_container .logo{
+                max-width: 80px;
+        
+            }
+            .Footer_container iframe{
+                max-height: 100px;
     
-    .links_content ul,
-    .social_content ul {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        gap: 10px;
-    }
-    
-    .social_content {
-        display: flex;
-        flex-direction: column;
-    }
-    .links_content {
-        display: flex;
-        flex-direction: column;
-    }
-    .links_content ul li,
-    .social_content ul li {
-        list-style: none;
-        font-size: 20px;
-    }
+            }
+            .Footer_container h2{
+                font-size: 15px;
+            }
+            .About{
+                max-height:180px ;
+            }
+            .links_content button{
+                margin: 0;
+                font-size: 10px;
+            }
+            .About p{
+                font-size: 10px;
+            }
+            .About li{
+                margin: 0;
+            }
+            .end-cover{
+              margin-top: 150px;
+            }
+            
+        }
 </style>
     
 </head>
@@ -472,7 +511,7 @@
     
     </center>
 
-    <footer>
+    <Footer>
         <div class="Footer_container">
             <div >
                 <img class="logo" src="images/THE NINE-TAILS KITCHEN (1).png" style="width: 100px;"><br>
@@ -493,13 +532,13 @@
                 <ul>
                     <li><img src="images/icons8-location-48.png" alt="" srcset=""><p>Chandigarh-Patiala National Highway (NH-64)
                         Punjab- 140 401, India</p></li><br>
-                    <li><img src="images/icons8-phonecall-100.png" alt="" srcset=""><p>+91 98274 ****3 ,+91 86778 ****0</p></li><br>
+                    <li><img src="images/icons8-phonecall-100.png" alt="" srcset=""><p>+91 98274 *3 ,+91 86778 ***0</p></li><br>
                     <li><img src="images/icons8-sent-64.png" alt="" srcset=""><p>TheNineTailRestro@X</p></li><br>
                 </ul>
     
             </div>
         </div>
-    </footer>
+    </Footer>
     <script>
         // Simulated backend database (for demo purposes)
         var backend = {
