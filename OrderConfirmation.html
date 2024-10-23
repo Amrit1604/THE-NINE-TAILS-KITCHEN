@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Confirmation - The Nine Tails Kitchen</title>
     <style>
-  body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #faf5e5;
             margin: 0;
@@ -115,7 +115,7 @@
             <p><strong>Order Date:</strong> <span id="orderDate"></span></p>
             <p><strong>Estimated Delivery:</strong> <span id="estimatedDelivery"></span></p>
         </div>
-        <div id="shippingAddress"></div> <!-- Added for displaying shipping address -->
+        <div id="shippingAddress"></div>
         <div class="order-items">
             <h2>Order Summary</h2>
             <div id="orderItemsList"></div>
@@ -134,7 +134,7 @@
         function generateOrderNumber() {
             return Math.floor(100000 + Math.random() * 900000);
         }
-        
+
         function formatDate(date) {
             return date.toLocaleString('en-US', { 
                 year: 'numeric', 
@@ -144,30 +144,30 @@
                 minute: '2-digit'
             });
         }
-        
+
         function getEstimatedDelivery() {
             const now = new Date();
             now.setMinutes(now.getMinutes() + 30);
             return formatDate(now);
         }
-        
+
         function loadOrderDetails() {
             const orderNumber = generateOrderNumber();
             const orderDate = new Date();
             const estimatedDelivery = getEstimatedDelivery();
-        
+
             // Display order number, date, and estimated delivery
             document.getElementById('orderNumber').textContent = orderNumber;
             document.getElementById('orderDate').textContent = formatDate(orderDate);
             document.getElementById('estimatedDelivery').textContent = estimatedDelivery;
-        
+
             // Get the order data from localStorage
             const orderData = localStorage.getItem('orderData');
             if (orderData) {
                 const { cart, address } = JSON.parse(orderData);
                 const orderItemsList = document.getElementById('orderItemsList');
                 let totalAmount = 0;
-        
+
                 // Display address details
                 document.getElementById('shippingAddress').innerHTML = `
                     <h3>Shipping Address:</h3>
@@ -177,7 +177,7 @@
                        ${address.city}, ${address.state} ${address.zipCode}<br>
                        <strong>Phone:</strong> ${address.phoneNumber}</p>
                 `;
-        
+
                 // Display each cart item in the order
                 cart.forEach(item => {
                     if (item) {
@@ -185,7 +185,7 @@
                         itemDiv.className = 'order-item';
                         itemDiv.innerHTML = `
                             <div>
-                                <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;">
+                                <img src="${item.image}" alt="${item.name}">
                                 ${item.name} x ${item.quantity}
                             </div>
                             <div>₹${(item.price * item.quantity).toFixed(2)}</div>
@@ -194,14 +194,16 @@
                         totalAmount += item.price * item.quantity;
                     }
                 });
-        
+
                 // Display total amount
                 document.getElementById('totalAmount').textContent = `₹${totalAmount.toFixed(2)}`;
             } else {
-                document.getElementById('orderDetails').innerText = "No order data found.";
+                document.getElementById('shippingAddress').innerHTML = `<h3>No order data found.</h3>`;
+                document.getElementById('orderItemsList').innerHTML = `<p>Your cart is empty.</p>`;
+                document.getElementById('totalAmount').textContent = '₹0.00';
             }
         }
-        
+
         // Load order details when the page loads
         window.onload = loadOrderDetails;
     </script>
