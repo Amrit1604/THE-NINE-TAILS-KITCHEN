@@ -228,7 +228,7 @@ footer{
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        form {
+        .addressForm {
             width: 100%; /* Full width */
             max-width: 800px; /* Set maximum width */
             padding: 20px;
@@ -285,6 +285,118 @@ footer{
     }
 }
 
+.bg-div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Ensures it's above all other content */
+            display: none; /* Initially hidden */
+        }
+
+        /* Main content div for the payment form */
+        .main-div {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            height: auto; /* Auto-adjusts based on content */
+            max-width: 600px;
+            max-height: 80vh; /* Restricting max height */
+            overflow-y: auto; /* Enables scrolling if content exceeds height */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        /* Styling the close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Button for payment options */
+        .payment-option {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #c5cacf;
+            box-shadow: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Arrow icon */
+        .payment-option::after {
+            content: "▼";
+            font-size: 16px;
+            color: white;
+        }
+
+        .payment-option:hover {
+            background-color: #6a6c66;
+        }
+
+        /* Form input styling */
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #218838;
+        }
+
+        /* Hide the payment forms initially */
+        .payment-form {
+            display: none;
+        }
+
+        .pay-img{
+            margin-left: 10px;
+            width: 40px;
+        }
+
+        /* Responsive behavior */
+        @media (max-width: 768px) {
+            .main-div {
+                max-width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -419,6 +531,90 @@ footer{
     </div>
         
     </div>
+    <div class="bg-div" id="bg-div">
+        <div class="main-div">
+            <h2>Payment Options</h2>
+
+            <!-- Payment Options as buttons -->
+            <button class="payment-option" onclick="showForm('credit-card')">
+                <div>Credit Card
+                    <img src="https://www.svgrepo.com/show/514094/credit-card.svg" alt="" class="pay-img">
+                </div></button>
+            <button class="payment-option" onclick="showForm('debit-card')">
+                <div>
+                    Debit Card
+                    <img src="https://www.svgrepo.com/show/452128/visa.svg" alt="" class="pay-img">
+                </div></button>
+            <button class="payment-option" onclick="showForm('upi')">
+                <div>
+                    UPI
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upi-icon.png" alt="" class="pay-img">
+                </div></button>
+            <button class="payment-option" onclick="showForm('cod')">
+                <div>
+                    Cash on Delivery (COD)
+                    <img src="https://www.svgrepo.com/show/269525/deliver-bike.svg" alt="" class="pay-img">
+                </div></button>
+
+            <!-- Credit Card Form -->
+            <form id="credit-card" class="payment-form">
+                <h3>Credit Card Payment</h3>
+                <label for="credit-card-name">Cardholder Name:</label>
+                <input type="text" id="credit-card-name" name="credit-card-name" required><br>
+
+                <label for="credit-card-number">Card Number:</label>
+                <input type="text" id="credit-card-number" name="credit-card-number" required><br>
+
+                <label for="credit-exp-date">Expiration Date:</label>
+                <input type="text" id="credit-exp-date" name="credit-exp-date" required><br>
+
+                <label for="credit-cvv">CVV:</label>
+                <input type="password" id="credit-cvv" name="credit-cvv" required><br>
+
+                <button type="submit">Pay Now</button>
+            </form>
+
+            <!-- Debit Card Form -->
+            <form id="debit-card" class="payment-form">
+                <h3>Debit Card Payment</h3>
+                <label for="debit-card-name">Cardholder Name:</label>
+                <input type="text" id="debit-card-name" name="debit-card-name" required><br>
+
+                <label for="debit-card-number">Card Number:</label>
+                <input type="text" id="debit-card-number" name="debit-card-number" required><br>
+
+                <label for="debit-exp-date">Expiration Date:</label>
+                <input type="text" id="debit-exp-date" name="debit-exp-date" required><br>
+
+                <label for="debit-cvv">CVV:</label>
+                <input type="password" id="debit-cvv" name="debit-cvv" required><br>
+
+                <button type="submit">Pay Now</button>
+            </form>
+
+            <!-- UPI Form -->
+            <form id="upi" class="payment-form">
+                <h3>UPI Payment</h3>
+                <label for="upi-id">UPI ID:</label>
+                <input type="text" id="upi-id" name="upi-id" required><br>
+
+                <button type="submit">Pay Now</button>
+            </form>
+
+            <!-- COD Option -->
+            <form id="cod" class="payment-form">
+                <h3>Cash on Delivery</h3>
+                <p>Pay when your order arrives at your doorstep!</p>
+
+                <button type="submit">Confirm Order</button>
+            </form>
+
+            <button class="close-btn" id="close-btn">Close</button>
+        </div>
+    </div>
+
+
+
 
     <footer>
         <div class="Footer_container">
@@ -513,24 +709,26 @@ footer{
     };
 
     document.getElementById('confirmPurchase').addEventListener('click', () => {
-        // Get saved cart and address data
-        const storedCart = localStorage.getItem('cart');
-        const storedAddress = localStorage.getItem('savedAddress');
+    // Get saved cart and address data
+    const storedCart = localStorage.getItem('cart');
+    const storedAddress = localStorage.getItem('savedAddress');
 
-        if (storedCart && storedAddress) {
-            // Handle purchase confirmation logic here
-            console.log('Cart:', JSON.parse(storedCart));
-            console.log('Address:', JSON.parse(storedAddress));
-            alert('Purchase Confirmed!');
+    if (storedCart && storedAddress) {
+        // Handle purchase confirmation logic here
+        console.log('Cart:', JSON.parse(storedCart));
+        console.log('Address:', JSON.parse(storedAddress));       
 
-            // Clear cart and address after purchase
-            localStorage.removeItem('cart');
-            localStorage.removeItem('savedAddress');
-            window.location.href = 'index.html'; // Redirect to homepage or another page
-        } else {
-            alert('Please ensure both the cart and address are filled.');
-        }
-    });
+        alert('Purchase Confirmed!');
+
+        // Clear cart and address after purchase
+        localStorage.removeItem('cart');
+        localStorage.removeItem('savedAddress');
+        showPaymentPopup();
+    } else {
+        alert('Please ensure both the cart and address are filled.');
+    }
+});
+
 
     function updateCartItemQuantity(itemIndex, newQuantity) {
         const storedCart = localStorage.getItem('cart');
@@ -618,6 +816,60 @@ footer{
 
         
     });
+     // Show the payment pop-up
+     function showPaymentPopup() {
+            document.getElementById('bg-div').style.display = 'flex';
+        }
+
+        // Close the payment pop-up
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('bg-div').style.display = 'none';
+        });
+
+        // Show selected payment form and hide others
+        function showForm(paymentType) {
+            // Hide all payment forms
+            var forms = document.getElementsByClassName('payment-form');
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = 'none';
+            }
+
+            // Show the selected form
+            document.getElementById(paymentType).style.display = 'block';
+        }
+        function showForm(paymentType) {
+    // Hide all payment forms
+    var forms = document.getElementsByClassName('payment-form');
+    for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = 'none';
+    }
+
+    // Show the selected form
+    document.getElementById(paymentType).style.display = 'block';
+}
+
+// Handle form submissions for all payment types
+function handlePaymentFormSubmission() {
+    // Get all the forms
+    const forms = document.querySelectorAll('.payment-form');
+
+    // Loop through each form and add submit event listener
+    forms.forEach(form => {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Here you can add additional logic for form validation or payment processing
+            // For example, you can validate the form inputs here
+
+            // If payment is successfully processed, redirect to order.html
+            alert('Payment Successful! Redirecting to your order summary...');
+            window.location.href = 'OrderConfirmation.html'; // Redirect to order summary page
+        });
+    });
+}
+
+// Call the handlePaymentFormSubmission function when the page loads
+document.addEventListener('DOMContentLoaded', handlePaymentFormSubmission);
 
     // Load cart data when the page loads
     loadCart();

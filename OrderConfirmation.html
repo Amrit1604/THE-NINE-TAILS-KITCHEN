@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - The Nine Tails Kitchen</title>
+    <style>
+  body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf5e5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .navbar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar img {
+            height: 120px;
+            border-radius: 50%;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #FF6B35;
+            text-align: center;
+        }
+        .order-status {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+        }
+        .order-details, .order-items {
+            margin-bottom: 20px;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .order-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .order-total {
+            font-weight: bold;
+            text-align: right;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-container">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logonew-Ld5Zy9Yl5Ue9Yl1Ld5Zy9.png" alt="The Nine Tails Kitchen Logo">
+    </nav>
+
+    <div class="container">
+        <h1>Order Confirmation</h1>
+        <div class="order-status">
+            <p>Thank you for your order!</p>
+            <p>Order #<span id="orderNumber"></span> has been confirmed.</p>
+        </div>
+        <div class="order-details">
+            <h2>Order Details</h2>
+            <p><strong>Order Date:</strong> <span id="orderDate"></span></p>
+            <p><strong>Estimated Delivery:</strong> <span id="estimatedDelivery"></span></p>
+        </div>
+        <div id="shippingAddress"></div> <!-- Added for displaying shipping address -->
+        <div class="order-items">
+            <h2>Order Summary</h2>
+            <div id="orderItemsList"></div>
+        </div>
+        <div class="order-total">
+            Total: <span id="totalAmount"></span>
+        </div>
+        <a href="#" class="btn" id="trackOrderBtn">Track Order</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 The Nine Tails Kitchen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function generateOrderNumber() {
+            return Math.floor(100000 + Math.random() * 900000);
+        }
+        
+        function formatDate(date) {
+            return date.toLocaleString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit'
+            });
+        }
+        
+        function getEstimatedDelivery() {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() + 30);
+            return formatDate(now);
+        }
+        
+        function loadOrderDetails() {
+            const orderNumber = generateOrderNumber();
+            const orderDate = new Date();
+            const estimatedDelivery = getEstimatedDelivery();
+        
+            // Display order number, date, and estimated delivery
+            document.getElementById('orderNumber').textContent = orderNumber;
+            document.getElementById('orderDate').textContent = formatDate(orderDate);
+            document.getElementById('estimatedDelivery').textContent = estimatedDelivery;
+        
+            // Get the order data from localStorage
+            const orderData = localStorage.getItem('orderData');
+            if (orderData) {
+                const { cart, address } = JSON.parse(orderData);
+                const orderItemsList = document.getElementById('orderItemsList');
+                let totalAmount = 0;
+        
+                // Display address details
+                document.getElementById('shippingAddress').innerHTML = `
+                    <h3>Shipping Address:</h3>
+                    <p>${address.fullName}<br>
+                       ${address.addressLine1}<br>
+                       ${address.addressLine2 || ''}<br>
+                       ${address.city}, ${address.state} ${address.zipCode}<br>
+                       <strong>Phone:</strong> ${address.phoneNumber}</p>
+                `;
+        
+                // Display each cart item in the order
+                cart.forEach(item => {
+                    if (item) {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'order-item';
+                        itemDiv.innerHTML = `
+                            <div>
+                                <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;">
+                                ${item.name} x ${item.quantity}
+                            </div>
+                            <div>₹${(item.price * item.quantity).toFixed(2)}</div>
+                        `;
+                        orderItemsList.appendChild(itemDiv);
+                        totalAmount += item.price * item.quantity;
+                    }
+                });
+        
+                // Display total amount
+                document.getElementById('totalAmount').textContent = `₹${totalAmount.toFixed(2)}`;
+            } else {
+                document.getElementById('orderDetails').innerText = "No order data found.";
+            }
+        }
+        
+        // Load order details when the page loads
+        window.onload = loadOrderDetails;
+    </script>
+</body>
+</html>
