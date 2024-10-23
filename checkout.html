@@ -638,194 +638,198 @@ footer{
     </footer>
 
     <script>
-
-    document.getElementById('addressForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const fullName = document.getElementById('fullName').value;
-        const addressLine1 = document.getElementById('addressLine1').value;
-        const addressLine2 = document.getElementById('addressLine2').value;
-        const city = document.getElementById('city').value;
-        const state = document.getElementById('state').value;
-        const zipCode = document.getElementById('zipCode').value;
-        const phoneNumber = document.getElementById('phoneNumber').value;
-
-        // Structured display of address
-        let formattedAddress = {
-            fullName: fullName,
-            addressLine1: addressLine1,
-            addressLine2: addressLine2,
-            city: city,
-            state: state,
-            zipCode: zipCode,
-            phoneNumber: phoneNumber
-        };
-
-        // Save address in localStorage
-        localStorage.setItem('savedAddress', JSON.stringify(formattedAddress));
-
-        // Display the formatted address
-        document.getElementById('addressDisplay').innerHTML = `
-            <strong>${formattedAddress.fullName}</strong><br>
-            ${formattedAddress.addressLine1}<br>
-            ${formattedAddress.addressLine2 ? formattedAddress.addressLine2 + '<br>' : ''}
-            ${formattedAddress.city}, ${formattedAddress.state} ${formattedAddress.zipCode}<br>
-            <strong>Phone:</strong> ${formattedAddress.phoneNumber}
-        `;
-
-        // Show the saved address section
-        document.getElementById('savedAddress').style.display = 'block';
-    });
-
-    // Function to load saved address and display it on the page
-    function loadSavedAddress() {
-        const storedAddress = localStorage.getItem('savedAddress');
-        if (storedAddress) {
-            const address = JSON.parse(storedAddress);
+        document.getElementById('addressForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const addressLine1 = document.getElementById('addressLine1').value;
+            const addressLine2 = document.getElementById('addressLine2').value;
+            const city = document.getElementById('city').value;
+            const state = document.getElementById('state').value;
+            const zipCode = document.getElementById('zipCode').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+    
+            // Structured display of address
+            let formattedAddress = {
+                fullName: fullName,
+                addressLine1: addressLine1,
+                addressLine2: addressLine2,
+                city: city,
+                state: state,
+                zipCode: zipCode,
+                phoneNumber: phoneNumber
+            };
+    
+            // Save address in localStorage
+            localStorage.setItem('savedAddress', JSON.stringify(formattedAddress));
+    
+            // Display the formatted address
             document.getElementById('addressDisplay').innerHTML = `
-                <strong>${address.fullName}</strong><br>
-                ${address.addressLine1}<br>
-                ${address.addressLine2 ? address.addressLine2 + '<br>' : ''}
-                ${address.city}, ${address.state} ${address.zipCode}<br>
-                <strong>Phone:</strong> ${address.phoneNumber}
+                <strong>${formattedAddress.fullName}</strong><br>
+                ${formattedAddress.addressLine1}<br>
+                ${formattedAddress.addressLine2 ? formattedAddress.addressLine2 + '<br>' : ''}
+                ${formattedAddress.city}, ${formattedAddress.state} ${formattedAddress.zipCode}<br>
+                <strong>Phone:</strong> ${formattedAddress.phoneNumber}
             `;
+    
+            // Show the saved address section
             document.getElementById('savedAddress').style.display = 'block';
-        }
-    }
-
-    const states = ["Punjab", "Delhi", "Maharashtra","Uttar Pradesh"];
-    const stateSelect = document.getElementById('state');
-    states.forEach(state => {
-        const option = document.createElement('option');
-        option.value = state;
-        option.textContent = state;
-        stateSelect.appendChild(option);
-    });
-
-    // Call loadSavedAddress when the page loads
-    window.onload = function() {
-        loadCart();
-        loadSavedAddress();
-    };
-
-    document.getElementById('confirmPurchase').addEventListener('click', () => {
-    // Get saved cart and address data
-    const storedCart = localStorage.getItem('cart');
-    const storedAddress = localStorage.getItem('savedAddress');
-
-    if (storedCart && storedAddress) {
-        // Handle purchase confirmation logic here
-        console.log('Cart:', JSON.parse(storedCart));
-        console.log('Address:', JSON.parse(storedAddress));       
-
-        alert('Purchase Confirmed!');
-
-        // Clear cart and address after purchase
-        localStorage.removeItem('cart');
-        localStorage.removeItem('savedAddress');
-        showPaymentPopup();
-    } else {
-        alert('Please ensure both the cart and address are filled.');
-    }
-});
-
-
-    function updateCartItemQuantity(itemIndex, newQuantity) {
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            const listCarts = JSON.parse(storedCart);
-            if (itemIndex >= 0 && itemIndex < listCarts.length) {
-                listCarts[itemIndex].quantity = newQuantity;
-                localStorage.setItem('cart', JSON.stringify(listCarts));
-                loadCart();
+        });
+    
+        // Function to load saved address and display it on the page
+        function loadSavedAddress() {
+            const storedAddress = localStorage.getItem('savedAddress');
+            if (storedAddress) {
+                const address = JSON.parse(storedAddress);
+                document.getElementById('addressDisplay').innerHTML = `
+                    <strong>${address.fullName}</strong><br>
+                    ${address.addressLine1}<br>
+                    ${address.addressLine2 ? address.addressLine2 + '<br>' : ''}
+                    ${address.city}, ${address.state} ${address.zipCode}<br>
+                    <strong>Phone:</strong> ${address.phoneNumber}
+                `;
+                document.getElementById('savedAddress').style.display = 'block';
             }
         }
-    }
-
-    function deleteCartItem(itemIndex) {
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            const listCarts = JSON.parse(storedCart);
-            if (itemIndex >= 0 && itemIndex < listCarts.length) {
-                listCarts.splice(itemIndex, 1);
-                localStorage.setItem('cart', JSON.stringify(listCarts));
-                loadCart();
+    
+        const states = ["Punjab", "Delhi", "Maharashtra", "Uttar Pradesh"];
+        const stateSelect = document.getElementById('state');
+        states.forEach(state => {
+            const option = document.createElement('option');
+            option.value = state;
+            option.textContent = state;
+            stateSelect.appendChild(option);
+        });
+    
+        // Call loadSavedAddress when the page loads
+        window.onload = function() {
+            loadCart();
+            loadSavedAddress();
+        };
+    
+        document.getElementById('confirmPurchase').addEventListener('click', () => {
+            // Get saved cart and address data
+            const storedCart = localStorage.getItem('cart');
+            const storedAddress = localStorage.getItem('savedAddress');
+    
+            if (storedCart && storedAddress) {
+                // Handle purchase confirmation logic here
+                console.log('Cart:', JSON.parse(storedCart));
+                console.log('Address:', JSON.parse(storedAddress));       
+    
+                // Save order data in localStorage for confirmation page
+                const orderData = {
+                    cart: JSON.parse(storedCart),
+                    address: JSON.parse(storedAddress)
+                };
+                localStorage.setItem('orderData', JSON.stringify(orderData));
+    
+                alert('Purchase Confirmed!');
+    
+                // Clear cart and address after purchase
+                localStorage.removeItem('cart');
+                localStorage.removeItem('savedAddress');
+                showPaymentPopup();
+            } else {
+                alert('Please ensure both the cart and address are filled.');
             }
-        }
-    }
-
-    function loadCart() {
-        const checkoutList = document.getElementById('checkoutList');
-        const totalAmount = document.getElementById('totalAmount');
-        const deliveryCharges = 20; // Fixed delivery charge
-        const taxAmount = 20; // Fixed tax amount
-        
-        checkoutList.innerHTML = ''; // Clear the list first
-
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            const listCarts = JSON.parse(storedCart);
-            let totalPrice = 0;
-
-            listCarts.forEach((item, index) => {
-                if (item) {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'checkout-item';
-                    itemDiv.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}">
-                        <div>${item.name}</div>
-                        <div>Price: &#8377;${item.price.toFixed(2)}</div>
-                        <div class="quantity-controls">
-                            <button onclick="updateCartItemQuantity(${index}, ${item.quantity - 1})" ${item.quantity <= 1 ? 'disabled' : ''}>-</button>
-                            <input type="text" value="${item.quantity}" readonly>
-                            <button onclick="updateCartItemQuantity(${index}, ${item.quantity + 1})">+</button>
-                        </div>
-                        <div>Total: &#8377;${(item.price * item.quantity).toFixed(2)}</div>
-                        <button class="delete-button" onclick="deleteCartItem(${index})">Delete</button>
-                    `;
-                    checkoutList.appendChild(itemDiv);
-                    totalPrice += item.price * item.quantity;
+        });
+    
+        function updateCartItemQuantity(itemIndex, newQuantity) {
+            const storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                const listCarts = JSON.parse(storedCart);
+                if (itemIndex >= 0 && itemIndex < listCarts.length) {
+                    listCarts[itemIndex].quantity = newQuantity;
+                    localStorage.setItem('cart', JSON.stringify(listCarts));
+                    loadCart();
                 }
-            });
-
-            const finalTotal = totalPrice + deliveryCharges + taxAmount;
-            totalAmount.textContent = finalTotal.toFixed(2);
+            }
         }
-    }
-
-    document.getElementById('applyCoupon').addEventListener('click', () => {
-        const couponCode = document.getElementById('couponCode').value;
-        const discountAmountElement = document.getElementById('discountAmount');
-        const totalAmountElement = document.getElementById('totalAmount');
-        
-        let currentTotal = parseFloat(totalAmountElement.textContent);
-        let discount = 0;
-
-        if (couponCode === 'JOSH100') {
-            discount = 100; // Discount amount
-            discountAmountElement.textContent = discount; // Update displayed discount
-            alert(`Coupon applied! You saved ₹${discount.toFixed(2)}.`);
-        } else {
-            alert('Invalid coupon code');
-            discountAmountElement.textContent = 0; // Reset discount if code is invalid
+    
+        function deleteCartItem(itemIndex) {
+            const storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                const listCarts = JSON.parse(storedCart);
+                if (itemIndex >= 0 && itemIndex < listCarts.length) {
+                    listCarts.splice(itemIndex, 1);
+                    localStorage.setItem('cart', JSON.stringify(listCarts));
+                    loadCart();
+                }
+            }
         }
-
-        // Update total amount after applying discount
-        const finalTotal = currentTotal - discount;
-        totalAmountElement.textContent = finalTotal.toFixed(2);
-
-        
-    });
-     // Show the payment pop-up
-     function showPaymentPopup() {
+    
+        function loadCart() {
+            const checkoutList = document.getElementById('checkoutList');
+            const totalAmount = document.getElementById('totalAmount');
+            const deliveryCharges = 20; // Fixed delivery charge
+            const taxAmount = 20; // Fixed tax amount
+            
+            checkoutList.innerHTML = ''; // Clear the list first
+    
+            const storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                const listCarts = JSON.parse(storedCart);
+                let totalPrice = 0;
+    
+                listCarts.forEach((item, index) => {
+                    if (item) {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'checkout-item';
+                        itemDiv.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}">
+                            <div>${item.name}</div>
+                            <div>Price: &#8377;${item.price.toFixed(2)}</div>
+                            <div class="quantity-controls">
+                                <button onclick="updateCartItemQuantity(${index}, ${item.quantity - 1})" ${item.quantity <= 1 ? 'disabled' : ''}>-</button>
+                                <input type="text" value="${item.quantity}" readonly>
+                                <button onclick="updateCartItemQuantity(${index}, ${item.quantity + 1})">+</button>
+                            </div>
+                            <div>Total: &#8377;${(item.price * item.quantity).toFixed(2)}</div>
+                            <button class="delete-button" onclick="deleteCartItem(${index})">Delete</button>
+                        `;
+                        checkoutList.appendChild(itemDiv);
+                        totalPrice += item.price * item.quantity;
+                    }
+                });
+    
+                const finalTotal = totalPrice + deliveryCharges + taxAmount;
+                totalAmount.textContent = finalTotal.toFixed(2);
+            }
+        }
+    
+        document.getElementById('applyCoupon').addEventListener('click', () => {
+            const couponCode = document.getElementById('couponCode').value;
+            const discountAmountElement = document.getElementById('discountAmount');
+            const totalAmountElement = document.getElementById('totalAmount');
+            
+            let currentTotal = parseFloat(totalAmountElement.textContent);
+            let discount = 0;
+    
+            if (couponCode === 'JOSH100') {
+                discount = 100; // Discount amount
+                discountAmountElement.textContent = discount; // Update displayed discount
+                alert(`Coupon applied! You saved ₹${discount.toFixed(2)}.`);
+            } else {
+                alert('Invalid coupon code');
+                discountAmountElement.textContent = 0; // Reset discount if code is invalid
+            }
+    
+            // Update total amount after applying discount
+            const finalTotal = currentTotal - discount;
+            totalAmountElement.textContent = finalTotal.toFixed(2);
+        });
+    
+        // Show the payment pop-up
+        function showPaymentPopup() {
             document.getElementById('bg-div').style.display = 'flex';
         }
-
+    
         // Close the payment pop-up
         document.getElementById('close-btn').addEventListener('click', function() {
             document.getElementById('bg-div').style.display = 'none';
         });
-
+    
         // Show selected payment form and hide others
         function showForm(paymentType) {
             // Hide all payment forms
@@ -833,49 +837,38 @@ footer{
             for (var i = 0; i < forms.length; i++) {
                 forms[i].style.display = 'none';
             }
-
+    
             // Show the selected form
             document.getElementById(paymentType).style.display = 'block';
         }
-        function showForm(paymentType) {
-    // Hide all payment forms
-    var forms = document.getElementsByClassName('payment-form');
-    for (var i = 0; i < forms.length; i++) {
-        forms[i].style.display = 'none';
-    }
-
-    // Show the selected form
-    document.getElementById(paymentType).style.display = 'block';
-}
-
-// Handle form submissions for all payment types
-function handlePaymentFormSubmission() {
-    // Get all the forms
-    const forms = document.querySelectorAll('.payment-form');
-
-    // Loop through each form and add submit event listener
-    forms.forEach(form => {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission behavior
-
-            // Here you can add additional logic for form validation or payment processing
-            // For example, you can validate the form inputs here
-
-            // If payment is successfully processed, redirect to order.html
-            alert('Payment Successful! Redirecting to your order summary...');
-            window.location.href = 'OrderConfirmation.html'; // Redirect to order summary page
-        });
-    });
-}
-
-// Call the handlePaymentFormSubmission function when the page loads
-document.addEventListener('DOMContentLoaded', handlePaymentFormSubmission);
-
-    // Load cart data when the page loads
-    loadCart();
-
-
+    
+        // Handle form submissions for all payment types
+        function handlePaymentFormSubmission() {
+            // Get all the forms
+            const forms = document.querySelectorAll('.payment-form');
+    
+            // Loop through each form and add submit event listener
+            forms.forEach(form => {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the default form submission behavior
+    
+                    // Here you can add additional logic for form validation or payment processing
+                    // For example, you can validate the form inputs here
+    
+                    // If payment is successfully processed, redirect to order.html
+                    alert('Payment Successful! Redirecting to your order summary...');
+                    window.location.href = 'OrderConfirmation.html'; // Redirect to order summary page
+                });
+            });
+        }
+    
+        // Call the handlePaymentFormSubmission function when the page loads
+        document.addEventListener('DOMContentLoaded', handlePaymentFormSubmission);
+    
+        // Load cart data when the page loads
+        loadCart();
     </script>
+    
     
 </body>
 </html>
