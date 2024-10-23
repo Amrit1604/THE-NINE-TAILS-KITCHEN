@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Gallery container */
+        #gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Grid layout for images */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* Gallery item */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Set images to a small size with object-fit to maintain aspect ratio */
+        .gallery-item img {
+            width: 100%;
+            height: 150px; /* Small size */
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* Zoom effect on hover */
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Caption */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px; /* Reduced padding for smaller caption size */
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 12px; /* Smaller font size for captions */
+        }
+
+        /* Show caption on hover */
+        .gallery-item:hover .caption {
+            opacity: 1;
+        }
+
+        /* Modal container (hidden by default) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Modal content (image inside modal) */
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <section id="gallery">
+        <h2>Experience the Ambiance</h2>
+        <p>Step inside and discover the beauty of The Nine Tails Kitchen...</p>
+        
+        <div class="image-grid">
+            <div class="gallery-item">
+                <img src="https://b.zmtcdn.com/data/pictures/6/18548506/62b14515bb652c908ea2f061dc11b05a.jpg?fit=around|960:500&crop=960:500;*,*" alt="Cozy dining area">
+                <p class="caption">Cozy and intimate dining area</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsLyeoMlGwS8FLJ_oY8wQkpzL4CHlltYbeqw&s" alt="Traditional Japanese garden">
+                <p class="caption">Serene view of the traditional Japanese garden</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://media.architecturaldigest.com/photos/572a34ffe50e09d42bdfb5e0/4:3/w_2835,h_2126,c_limit/japanese-restaurants-la-01.jpg" alt="Sushi bar">
+                <p class="caption">Our vibrant sushi bar</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://img.freepik.com/premium-photo/japanese-restaurant-with-beautiful-decor-photo-high-quality_1013016-713.jpg" alt="Elegant interior decor">
+                <p class="caption">Elegant interior decor</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.wixstatic.com/media/59378b_e0b3c8c6744b4db28ab259792f6b2d60~mv2.jpeg/v1/fill/w_1024,h_768,al_c/59378b_e0b3c8c6744b4db28ab259792f6b2d60~mv2.jpeg" alt="Outdoor seating area">
+                <p class="caption">Relaxing outdoor seating area</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://tamatelandscaping.com//wp-content/uploads/2019/03/japan-2975790_960_720-680x382.jpg" alt="Peaceful landscape">
+                <p class="caption">Breathtaking landscape view</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.wixstatic.com/media/59378b_458cf329c62f4fe9840de0b7252dd5a2~mv2.jpg/v1/fill/w_980,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/59378b_458cf329c62f4fe9840de0b7252dd5a2~mv2.jpg" alt="Sleek and modern decor">
+                <p class="caption">Sleek and modern decor</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://thumbs.dreamstime.com/b/modern-japanese-restaurant-exterior-warm-lighting-showcasing-sleek-facade-large-window-welcoming-ambiance-322227856.jpg" alt="Exterior view of the restaurant">
+                <p class="caption">Warm lighting and sleek facade</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://st.hzcdn.com/simgs/pictures/exteriors/mariposa-restaurant-sedona-arizona-matt-dougan-design-img~4c4162a105db2f8f_4-3118-1-fb4beb5.jpg" alt="Restaurant entrance at night">
+                <p class="caption">Restaurant entrance illuminated at night</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for viewing image -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        // JavaScript to handle image clicks and open modal
+        const modal = document.getElementById('myModal');
+        const modalImg = document.getElementById('modal-img');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        // Get all images in the gallery
+        const images = document.querySelectorAll('.gallery-item img');
+
+        // Add click event to each image
+        images.forEach((img) => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';  // Show the modal
+                modalImg.src = img.src;        // Set the modal image source to the clicked image
+            });
+        });
+
+        // Close the modal when the close button is clicked
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close the modal if user clicks anywhere outside the modal image
+        modal.addEventListener('click', (e) => {
+            if (e.target !== modalImg) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
