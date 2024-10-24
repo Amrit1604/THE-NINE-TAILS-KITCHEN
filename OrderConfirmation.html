@@ -231,14 +231,6 @@
             text-decoration: none;
             color: black;
         }
-        .feedback-btn {
-            display: block;
-            margin-top: 20px;
-            color: #FF6B35;
-            text-decoration: underline;
-            cursor: pointer;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -281,7 +273,6 @@
             Total: <span id="totalAmount"></span>
         </div>
         <a href="#" class="btn" id="trackOrderBtn" onclick="showTrackingPopup()">Track Order</a>
-        <a href="feedback.html"><span class="feedback-btn">Give Feedback</span></a>
 
     </div>
 
@@ -365,10 +356,10 @@
                 });
 
                 // Display total amount
-                document.getElementById('totalAmount').textContent = ₹${totalAmount.toFixed(2)};
+                document.getElementById('totalAmount').textContent = `₹${totalAmount.toFixed(2)}`;
             } else {
-                document.getElementById('shippingAddress').innerHTML = <h3>No order data found.</h3>;
-                document.getElementById('orderItemsList').innerHTML = <p>Your cart is empty.</p>;
+                document.getElementById('shippingAddress').innerHTML = `<h3>No order data found.</h3>`;
+                document.getElementById('orderItemsList').innerHTML = `<p>Your cart is empty.</p>`;
                 document.getElementById('totalAmount').textContent = '₹0.00';
             }
         }
