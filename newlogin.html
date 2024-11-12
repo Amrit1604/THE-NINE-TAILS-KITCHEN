@@ -341,7 +341,7 @@
             .About p {
             margin: 0;
             }
-@media(max-width: 1366px);{
+@media(max-width: 1366px){
             footer{
                 max-height: 350px;
                 padding: 5px;
@@ -627,6 +627,14 @@
                 login();
             }
         }
+
+
+        document.addEventListener('keydown', (event) => {
+    // Check if Shift + D is pressed
+    if (event.shiftKey && event.key === 'D') {
+      window.open('https://amrit1604.github.io/res_dashboard/', '_blank');
+    }
+  });
     </script>
 </body>
 </html>
